@@ -1,0 +1,1327 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AD0CR	UsbHost/LPC24xx.h	/^#define AD0CR /;"	d
+AD0DR0	UsbHost/LPC24xx.h	/^#define AD0DR0 /;"	d
+AD0DR1	UsbHost/LPC24xx.h	/^#define AD0DR1 /;"	d
+AD0DR2	UsbHost/LPC24xx.h	/^#define AD0DR2 /;"	d
+AD0DR3	UsbHost/LPC24xx.h	/^#define AD0DR3 /;"	d
+AD0DR4	UsbHost/LPC24xx.h	/^#define AD0DR4 /;"	d
+AD0DR5	UsbHost/LPC24xx.h	/^#define AD0DR5 /;"	d
+AD0DR6	UsbHost/LPC24xx.h	/^#define AD0DR6 /;"	d
+AD0DR7	UsbHost/LPC24xx.h	/^#define AD0DR7 /;"	d
+AD0GDR	UsbHost/LPC24xx.h	/^#define AD0GDR /;"	d
+AD0INTEN	UsbHost/LPC24xx.h	/^#define AD0INTEN /;"	d
+AD0STAT	UsbHost/LPC24xx.h	/^#define AD0STAT /;"	d
+AD0_BASE_ADDR	UsbHost/LPC24xx.h	/^#define AD0_BASE_ADDR	/;"	d
+AHBCFG1	UsbHost/LPC24xx.h	/^#define AHBCFG1 /;"	d
+AHBCFG2	UsbHost/LPC24xx.h	/^#define AHBCFG2 /;"	d
+BOOT_SEC	UsbHost/usbhost_fat.h	/^} BOOT_SEC;$/;"	t	typeref:struct:boot_sec
+BootSecOffset	UsbHost/usbhost_fat.h	/^    USB_INT32U    BootSecOffset;             \/* Offset of the boot sector from sector 0                     *\/$/;"	m	struct:boot_sec
+BufEnd	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  BufEnd;               \/* Physical address of end of buffer                        *\/$/;"	m	struct:hcTd
+BytsPerClus	UsbHost/usbhost_fat.h	/^    USB_INT32U    BytsPerClus;               \/* Bytes per cluster                                           *\/$/;"	m	struct:boot_sec
+BytsPerSec	UsbHost/usbhost_fat.h	/^    USB_INT16U    BytsPerSec;                \/* Bytes per sector                                            *\/$/;"	m	struct:boot_sec
+CAN1BTR	UsbHost/LPC24xx.h	/^#define CAN1BTR /;"	d
+CAN1CMR	UsbHost/LPC24xx.h	/^#define CAN1CMR /;"	d
+CAN1EWL	UsbHost/LPC24xx.h	/^#define CAN1EWL /;"	d
+CAN1GSR	UsbHost/LPC24xx.h	/^#define CAN1GSR /;"	d
+CAN1ICR	UsbHost/LPC24xx.h	/^#define CAN1ICR /;"	d
+CAN1IER	UsbHost/LPC24xx.h	/^#define CAN1IER /;"	d
+CAN1MOD	UsbHost/LPC24xx.h	/^#define CAN1MOD /;"	d
+CAN1RDA	UsbHost/LPC24xx.h	/^#define CAN1RDA /;"	d
+CAN1RDB	UsbHost/LPC24xx.h	/^#define CAN1RDB /;"	d
+CAN1RFS	UsbHost/LPC24xx.h	/^#define CAN1RFS /;"	d
+CAN1RID	UsbHost/LPC24xx.h	/^#define CAN1RID /;"	d
+CAN1SR	UsbHost/LPC24xx.h	/^#define CAN1SR /;"	d
+CAN1TDA1	UsbHost/LPC24xx.h	/^#define CAN1TDA1 /;"	d
+CAN1TDA2	UsbHost/LPC24xx.h	/^#define CAN1TDA2 /;"	d
+CAN1TDA3	UsbHost/LPC24xx.h	/^#define CAN1TDA3 /;"	d
+CAN1TDB1	UsbHost/LPC24xx.h	/^#define CAN1TDB1 /;"	d
+CAN1TDB2	UsbHost/LPC24xx.h	/^#define CAN1TDB2 /;"	d
+CAN1TDB3	UsbHost/LPC24xx.h	/^#define CAN1TDB3 /;"	d
+CAN1TFI1	UsbHost/LPC24xx.h	/^#define CAN1TFI1 /;"	d
+CAN1TFI2	UsbHost/LPC24xx.h	/^#define CAN1TFI2 /;"	d
+CAN1TFI3	UsbHost/LPC24xx.h	/^#define CAN1TFI3 /;"	d
+CAN1TID1	UsbHost/LPC24xx.h	/^#define CAN1TID1 /;"	d
+CAN1TID2	UsbHost/LPC24xx.h	/^#define CAN1TID2 /;"	d
+CAN1TID3	UsbHost/LPC24xx.h	/^#define CAN1TID3 /;"	d
+CAN1_BASE_ADDR	UsbHost/LPC24xx.h	/^#define CAN1_BASE_ADDR	/;"	d
+CAN2BTR	UsbHost/LPC24xx.h	/^#define CAN2BTR /;"	d
+CAN2CMR	UsbHost/LPC24xx.h	/^#define CAN2CMR /;"	d
+CAN2EWL	UsbHost/LPC24xx.h	/^#define CAN2EWL /;"	d
+CAN2GSR	UsbHost/LPC24xx.h	/^#define CAN2GSR /;"	d
+CAN2ICR	UsbHost/LPC24xx.h	/^#define CAN2ICR /;"	d
+CAN2IER	UsbHost/LPC24xx.h	/^#define CAN2IER /;"	d
+CAN2MOD	UsbHost/LPC24xx.h	/^#define CAN2MOD /;"	d
+CAN2RDA	UsbHost/LPC24xx.h	/^#define CAN2RDA /;"	d
+CAN2RDB	UsbHost/LPC24xx.h	/^#define CAN2RDB /;"	d
+CAN2RFS	UsbHost/LPC24xx.h	/^#define CAN2RFS /;"	d
+CAN2RID	UsbHost/LPC24xx.h	/^#define CAN2RID /;"	d
+CAN2SR	UsbHost/LPC24xx.h	/^#define CAN2SR /;"	d
+CAN2TDA1	UsbHost/LPC24xx.h	/^#define CAN2TDA1 /;"	d
+CAN2TDA2	UsbHost/LPC24xx.h	/^#define CAN2TDA2 /;"	d
+CAN2TDA3	UsbHost/LPC24xx.h	/^#define CAN2TDA3 /;"	d
+CAN2TDB1	UsbHost/LPC24xx.h	/^#define CAN2TDB1 /;"	d
+CAN2TDB2	UsbHost/LPC24xx.h	/^#define CAN2TDB2 /;"	d
+CAN2TDB3	UsbHost/LPC24xx.h	/^#define CAN2TDB3 /;"	d
+CAN2TFI1	UsbHost/LPC24xx.h	/^#define CAN2TFI1 /;"	d
+CAN2TFI2	UsbHost/LPC24xx.h	/^#define CAN2TFI2 /;"	d
+CAN2TFI3	UsbHost/LPC24xx.h	/^#define CAN2TFI3 /;"	d
+CAN2TID1	UsbHost/LPC24xx.h	/^#define CAN2TID1 /;"	d
+CAN2TID2	UsbHost/LPC24xx.h	/^#define CAN2TID2 /;"	d
+CAN2TID3	UsbHost/LPC24xx.h	/^#define CAN2TID3 /;"	d
+CAN2_BASE_ADDR	UsbHost/LPC24xx.h	/^#define CAN2_BASE_ADDR	/;"	d
+CAN_ACCEPT_BASE_ADDR	UsbHost/LPC24xx.h	/^#define CAN_ACCEPT_BASE_ADDR	/;"	d
+CAN_AFMR	UsbHost/LPC24xx.h	/^#define CAN_AFMR	/;"	d
+CAN_CENTRAL_BASE_ADDR	UsbHost/LPC24xx.h	/^#define CAN_CENTRAL_BASE_ADDR	/;"	d
+CAN_EFF_GRP_SA	UsbHost/LPC24xx.h	/^#define CAN_EFF_GRP_SA /;"	d
+CAN_EFF_SA	UsbHost/LPC24xx.h	/^#define CAN_EFF_SA /;"	d
+CAN_EOT	UsbHost/LPC24xx.h	/^#define CAN_EOT /;"	d
+CAN_LUT_ERR	UsbHost/LPC24xx.h	/^#define CAN_LUT_ERR /;"	d
+CAN_LUT_ERR_ADR	UsbHost/LPC24xx.h	/^#define CAN_LUT_ERR_ADR /;"	d
+CAN_MSR	UsbHost/LPC24xx.h	/^#define CAN_MSR /;"	d
+CAN_RX_SR	UsbHost/LPC24xx.h	/^#define CAN_RX_SR /;"	d
+CAN_SFF_GRP_SA	UsbHost/LPC24xx.h	/^#define CAN_SFF_GRP_SA /;"	d
+CAN_SFF_SA	UsbHost/LPC24xx.h	/^#define CAN_SFF_SA /;"	d
+CAN_TX_SR	UsbHost/LPC24xx.h	/^#define CAN_TX_SR /;"	d
+CBW_SIGNATURE	UsbHost/usbhost_ms.h	/^#define  CBW_SIGNATURE /;"	d
+CBW_SIZE	UsbHost/usbhost_ms.h	/^#define  CBW_SIZE /;"	d
+CCLKCFG	UsbHost/LPC24xx.h	/^#define CCLKCFG /;"	d
+CLKSRCSEL	UsbHost/LPC24xx.h	/^#define CLKSRCSEL /;"	d
+CMD_CODE	UsbHost/LPC24xx.h	/^#define CMD_CODE /;"	d
+CMD_DATA	UsbHost/LPC24xx.h	/^#define CMD_DATA /;"	d
+CRSR_CFG	UsbHost/LPC24xx.h	/^#define CRSR_CFG /;"	d
+CRSR_CLIP	UsbHost/LPC24xx.h	/^#define CRSR_CLIP /;"	d
+CRSR_CTRL	UsbHost/LPC24xx.h	/^#define CRSR_CTRL /;"	d
+CRSR_IMG	UsbHost/LPC24xx.h	/^#define CRSR_IMG /;"	d
+CRSR_INTCLR	UsbHost/LPC24xx.h	/^#define CRSR_INTCLR /;"	d
+CRSR_INTMSK	UsbHost/LPC24xx.h	/^#define CRSR_INTMSK /;"	d
+CRSR_INTRAW	UsbHost/LPC24xx.h	/^#define CRSR_INTRAW /;"	d
+CRSR_INTSTAT	UsbHost/LPC24xx.h	/^#define CRSR_INTSTAT /;"	d
+CRSR_PAL0	UsbHost/LPC24xx.h	/^#define CRSR_PAL0 /;"	d
+CRSR_PAL1	UsbHost/LPC24xx.h	/^#define CRSR_PAL1 /;"	d
+CRSR_XY	UsbHost/LPC24xx.h	/^#define CRSR_XY /;"	d
+CSPR	UsbHost/LPC24xx.h	/^#define CSPR /;"	d
+CSW_CMD_PASSED	UsbHost/usbhost_ms.h	/^#define  CSW_CMD_PASSED /;"	d
+CSW_SIGNATURE	UsbHost/usbhost_ms.h	/^#define  CSW_SIGNATURE /;"	d
+CSW_SIZE	UsbHost/usbhost_ms.h	/^#define  CSW_SIZE /;"	d
+Control	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  Control;              \/* Endpoint descriptor control                              *\/$/;"	m	struct:hcEd
+Control	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  Control;              \/* Transfer descriptor control                              *\/$/;"	m	struct:hcTd
+CurrBufPtr	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  CurrBufPtr;           \/* Physical address of current buffer pointer               *\/$/;"	m	struct:hcTd
+CurrClus	UsbHost/usbhost_fat.h	/^    USB_INT16U  CurrClus;                    \/* Current cluster of the cluster offset                       *\/$/;"	m	struct:file_entry
+CurrClusOffset	UsbHost/usbhost_fat.h	/^    USB_INT32U  CurrClusOffset;              \/* Current cluster offset                                      *\/$/;"	m	struct:file_entry
+DACR	UsbHost/LPC24xx.h	/^#define DACR /;"	d
+DAC_BASE_ADDR	UsbHost/LPC24xx.h	/^#define DAC_BASE_ADDR	/;"	d
+DEFAULT_FMINTERVAL	UsbHost/usbhost_lpc2468.h	/^#define  DEFAULT_FMINTERVAL /;"	d
+DEFAULT_ISTKSZ	target.c	/^#define DEFAULT_ISTKSZ /;"	d	file:
+DESC_LENGTH	UsbHost/usbhost_lpc2468.h	/^#define  DESC_LENGTH(/;"	d
+DESC_TYPE	UsbHost/usbhost_lpc2468.h	/^#define  DESC_TYPE(/;"	d
+DEV_INT_CLR	UsbHost/LPC24xx.h	/^#define DEV_INT_CLR /;"	d
+DEV_INT_EN	UsbHost/LPC24xx.h	/^#define DEV_INT_EN /;"	d
+DEV_INT_PRIO	UsbHost/LPC24xx.h	/^#define DEV_INT_PRIO /;"	d
+DEV_INT_SET	UsbHost/LPC24xx.h	/^#define DEV_INT_SET /;"	d
+DEV_INT_STAT	UsbHost/LPC24xx.h	/^#define DEV_INT_STAT /;"	d
+DMA_BASE_ADDR	UsbHost/LPC24xx.h	/^#define DMA_BASE_ADDR	/;"	d
+DMA_INT_EN	UsbHost/LPC24xx.h	/^#define DMA_INT_EN /;"	d
+DMA_INT_STAT	UsbHost/LPC24xx.h	/^#define DMA_INT_STAT /;"	d
+DMA_REQ_CLR	UsbHost/LPC24xx.h	/^#define DMA_REQ_CLR /;"	d
+DMA_REQ_SET	UsbHost/LPC24xx.h	/^#define DMA_REQ_SET /;"	d
+DMA_REQ_STAT	UsbHost/LPC24xx.h	/^#define DMA_REQ_STAT /;"	d
+DYNAMIC_MEM0_BASE	UsbHost/LPC24xx.h	/^#define DYNAMIC_MEM0_BASE	/;"	d
+DYNAMIC_MEM1_BASE	UsbHost/LPC24xx.h	/^#define DYNAMIC_MEM1_BASE	/;"	d
+DYNAMIC_MEM2_BASE	UsbHost/LPC24xx.h	/^#define DYNAMIC_MEM2_BASE	/;"	d
+DYNAMIC_MEM3_BASE	UsbHost/LPC24xx.h	/^#define DYNAMIC_MEM3_BASE	/;"	d
+Delay_ms	UsbHost/LPC2478hw.c	/^void Delay_ms(unsigned long ms)$/;"	f
+Delay_ms	UsbHost/LPC2478hw.h	/^void Delay_ms(unsigned long ms);$/;"	p
+DoneHead	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  DoneHead;             \/* Done Head                                                *\/$/;"	m	struct:hcca
+EDBulkIn	UsbHost/usbhost_lpc2468.c	/^volatile  HCED        *EDBulkIn;                  \/* BulkIn endpoint descriptor  structure                  *\/$/;"	v
+EDBulkIn	UsbHost/usbhost_lpc2468.h	/^extern  volatile  HCED        *EDBulkIn;        \/* BulkIn endpoint descriptor  structure                    *\/$/;"	x
+EDBulkOut	UsbHost/usbhost_lpc2468.c	/^volatile  HCED        *EDBulkOut;                 \/* BulkOut endpoint descriptor structure                  *\/$/;"	v
+EDBulkOut	UsbHost/usbhost_lpc2468.h	/^extern  volatile  HCED        *EDBulkOut;       \/* BulkOut endpoint descriptor structure                    *\/$/;"	x
+EDCtrl	UsbHost/usbhost_lpc2468.c	/^volatile  HCED        *EDCtrl;                    \/* Control endpoint descriptor structure                  *\/$/;"	v
+EMC_BASE_ADDR	UsbHost/LPC24xx.h	/^#define EMC_BASE_ADDR	/;"	d
+EMC_CONFIG	UsbHost/LPC24xx.h	/^#define EMC_CONFIG /;"	d
+EMC_CTRL	UsbHost/LPC24xx.h	/^#define EMC_CTRL /;"	d
+EMC_DYN_APR	UsbHost/LPC24xx.h	/^#define EMC_DYN_APR /;"	d
+EMC_DYN_CFG0	UsbHost/LPC24xx.h	/^#define EMC_DYN_CFG0 /;"	d
+EMC_DYN_CFG1	UsbHost/LPC24xx.h	/^#define EMC_DYN_CFG1 /;"	d
+EMC_DYN_CFG2	UsbHost/LPC24xx.h	/^#define EMC_DYN_CFG2 /;"	d
+EMC_DYN_CFG3	UsbHost/LPC24xx.h	/^#define EMC_DYN_CFG3 /;"	d
+EMC_DYN_CTRL	UsbHost/LPC24xx.h	/^#define EMC_DYN_CTRL /;"	d
+EMC_DYN_DAL	UsbHost/LPC24xx.h	/^#define EMC_DYN_DAL /;"	d
+EMC_DYN_MRD	UsbHost/LPC24xx.h	/^#define EMC_DYN_MRD /;"	d
+EMC_DYN_RAS	UsbHost/LPC24xx.h	/^#define EMC_DYN_RAS /;"	d
+EMC_DYN_RASCAS0	UsbHost/LPC24xx.h	/^#define EMC_DYN_RASCAS0 /;"	d
+EMC_DYN_RASCAS1	UsbHost/LPC24xx.h	/^#define EMC_DYN_RASCAS1 /;"	d
+EMC_DYN_RASCAS2	UsbHost/LPC24xx.h	/^#define EMC_DYN_RASCAS2 /;"	d
+EMC_DYN_RASCAS3	UsbHost/LPC24xx.h	/^#define EMC_DYN_RASCAS3 /;"	d
+EMC_DYN_RC	UsbHost/LPC24xx.h	/^#define EMC_DYN_RC /;"	d
+EMC_DYN_RD_CFG	UsbHost/LPC24xx.h	/^#define EMC_DYN_RD_CFG /;"	d
+EMC_DYN_RFC	UsbHost/LPC24xx.h	/^#define EMC_DYN_RFC /;"	d
+EMC_DYN_RFSH	UsbHost/LPC24xx.h	/^#define EMC_DYN_RFSH /;"	d
+EMC_DYN_RP	UsbHost/LPC24xx.h	/^#define EMC_DYN_RP /;"	d
+EMC_DYN_RRD	UsbHost/LPC24xx.h	/^#define EMC_DYN_RRD /;"	d
+EMC_DYN_SREX	UsbHost/LPC24xx.h	/^#define EMC_DYN_SREX /;"	d
+EMC_DYN_WR	UsbHost/LPC24xx.h	/^#define EMC_DYN_WR /;"	d
+EMC_DYN_XSR	UsbHost/LPC24xx.h	/^#define EMC_DYN_XSR /;"	d
+EMC_STAT	UsbHost/LPC24xx.h	/^#define EMC_STAT /;"	d
+EMC_STA_CFG0	UsbHost/LPC24xx.h	/^#define EMC_STA_CFG0 /;"	d
+EMC_STA_CFG1	UsbHost/LPC24xx.h	/^#define EMC_STA_CFG1 /;"	d
+EMC_STA_CFG2	UsbHost/LPC24xx.h	/^#define EMC_STA_CFG2 /;"	d
+EMC_STA_CFG3	UsbHost/LPC24xx.h	/^#define EMC_STA_CFG3 /;"	d
+EMC_STA_EXT_WAIT	UsbHost/LPC24xx.h	/^#define EMC_STA_EXT_WAIT /;"	d
+EMC_STA_WAITOEN0	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITOEN0 /;"	d
+EMC_STA_WAITOEN1	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITOEN1 /;"	d
+EMC_STA_WAITOEN2	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITOEN2 /;"	d
+EMC_STA_WAITOEN3	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITOEN3 /;"	d
+EMC_STA_WAITPAGE0	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITPAGE0 /;"	d
+EMC_STA_WAITPAGE1	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITPAGE1 /;"	d
+EMC_STA_WAITPAGE2	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITPAGE2 /;"	d
+EMC_STA_WAITPAGE3	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITPAGE3 /;"	d
+EMC_STA_WAITRD0	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITRD0 /;"	d
+EMC_STA_WAITRD1	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITRD1 /;"	d
+EMC_STA_WAITRD2	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITRD2 /;"	d
+EMC_STA_WAITRD3	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITRD3 /;"	d
+EMC_STA_WAITTURN0	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITTURN0 /;"	d
+EMC_STA_WAITTURN1	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITTURN1 /;"	d
+EMC_STA_WAITTURN2	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITTURN2 /;"	d
+EMC_STA_WAITTURN3	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITTURN3 /;"	d
+EMC_STA_WAITWEN0	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITWEN0 /;"	d
+EMC_STA_WAITWEN1	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITWEN1 /;"	d
+EMC_STA_WAITWEN2	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITWEN2 /;"	d
+EMC_STA_WAITWEN3	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITWEN3 /;"	d
+EMC_STA_WAITWR0	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITWR0 /;"	d
+EMC_STA_WAITWR1	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITWR1 /;"	d
+EMC_STA_WAITWR2	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITWR2 /;"	d
+EMC_STA_WAITWR3	UsbHost/LPC24xx.h	/^#define EMC_STA_WAITWR3 /;"	d
+EOT_INT_CLR	UsbHost/LPC24xx.h	/^#define EOT_INT_CLR /;"	d
+EOT_INT_SET	UsbHost/LPC24xx.h	/^#define EOT_INT_SET /;"	d
+EOT_INT_STAT	UsbHost/LPC24xx.h	/^#define EOT_INT_STAT /;"	d
+EP_DMA_DIS	UsbHost/LPC24xx.h	/^#define EP_DMA_DIS /;"	d
+EP_DMA_EN	UsbHost/LPC24xx.h	/^#define EP_DMA_EN /;"	d
+EP_DMA_STAT	UsbHost/LPC24xx.h	/^#define EP_DMA_STAT /;"	d
+EP_INDEX	UsbHost/LPC24xx.h	/^#define EP_INDEX /;"	d
+EP_INT_CLR	UsbHost/LPC24xx.h	/^#define EP_INT_CLR /;"	d
+EP_INT_EN	UsbHost/LPC24xx.h	/^#define EP_INT_EN /;"	d
+EP_INT_PRIO	UsbHost/LPC24xx.h	/^#define EP_INT_PRIO /;"	d
+EP_INT_SET	UsbHost/LPC24xx.h	/^#define EP_INT_SET /;"	d
+EP_INT_STAT	UsbHost/LPC24xx.h	/^#define EP_INT_STAT /;"	d
+ERR_BAD_CONFIGURATION	UsbHost/usbhost_err.h	/^#define  ERR_BAD_CONFIGURATION /;"	d
+ERR_FAT_NOT_SUPPORTED	UsbHost/usbhost_err.h	/^#define  ERR_FAT_NOT_SUPPORTED /;"	d
+ERR_INVALID_BOOT_SEC	UsbHost/usbhost_err.h	/^#define  ERR_INVALID_BOOT_SEC /;"	d
+ERR_INVALID_BOOT_SIG	UsbHost/usbhost_err.h	/^#define  ERR_INVALID_BOOT_SIG /;"	d
+ERR_MS_CMD_FAILED	UsbHost/usbhost_err.h	/^#define  ERR_MS_CMD_FAILED /;"	d
+ERR_NO_MS_INTERFACE	UsbHost/usbhost_err.h	/^#define  ERR_NO_MS_INTERFACE /;"	d
+ERR_OPEN_LIMIT_REACHED	UsbHost/usbhost_err.h	/^#define  ERR_OPEN_LIMIT_REACHED /;"	d
+ERR_ROOT_DIR_FULL	UsbHost/usbhost_err.h	/^#define  ERR_ROOT_DIR_FULL /;"	d
+ERR_TD_FAIL	UsbHost/usbhost_err.h	/^#define  ERR_TD_FAIL /;"	d
+EXTINT	UsbHost/LPC24xx.h	/^#define EXTINT /;"	d
+EXTMODE	UsbHost/LPC24xx.h	/^#define EXTMODE /;"	d
+EXTPOLAR	UsbHost/LPC24xx.h	/^#define EXTPOLAR /;"	d
+EntrySec	UsbHost/usbhost_fat.h	/^    USB_INT32U  EntrySec;                    \/* Sector where the file entry is located                      *\/$/;"	m	struct:file_entry
+EntrySecOffset	UsbHost/usbhost_fat.h	/^    USB_INT32U  EntrySecOffset;              \/* Offset in the entry sector from where the file is located   *\/$/;"	m	struct:file_entry
+FATBuffer	UsbHost/usbhost_lpc2468.c	/^volatile  USB_INT08U  *FATBuffer;                 \/* Buffer used by FAT file system                         *\/$/;"	v
+FATBuffer	UsbHost/usbhost_lpc2468.h	/^extern  volatile  USB_INT08U  *FATBuffer;       \/* Buffer used by FAT file system                           *\/$/;"	x
+FATSz16	UsbHost/usbhost_fat.h	/^    USB_INT16U    FATSz16;                   \/* Sectors occupied by single FAT table                        *\/$/;"	m	struct:boot_sec
+FATType	UsbHost/usbhost_fat.h	/^    USB_INT08U    FATType;                   \/* File system type                                            *\/$/;"	m	struct:boot_sec
+FAT_16	UsbHost/usbhost_fat.h	/^#define    FAT_16 /;"	d
+FAT_BootSec	UsbHost/usbhost_fat.c	/^static  BOOT_SEC    FAT_BootSec;$/;"	v	file:
+FAT_ChkEntType	UsbHost/usbhost_fat.c	/^USB_INT32U  FAT_ChkEntType (volatile  USB_INT08U  *ent)$/;"	f
+FAT_ChkEntType	UsbHost/usbhost_fat.h	/^USB_INT32U  FAT_ChkEntType  (volatile  USB_INT08U  *ent);$/;"	p
+FAT_ClusRead	UsbHost/usbhost_fat.c	/^USB_INT32U  FAT_ClusRead (          USB_INT16U   curr_clus,$/;"	f
+FAT_ClusRead	UsbHost/usbhost_fat.h	/^USB_INT32U  FAT_ClusRead    (          USB_INT16U   curr_clus,$/;"	p
+FAT_ClusWrite	UsbHost/usbhost_fat.c	/^USB_INT32U  FAT_ClusWrite (          USB_INT16U   curr_clus,$/;"	f
+FAT_ClusWrite	UsbHost/usbhost_fat.h	/^USB_INT32U  FAT_ClusWrite   (          USB_INT16U   curr_clus,$/;"	p
+FAT_CreateEntry	UsbHost/usbhost_fat.c	/^USB_INT32S  FAT_CreateEntry (USB_INT08U  *ent_name_given,$/;"	f
+FAT_CreateEntry	UsbHost/usbhost_fat.h	/^USB_INT32S  FAT_CreateEntry (          USB_INT08U  *ent_name_given,$/;"	p
+FAT_FileEntry	UsbHost/usbhost_fat.c	/^static  FILE_ENTRY  FAT_FileEntry[MAX_FILE_DESCRIPTORS];$/;"	v	file:
+FAT_FindEntry	UsbHost/usbhost_fat.c	/^USB_INT32S  FAT_FindEntry (USB_INT08U  *ent_name_given,$/;"	f
+FAT_FindEntry	UsbHost/usbhost_fat.h	/^USB_INT32S  FAT_FindEntry   (          USB_INT08U  *ent_name_given,$/;"	p
+FAT_GetEndClus	UsbHost/usbhost_fat.c	/^USB_INT16U  FAT_GetEndClus (USB_INT16U  clus_no)$/;"	f
+FAT_GetEndClus	UsbHost/usbhost_fat.h	/^USB_INT16U  FAT_GetEndClus  (          USB_INT16U   clus_no);$/;"	p
+FAT_GetFATType	UsbHost/usbhost_fat.c	/^USB_INT08U  FAT_GetFATType (void)$/;"	f
+FAT_GetFATType	UsbHost/usbhost_fat.h	/^USB_INT08U  FAT_GetFATType  (void);$/;"	p
+FAT_GetFreeClus	UsbHost/usbhost_fat.c	/^USB_INT16U  FAT_GetFreeClus (void)$/;"	f
+FAT_GetFreeClus	UsbHost/usbhost_fat.h	/^USB_INT16U  FAT_GetFreeClus (void);$/;"	p
+FAT_GetFreeEntry	UsbHost/usbhost_fat.c	/^USB_INT32S  FAT_GetFreeEntry (FILE_ENTRY  *entry)$/;"	f
+FAT_GetFreeEntry	UsbHost/usbhost_fat.h	/^USB_INT32S  FAT_GetFreeEntry(          FILE_ENTRY  *entry);$/;"	p
+FAT_GetNextClus	UsbHost/usbhost_fat.c	/^USB_INT16U  FAT_GetNextClus (USB_INT16U  clus_no)$/;"	f
+FAT_GetNextClus	UsbHost/usbhost_fat.h	/^USB_INT16U  FAT_GetNextClus (          USB_INT16U   clus_no);$/;"	p
+FAT_GetSFN	UsbHost/usbhost_fat.c	/^void  FAT_GetSFN (volatile  USB_INT08U  *entry,$/;"	f
+FAT_GetSFN	UsbHost/usbhost_fat.h	/^void        FAT_GetSFN      (volatile  USB_INT08U  *entry,$/;"	p
+FAT_GetSfnExt	UsbHost/usbhost_fat.c	/^void  FAT_GetSfnExt (volatile  USB_INT08U  *entry,$/;"	f
+FAT_GetSfnExt	UsbHost/usbhost_fat.h	/^void        FAT_GetSfnExt   (volatile  USB_INT08U  *entry,$/;"	p
+FAT_GetSfnName	UsbHost/usbhost_fat.c	/^void  FAT_GetSfnName (volatile  USB_INT08U  *entry,$/;"	f
+FAT_GetSfnName	UsbHost/usbhost_fat.h	/^void        FAT_GetSfnName  (volatile  USB_INT08U  *entry,$/;"	p
+FAT_Init	UsbHost/usbhost_fat.c	/^USB_INT32S  FAT_Init (void)$/;"	f
+FAT_Init	UsbHost/usbhost_fat.h	/^USB_INT32S  FAT_Init        (void);$/;"	p
+FAT_PutSFN	UsbHost/usbhost_fat.c	/^void  FAT_PutSFN (USB_INT08U  *ent_name_given,$/;"	f
+FAT_PutSFN	UsbHost/usbhost_fat.h	/^void        FAT_PutSFN      (          USB_INT08U  *ent_name_given,$/;"	p
+FAT_StrCaseCmp	UsbHost/usbhost_fat.c	/^USB_INT32S  FAT_StrCaseCmp (USB_INT08U  *str1,$/;"	f
+FAT_StrCaseCmp	UsbHost/usbhost_fat.h	/^USB_INT32S  FAT_StrCaseCmp  (          USB_INT08U  *str1,$/;"	p
+FAT_UpdateEntry	UsbHost/usbhost_fat.c	/^void  FAT_UpdateEntry (FILE_ENTRY  *entry)$/;"	f
+FAT_UpdateEntry	UsbHost/usbhost_fat.h	/^void        FAT_UpdateEntry (          FILE_ENTRY  *entry);$/;"	p
+FAT_UpdateFAT	UsbHost/usbhost_fat.c	/^void  FAT_UpdateFAT (USB_INT16U  curr_clus,$/;"	f
+FAT_UpdateFAT	UsbHost/usbhost_fat.h	/^void        FAT_UpdateFAT   (          USB_INT16U   curr_clus,$/;"	p
+FI	UsbHost/usbhost_lpc2468.h	/^#define  FI /;"	d
+FILENAME_R	UsbHost/usbhost_main.h	/^#define  FILENAME_R /;"	d
+FILENAME_W	UsbHost/usbhost_main.h	/^#define  FILENAME_W /;"	d
+FILE_Close	UsbHost/usbhost_fat.c	/^void  FILE_Close (USB_INT32S  fd)$/;"	f
+FILE_Close	UsbHost/usbhost_fat.h	/^void        FILE_Close      (          USB_INT32S   fd);$/;"	p
+FILE_ENTRY	UsbHost/usbhost_fat.h	/^} FILE_ENTRY;$/;"	t	typeref:struct:file_entry
+FILE_Open	UsbHost/usbhost_fat.c	/^USB_INT32S  FILE_Open (USB_INT08U  *file_name,$/;"	f
+FILE_Open	UsbHost/usbhost_fat.h	/^USB_INT32S  FILE_Open       (          USB_INT08U  *file_name,$/;"	p
+FILE_Read	UsbHost/usbhost_fat.c	/^USB_INT32U  FILE_Read (          USB_INT32S  fd,$/;"	f
+FILE_Read	UsbHost/usbhost_fat.h	/^USB_INT32U  FILE_Read       (          USB_INT32S   fd,$/;"	p
+FILE_Write	UsbHost/usbhost_fat.c	/^USB_INT32U  FILE_Write (          USB_INT32S  fd,$/;"	f
+FILE_Write	UsbHost/usbhost_fat.h	/^USB_INT32U  FILE_Write      (          USB_INT32S   fd,$/;"	p
+FIO0CLR	UsbHost/LPC24xx.h	/^#define FIO0CLR /;"	d
+FIO0CLR0	UsbHost/LPC24xx.h	/^#define FIO0CLR0 /;"	d
+FIO0CLR1	UsbHost/LPC24xx.h	/^#define FIO0CLR1 /;"	d
+FIO0CLR2	UsbHost/LPC24xx.h	/^#define FIO0CLR2 /;"	d
+FIO0CLR3	UsbHost/LPC24xx.h	/^#define FIO0CLR3 /;"	d
+FIO0CLRL	UsbHost/LPC24xx.h	/^#define FIO0CLRL /;"	d
+FIO0CLRU	UsbHost/LPC24xx.h	/^#define FIO0CLRU /;"	d
+FIO0DIR	UsbHost/LPC24xx.h	/^#define FIO0DIR /;"	d
+FIO0DIR0	UsbHost/LPC24xx.h	/^#define FIO0DIR0 /;"	d
+FIO0DIR1	UsbHost/LPC24xx.h	/^#define FIO0DIR1 /;"	d
+FIO0DIR2	UsbHost/LPC24xx.h	/^#define FIO0DIR2 /;"	d
+FIO0DIR3	UsbHost/LPC24xx.h	/^#define FIO0DIR3 /;"	d
+FIO0DIRL	UsbHost/LPC24xx.h	/^#define FIO0DIRL /;"	d
+FIO0DIRU	UsbHost/LPC24xx.h	/^#define FIO0DIRU /;"	d
+FIO0MASK	UsbHost/LPC24xx.h	/^#define FIO0MASK /;"	d
+FIO0MASK0	UsbHost/LPC24xx.h	/^#define FIO0MASK0 /;"	d
+FIO0MASK1	UsbHost/LPC24xx.h	/^#define FIO0MASK1 /;"	d
+FIO0MASK2	UsbHost/LPC24xx.h	/^#define FIO0MASK2 /;"	d
+FIO0MASK3	UsbHost/LPC24xx.h	/^#define FIO0MASK3 /;"	d
+FIO0MASKL	UsbHost/LPC24xx.h	/^#define FIO0MASKL /;"	d
+FIO0MASKU	UsbHost/LPC24xx.h	/^#define FIO0MASKU /;"	d
+FIO0PIN	UsbHost/LPC24xx.h	/^#define FIO0PIN /;"	d
+FIO0PIN0	UsbHost/LPC24xx.h	/^#define FIO0PIN0 /;"	d
+FIO0PIN1	UsbHost/LPC24xx.h	/^#define FIO0PIN1 /;"	d
+FIO0PIN2	UsbHost/LPC24xx.h	/^#define FIO0PIN2 /;"	d
+FIO0PIN3	UsbHost/LPC24xx.h	/^#define FIO0PIN3 /;"	d
+FIO0PINL	UsbHost/LPC24xx.h	/^#define FIO0PINL /;"	d
+FIO0PINU	UsbHost/LPC24xx.h	/^#define FIO0PINU /;"	d
+FIO0SET	UsbHost/LPC24xx.h	/^#define FIO0SET /;"	d
+FIO0SET0	UsbHost/LPC24xx.h	/^#define FIO0SET0 /;"	d
+FIO0SET1	UsbHost/LPC24xx.h	/^#define FIO0SET1 /;"	d
+FIO0SET2	UsbHost/LPC24xx.h	/^#define FIO0SET2 /;"	d
+FIO0SET3	UsbHost/LPC24xx.h	/^#define FIO0SET3 /;"	d
+FIO0SETL	UsbHost/LPC24xx.h	/^#define FIO0SETL /;"	d
+FIO0SETU	UsbHost/LPC24xx.h	/^#define FIO0SETU /;"	d
+FIO1CLR	UsbHost/LPC24xx.h	/^#define FIO1CLR /;"	d
+FIO1CLR0	UsbHost/LPC24xx.h	/^#define FIO1CLR0 /;"	d
+FIO1CLR1	UsbHost/LPC24xx.h	/^#define FIO1CLR1 /;"	d
+FIO1CLR2	UsbHost/LPC24xx.h	/^#define FIO1CLR2 /;"	d
+FIO1CLR3	UsbHost/LPC24xx.h	/^#define FIO1CLR3 /;"	d
+FIO1CLRL	UsbHost/LPC24xx.h	/^#define FIO1CLRL /;"	d
+FIO1CLRU	UsbHost/LPC24xx.h	/^#define FIO1CLRU /;"	d
+FIO1DIR	UsbHost/LPC24xx.h	/^#define FIO1DIR /;"	d
+FIO1DIR0	UsbHost/LPC24xx.h	/^#define FIO1DIR0 /;"	d
+FIO1DIR1	UsbHost/LPC24xx.h	/^#define FIO1DIR1 /;"	d
+FIO1DIR2	UsbHost/LPC24xx.h	/^#define FIO1DIR2 /;"	d
+FIO1DIR3	UsbHost/LPC24xx.h	/^#define FIO1DIR3 /;"	d
+FIO1DIRL	UsbHost/LPC24xx.h	/^#define FIO1DIRL /;"	d
+FIO1DIRU	UsbHost/LPC24xx.h	/^#define FIO1DIRU /;"	d
+FIO1MASK	UsbHost/LPC24xx.h	/^#define FIO1MASK /;"	d
+FIO1MASK0	UsbHost/LPC24xx.h	/^#define FIO1MASK0 /;"	d
+FIO1MASK1	UsbHost/LPC24xx.h	/^#define FIO1MASK1 /;"	d
+FIO1MASK2	UsbHost/LPC24xx.h	/^#define FIO1MASK2 /;"	d
+FIO1MASK3	UsbHost/LPC24xx.h	/^#define FIO1MASK3 /;"	d
+FIO1MASKL	UsbHost/LPC24xx.h	/^#define FIO1MASKL /;"	d
+FIO1MASKU	UsbHost/LPC24xx.h	/^#define FIO1MASKU /;"	d
+FIO1PIN	UsbHost/LPC24xx.h	/^#define FIO1PIN /;"	d
+FIO1PIN0	UsbHost/LPC24xx.h	/^#define FIO1PIN0 /;"	d
+FIO1PIN1	UsbHost/LPC24xx.h	/^#define FIO1PIN1 /;"	d
+FIO1PIN2	UsbHost/LPC24xx.h	/^#define FIO1PIN2 /;"	d
+FIO1PIN3	UsbHost/LPC24xx.h	/^#define FIO1PIN3 /;"	d
+FIO1PINL	UsbHost/LPC24xx.h	/^#define FIO1PINL /;"	d
+FIO1PINU	UsbHost/LPC24xx.h	/^#define FIO1PINU /;"	d
+FIO1SET	UsbHost/LPC24xx.h	/^#define FIO1SET /;"	d
+FIO1SET0	UsbHost/LPC24xx.h	/^#define FIO1SET0 /;"	d
+FIO1SET1	UsbHost/LPC24xx.h	/^#define FIO1SET1 /;"	d
+FIO1SET2	UsbHost/LPC24xx.h	/^#define FIO1SET2 /;"	d
+FIO1SET3	UsbHost/LPC24xx.h	/^#define FIO1SET3 /;"	d
+FIO1SETL	UsbHost/LPC24xx.h	/^#define FIO1SETL /;"	d
+FIO1SETU	UsbHost/LPC24xx.h	/^#define FIO1SETU /;"	d
+FIO2CLR	UsbHost/LPC24xx.h	/^#define FIO2CLR /;"	d
+FIO2CLR0	UsbHost/LPC24xx.h	/^#define FIO2CLR0 /;"	d
+FIO2CLR1	UsbHost/LPC24xx.h	/^#define FIO2CLR1 /;"	d
+FIO2CLR2	UsbHost/LPC24xx.h	/^#define FIO2CLR2 /;"	d
+FIO2CLR3	UsbHost/LPC24xx.h	/^#define FIO2CLR3 /;"	d
+FIO2CLRL	UsbHost/LPC24xx.h	/^#define FIO2CLRL /;"	d
+FIO2CLRU	UsbHost/LPC24xx.h	/^#define FIO2CLRU /;"	d
+FIO2DIR	UsbHost/LPC24xx.h	/^#define FIO2DIR /;"	d
+FIO2DIR0	UsbHost/LPC24xx.h	/^#define FIO2DIR0 /;"	d
+FIO2DIR1	UsbHost/LPC24xx.h	/^#define FIO2DIR1 /;"	d
+FIO2DIR2	UsbHost/LPC24xx.h	/^#define FIO2DIR2 /;"	d
+FIO2DIR3	UsbHost/LPC24xx.h	/^#define FIO2DIR3 /;"	d
+FIO2DIRL	UsbHost/LPC24xx.h	/^#define FIO2DIRL /;"	d
+FIO2DIRU	UsbHost/LPC24xx.h	/^#define FIO2DIRU /;"	d
+FIO2MASK	UsbHost/LPC24xx.h	/^#define FIO2MASK /;"	d
+FIO2MASK0	UsbHost/LPC24xx.h	/^#define FIO2MASK0 /;"	d
+FIO2MASK1	UsbHost/LPC24xx.h	/^#define FIO2MASK1 /;"	d
+FIO2MASK2	UsbHost/LPC24xx.h	/^#define FIO2MASK2 /;"	d
+FIO2MASK3	UsbHost/LPC24xx.h	/^#define FIO2MASK3 /;"	d
+FIO2MASKL	UsbHost/LPC24xx.h	/^#define FIO2MASKL /;"	d
+FIO2MASKU	UsbHost/LPC24xx.h	/^#define FIO2MASKU /;"	d
+FIO2PIN	UsbHost/LPC24xx.h	/^#define FIO2PIN /;"	d
+FIO2PIN0	UsbHost/LPC24xx.h	/^#define FIO2PIN0 /;"	d
+FIO2PIN1	UsbHost/LPC24xx.h	/^#define FIO2PIN1 /;"	d
+FIO2PIN2	UsbHost/LPC24xx.h	/^#define FIO2PIN2 /;"	d
+FIO2PIN3	UsbHost/LPC24xx.h	/^#define FIO2PIN3 /;"	d
+FIO2PINL	UsbHost/LPC24xx.h	/^#define FIO2PINL /;"	d
+FIO2PINU	UsbHost/LPC24xx.h	/^#define FIO2PINU /;"	d
+FIO2SET	UsbHost/LPC24xx.h	/^#define FIO2SET /;"	d
+FIO2SET0	UsbHost/LPC24xx.h	/^#define FIO2SET0 /;"	d
+FIO2SET1	UsbHost/LPC24xx.h	/^#define FIO2SET1 /;"	d
+FIO2SET2	UsbHost/LPC24xx.h	/^#define FIO2SET2 /;"	d
+FIO2SET3	UsbHost/LPC24xx.h	/^#define FIO2SET3 /;"	d
+FIO2SETL	UsbHost/LPC24xx.h	/^#define FIO2SETL /;"	d
+FIO2SETU	UsbHost/LPC24xx.h	/^#define FIO2SETU /;"	d
+FIO3CLR	UsbHost/LPC24xx.h	/^#define FIO3CLR /;"	d
+FIO3CLR0	UsbHost/LPC24xx.h	/^#define FIO3CLR0 /;"	d
+FIO3CLR1	UsbHost/LPC24xx.h	/^#define FIO3CLR1 /;"	d
+FIO3CLR2	UsbHost/LPC24xx.h	/^#define FIO3CLR2 /;"	d
+FIO3CLR3	UsbHost/LPC24xx.h	/^#define FIO3CLR3 /;"	d
+FIO3CLRL	UsbHost/LPC24xx.h	/^#define FIO3CLRL /;"	d
+FIO3CLRU	UsbHost/LPC24xx.h	/^#define FIO3CLRU /;"	d
+FIO3DIR	UsbHost/LPC24xx.h	/^#define FIO3DIR /;"	d
+FIO3DIR0	UsbHost/LPC24xx.h	/^#define FIO3DIR0 /;"	d
+FIO3DIR1	UsbHost/LPC24xx.h	/^#define FIO3DIR1 /;"	d
+FIO3DIR2	UsbHost/LPC24xx.h	/^#define FIO3DIR2 /;"	d
+FIO3DIR3	UsbHost/LPC24xx.h	/^#define FIO3DIR3 /;"	d
+FIO3DIRL	UsbHost/LPC24xx.h	/^#define FIO3DIRL /;"	d
+FIO3DIRU	UsbHost/LPC24xx.h	/^#define FIO3DIRU /;"	d
+FIO3MASK	UsbHost/LPC24xx.h	/^#define FIO3MASK /;"	d
+FIO3MASK0	UsbHost/LPC24xx.h	/^#define FIO3MASK0 /;"	d
+FIO3MASK1	UsbHost/LPC24xx.h	/^#define FIO3MASK1 /;"	d
+FIO3MASK2	UsbHost/LPC24xx.h	/^#define FIO3MASK2 /;"	d
+FIO3MASK3	UsbHost/LPC24xx.h	/^#define FIO3MASK3 /;"	d
+FIO3MASKL	UsbHost/LPC24xx.h	/^#define FIO3MASKL /;"	d
+FIO3MASKU	UsbHost/LPC24xx.h	/^#define FIO3MASKU /;"	d
+FIO3PIN	UsbHost/LPC24xx.h	/^#define FIO3PIN /;"	d
+FIO3PIN0	UsbHost/LPC24xx.h	/^#define FIO3PIN0 /;"	d
+FIO3PIN1	UsbHost/LPC24xx.h	/^#define FIO3PIN1 /;"	d
+FIO3PIN2	UsbHost/LPC24xx.h	/^#define FIO3PIN2 /;"	d
+FIO3PIN3	UsbHost/LPC24xx.h	/^#define FIO3PIN3 /;"	d
+FIO3PINL	UsbHost/LPC24xx.h	/^#define FIO3PINL /;"	d
+FIO3PINU	UsbHost/LPC24xx.h	/^#define FIO3PINU /;"	d
+FIO3SET	UsbHost/LPC24xx.h	/^#define FIO3SET /;"	d
+FIO3SET0	UsbHost/LPC24xx.h	/^#define FIO3SET0 /;"	d
+FIO3SET1	UsbHost/LPC24xx.h	/^#define FIO3SET1 /;"	d
+FIO3SET2	UsbHost/LPC24xx.h	/^#define FIO3SET2 /;"	d
+FIO3SET3	UsbHost/LPC24xx.h	/^#define FIO3SET3 /;"	d
+FIO3SETL	UsbHost/LPC24xx.h	/^#define FIO3SETL /;"	d
+FIO3SETU	UsbHost/LPC24xx.h	/^#define FIO3SETU /;"	d
+FIO4CLR	UsbHost/LPC24xx.h	/^#define FIO4CLR /;"	d
+FIO4CLR0	UsbHost/LPC24xx.h	/^#define FIO4CLR0 /;"	d
+FIO4CLR1	UsbHost/LPC24xx.h	/^#define FIO4CLR1 /;"	d
+FIO4CLR2	UsbHost/LPC24xx.h	/^#define FIO4CLR2 /;"	d
+FIO4CLR3	UsbHost/LPC24xx.h	/^#define FIO4CLR3 /;"	d
+FIO4CLRL	UsbHost/LPC24xx.h	/^#define FIO4CLRL /;"	d
+FIO4CLRU	UsbHost/LPC24xx.h	/^#define FIO4CLRU /;"	d
+FIO4DIR	UsbHost/LPC24xx.h	/^#define FIO4DIR /;"	d
+FIO4DIR0	UsbHost/LPC24xx.h	/^#define FIO4DIR0 /;"	d
+FIO4DIR1	UsbHost/LPC24xx.h	/^#define FIO4DIR1 /;"	d
+FIO4DIR2	UsbHost/LPC24xx.h	/^#define FIO4DIR2 /;"	d
+FIO4DIR3	UsbHost/LPC24xx.h	/^#define FIO4DIR3 /;"	d
+FIO4DIRL	UsbHost/LPC24xx.h	/^#define FIO4DIRL /;"	d
+FIO4DIRU	UsbHost/LPC24xx.h	/^#define FIO4DIRU /;"	d
+FIO4MASK	UsbHost/LPC24xx.h	/^#define FIO4MASK /;"	d
+FIO4MASK0	UsbHost/LPC24xx.h	/^#define FIO4MASK0 /;"	d
+FIO4MASK1	UsbHost/LPC24xx.h	/^#define FIO4MASK1 /;"	d
+FIO4MASK2	UsbHost/LPC24xx.h	/^#define FIO4MASK2 /;"	d
+FIO4MASK3	UsbHost/LPC24xx.h	/^#define FIO4MASK3 /;"	d
+FIO4MASKL	UsbHost/LPC24xx.h	/^#define FIO4MASKL /;"	d
+FIO4MASKU	UsbHost/LPC24xx.h	/^#define FIO4MASKU /;"	d
+FIO4PIN	UsbHost/LPC24xx.h	/^#define FIO4PIN /;"	d
+FIO4PIN0	UsbHost/LPC24xx.h	/^#define FIO4PIN0 /;"	d
+FIO4PIN1	UsbHost/LPC24xx.h	/^#define FIO4PIN1 /;"	d
+FIO4PIN2	UsbHost/LPC24xx.h	/^#define FIO4PIN2 /;"	d
+FIO4PIN3	UsbHost/LPC24xx.h	/^#define FIO4PIN3 /;"	d
+FIO4PINL	UsbHost/LPC24xx.h	/^#define FIO4PINL /;"	d
+FIO4PINU	UsbHost/LPC24xx.h	/^#define FIO4PINU /;"	d
+FIO4SET	UsbHost/LPC24xx.h	/^#define FIO4SET /;"	d
+FIO4SET0	UsbHost/LPC24xx.h	/^#define FIO4SET0 /;"	d
+FIO4SET1	UsbHost/LPC24xx.h	/^#define FIO4SET1 /;"	d
+FIO4SET2	UsbHost/LPC24xx.h	/^#define FIO4SET2 /;"	d
+FIO4SET3	UsbHost/LPC24xx.h	/^#define FIO4SET3 /;"	d
+FIO4SETL	UsbHost/LPC24xx.h	/^#define FIO4SETL /;"	d
+FIO4SETU	UsbHost/LPC24xx.h	/^#define FIO4SETU /;"	d
+FIO_BASE_ADDR	UsbHost/LPC24xx.h	/^#define FIO_BASE_ADDR	/;"	d
+FREE_ENTRY	UsbHost/usbhost_fat.h	/^#define    FREE_ENTRY /;"	d
+Fcclk	UsbHost/usbhost_uart.h	/^#define Fcclk	/;"	d
+FileSize	UsbHost/usbhost_fat.h	/^    USB_INT32U  FileSize;                    \/* Total size of the file                                      *\/$/;"	m	struct:file_entry
+Fill_MSCommand	UsbHost/usbhost_ms.c	/^void  Fill_MSCommand (USB_INT32U   block_number,$/;"	f
+Fill_MSCommand	UsbHost/usbhost_ms.h	/^void        Fill_MSCommand       (          USB_INT32U    block_number,$/;"	p
+FirstDataSec	UsbHost/usbhost_fat.h	/^    USB_INT32U    FirstDataSec;              \/* Starting sector of the first data cluster                   *\/$/;"	m	struct:boot_sec
+Fp_uartclk	UsbHost/usbhost_uart.h	/^#define Fp_uartclk	/;"	d
+Fp_uartclk_div	UsbHost/usbhost_uart.h	/^#define Fp_uartclk_div /;"	d
+FrameNumber	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  FrameNumber;          \/* Frame Number                                             *\/$/;"	m	struct:hcca
+GET_DESCRIPTOR	UsbHost/usbhost_lpc2468.h	/^#define  GET_DESCRIPTOR /;"	d
+GPDMA_CH0_CFG	UsbHost/LPC24xx.h	/^#define GPDMA_CH0_CFG /;"	d
+GPDMA_CH0_CTRL	UsbHost/LPC24xx.h	/^#define GPDMA_CH0_CTRL /;"	d
+GPDMA_CH0_DEST	UsbHost/LPC24xx.h	/^#define GPDMA_CH0_DEST /;"	d
+GPDMA_CH0_LLI	UsbHost/LPC24xx.h	/^#define GPDMA_CH0_LLI /;"	d
+GPDMA_CH0_SRC	UsbHost/LPC24xx.h	/^#define GPDMA_CH0_SRC /;"	d
+GPDMA_CH1_CFG	UsbHost/LPC24xx.h	/^#define GPDMA_CH1_CFG /;"	d
+GPDMA_CH1_CTRL	UsbHost/LPC24xx.h	/^#define GPDMA_CH1_CTRL /;"	d
+GPDMA_CH1_DEST	UsbHost/LPC24xx.h	/^#define GPDMA_CH1_DEST /;"	d
+GPDMA_CH1_LLI	UsbHost/LPC24xx.h	/^#define GPDMA_CH1_LLI /;"	d
+GPDMA_CH1_SRC	UsbHost/LPC24xx.h	/^#define GPDMA_CH1_SRC /;"	d
+GPDMA_CONFIG	UsbHost/LPC24xx.h	/^#define GPDMA_CONFIG /;"	d
+GPDMA_ENABLED_CHNS	UsbHost/LPC24xx.h	/^#define GPDMA_ENABLED_CHNS /;"	d
+GPDMA_INT_ERR_CLR	UsbHost/LPC24xx.h	/^#define GPDMA_INT_ERR_CLR /;"	d
+GPDMA_INT_ERR_STAT	UsbHost/LPC24xx.h	/^#define GPDMA_INT_ERR_STAT /;"	d
+GPDMA_INT_STAT	UsbHost/LPC24xx.h	/^#define GPDMA_INT_STAT /;"	d
+GPDMA_INT_TCCLR	UsbHost/LPC24xx.h	/^#define GPDMA_INT_TCCLR /;"	d
+GPDMA_INT_TCSTAT	UsbHost/LPC24xx.h	/^#define GPDMA_INT_TCSTAT /;"	d
+GPDMA_RAW_INT_ERR_STAT	UsbHost/LPC24xx.h	/^#define GPDMA_RAW_INT_ERR_STAT /;"	d
+GPDMA_RAW_INT_TCSTAT	UsbHost/LPC24xx.h	/^#define GPDMA_RAW_INT_TCSTAT /;"	d
+GPDMA_SOFT_BREQ	UsbHost/LPC24xx.h	/^#define GPDMA_SOFT_BREQ /;"	d
+GPDMA_SOFT_LBREQ	UsbHost/LPC24xx.h	/^#define GPDMA_SOFT_LBREQ /;"	d
+GPDMA_SOFT_LSREQ	UsbHost/LPC24xx.h	/^#define GPDMA_SOFT_LSREQ /;"	d
+GPDMA_SOFT_SREQ	UsbHost/LPC24xx.h	/^#define GPDMA_SOFT_SREQ /;"	d
+GPDMA_SYNC	UsbHost/LPC24xx.h	/^#define GPDMA_SYNC /;"	d
+GPIO_BASE_ADDR	UsbHost/LPC24xx.h	/^#define GPIO_BASE_ADDR	/;"	d
+HCCA	UsbHost/usbhost_lpc2468.h	/^} HCCA;$/;"	t	typeref:struct:hcca
+HCED	UsbHost/usbhost_lpc2468.h	/^} HCED;$/;"	t	typeref:struct:hcEd
+HCTD	UsbHost/usbhost_lpc2468.h	/^} HCTD;$/;"	t	typeref:struct:hcTd
+HC_BULK_CUR_ED	UsbHost/LPC24xx.h	/^#define HC_BULK_CUR_ED /;"	d
+HC_BULK_HEAD_ED	UsbHost/LPC24xx.h	/^#define HC_BULK_HEAD_ED /;"	d
+HC_CMD_STAT	UsbHost/LPC24xx.h	/^#define HC_CMD_STAT /;"	d
+HC_CONTROL	UsbHost/LPC24xx.h	/^#define HC_CONTROL /;"	d
+HC_CTRL_CUR_ED	UsbHost/LPC24xx.h	/^#define HC_CTRL_CUR_ED /;"	d
+HC_CTRL_HEAD_ED	UsbHost/LPC24xx.h	/^#define HC_CTRL_HEAD_ED /;"	d
+HC_DONE_HEAD	UsbHost/LPC24xx.h	/^#define HC_DONE_HEAD /;"	d
+HC_FM_INTERVAL	UsbHost/LPC24xx.h	/^#define HC_FM_INTERVAL /;"	d
+HC_FM_NUMBER	UsbHost/LPC24xx.h	/^#define HC_FM_NUMBER /;"	d
+HC_FM_REMAINING	UsbHost/LPC24xx.h	/^#define HC_FM_REMAINING /;"	d
+HC_HCCA	UsbHost/LPC24xx.h	/^#define HC_HCCA /;"	d
+HC_INT_DIS	UsbHost/LPC24xx.h	/^#define HC_INT_DIS /;"	d
+HC_INT_EN	UsbHost/LPC24xx.h	/^#define HC_INT_EN /;"	d
+HC_INT_STAT	UsbHost/LPC24xx.h	/^#define HC_INT_STAT /;"	d
+HC_LS_THRHLD	UsbHost/LPC24xx.h	/^#define HC_LS_THRHLD /;"	d
+HC_PERIOD_CUR_ED	UsbHost/LPC24xx.h	/^#define HC_PERIOD_CUR_ED /;"	d
+HC_PERIOD_START	UsbHost/LPC24xx.h	/^#define HC_PERIOD_START /;"	d
+HC_REVISION	UsbHost/LPC24xx.h	/^#define HC_REVISION /;"	d
+HC_RH_DESCA	UsbHost/LPC24xx.h	/^#define HC_RH_DESCA /;"	d
+HC_RH_DESCB	UsbHost/LPC24xx.h	/^#define HC_RH_DESCB /;"	d
+HC_RH_PORT_STAT1	UsbHost/LPC24xx.h	/^#define HC_RH_PORT_STAT1 /;"	d
+HC_RH_PORT_STAT2	UsbHost/LPC24xx.h	/^#define HC_RH_PORT_STAT2 /;"	d
+HC_RH_STAT	UsbHost/LPC24xx.h	/^#define HC_RH_STAT /;"	d
+HOST_BASE_ADDR	UsbHost/usbhost_lpc2468.h	/^#define  HOST_BASE_ADDR /;"	d
+HOST_GET_DESCRIPTOR	UsbHost/usbhost_lpc2468.h	/^#define  HOST_GET_DESCRIPTOR(/;"	d
+HOST_RhscIntr	UsbHost/usbhost_lpc2468.c	/^volatile  USB_INT32U   HOST_RhscIntr = 0;         \/* Root Hub Status Change interrupt                       *\/$/;"	v
+HOST_SET_ADDRESS	UsbHost/usbhost_lpc2468.h	/^#define  HOST_SET_ADDRESS(/;"	d
+HOST_TDControlStatus	UsbHost/usbhost_lpc2468.c	/^volatile  USB_INT08U   HOST_TDControlStatus = 0;$/;"	v
+HOST_WdhIntr	UsbHost/usbhost_lpc2468.c	/^volatile  USB_INT32U   HOST_WdhIntr  = 0;         \/* Semaphore to wait until the TD is submitted            *\/$/;"	v
+HcBulkHeadED	UsbHost/usbhost_lpc2468.h	/^#define  HcBulkHeadED /;"	d
+HcCommandStatus	UsbHost/usbhost_lpc2468.h	/^#define  HcCommandStatus /;"	d
+HcControl	UsbHost/usbhost_lpc2468.h	/^#define  HcControl /;"	d
+HcControlHeadED	UsbHost/usbhost_lpc2468.h	/^#define  HcControlHeadED /;"	d
+HcFmInterval	UsbHost/usbhost_lpc2468.h	/^#define  HcFmInterval /;"	d
+HcHCCA	UsbHost/usbhost_lpc2468.h	/^#define  HcHCCA /;"	d
+HcInterruptEnable	UsbHost/usbhost_lpc2468.h	/^#define  HcInterruptEnable /;"	d
+HcInterruptStatus	UsbHost/usbhost_lpc2468.h	/^#define  HcInterruptStatus /;"	d
+HcPeriodicStart	UsbHost/usbhost_lpc2468.h	/^#define  HcPeriodicStart /;"	d
+HcRhPortStatus1	UsbHost/usbhost_lpc2468.h	/^#define  HcRhPortStatus1 /;"	d
+HcRhPortStatus2	UsbHost/usbhost_lpc2468.h	/^#define  HcRhPortStatus2 /;"	d
+HcRhStatus	UsbHost/usbhost_lpc2468.h	/^#define  HcRhStatus /;"	d
+Hcca	UsbHost/usbhost_lpc2468.c	/^volatile  HCCA        *Hcca;                      \/* Host Controller Communications Area structure          *\/ $/;"	v
+HeadTd	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  HeadTd;               \/* Physcial address of head in Transfer descriptor list     *\/$/;"	m	struct:hcEd
+Hello	UsbHost/usbhost_main.c	/^const USB_INT08U* Hello = "Hello World!\\n";$/;"	v
+Host_CtrlRecv	UsbHost/usbhost_lpc2468.c	/^USB_INT32S  Host_CtrlRecv (         USB_INT08U   bm_request_type,$/;"	f
+Host_CtrlRecv	UsbHost/usbhost_lpc2468.h	/^USB_INT32S  Host_CtrlRecv (          USB_INT08U   bm_request_type,$/;"	p
+Host_CtrlSend	UsbHost/usbhost_lpc2468.c	/^USB_INT32S  Host_CtrlSend (          USB_INT08U   bm_request_type,$/;"	f
+Host_CtrlSend	UsbHost/usbhost_lpc2468.h	/^USB_INT32S  Host_CtrlSend (          USB_INT08U   bm_request_type,$/;"	p
+Host_DelayMS	UsbHost/usbhost_lpc2468.c	/^void  Host_DelayMS (USB_INT32U  delay)$/;"	f
+Host_DelayMS	UsbHost/usbhost_lpc2468.h	/^void        Host_DelayMS  (          USB_INT32U    delay);$/;"	p
+Host_DelayUS	UsbHost/usbhost_lpc2468.c	/^void  Host_DelayUS (USB_INT32U  delay)$/;"	f
+Host_DelayUS	UsbHost/usbhost_lpc2468.h	/^void        Host_DelayUS  (          USB_INT32U    delay);$/;"	p
+Host_EDInit	UsbHost/usbhost_lpc2468.c	/^void  Host_EDInit (volatile  HCED *ed)$/;"	f
+Host_EDInit	UsbHost/usbhost_lpc2468.h	/^void        Host_EDInit   (volatile  HCED *ed);$/;"	p
+Host_EnumDev	UsbHost/usbhost_lpc2468.c	/^USB_INT32S  Host_EnumDev (void)$/;"	f
+Host_EnumDev	UsbHost/usbhost_lpc2468.h	/^USB_INT32S  Host_EnumDev  (void);$/;"	p
+Host_FillSetup	UsbHost/usbhost_lpc2468.c	/^void  Host_FillSetup (USB_INT08U   bm_request_type,$/;"	f
+Host_FillSetup	UsbHost/usbhost_lpc2468.h	/^void        Host_FillSetup(          USB_INT08U   bm_request_type,$/;"	p
+Host_HCCAInit	UsbHost/usbhost_lpc2468.c	/^void  Host_HCCAInit (volatile  HCCA  *hcca)$/;"	f
+Host_HCCAInit	UsbHost/usbhost_lpc2468.h	/^void        Host_HCCAInit (volatile  HCCA  *hcca);$/;"	p
+Host_Init	UsbHost/usbhost_lpc2468.c	/^void  Host_Init (void)$/;"	f
+Host_Init	UsbHost/usbhost_lpc2468.h	/^void        Host_Init     (void);$/;"	p
+Host_Isr	UsbHost/usbhost_lpc2468.c	/^void  Host_Isr (void)$/;"	f
+Host_Isr	UsbHost/usbhost_lpc2468.h	/^void        Host_Isr      (void);$/;"	p
+Host_ProcessTD	UsbHost/usbhost_lpc2468.c	/^USB_INT32S  Host_ProcessTD (volatile  HCED       *ed,$/;"	f
+Host_ProcessTD	UsbHost/usbhost_lpc2468.h	/^USB_INT32S  Host_ProcessTD(volatile  HCED       *ed,$/;"	p
+Host_TDInit	UsbHost/usbhost_lpc2468.c	/^void  Host_TDInit (volatile  HCTD *td)$/;"	f
+Host_TDInit	UsbHost/usbhost_lpc2468.h	/^void        Host_TDInit   (volatile  HCTD *td);$/;"	p
+Host_WDHWait	UsbHost/usbhost_lpc2468.c	/^void  Host_WDHWait (void)$/;"	f
+Host_WDHWait	UsbHost/usbhost_lpc2468.h	/^void        Host_WDHWait  (void);$/;"	p
+I20ADR	UsbHost/LPC24xx.h	/^#define I20ADR /;"	d
+I20CONCLR	UsbHost/LPC24xx.h	/^#define I20CONCLR /;"	d
+I20CONSET	UsbHost/LPC24xx.h	/^#define I20CONSET /;"	d
+I20DAT	UsbHost/LPC24xx.h	/^#define I20DAT /;"	d
+I20SCLH	UsbHost/LPC24xx.h	/^#define I20SCLH /;"	d
+I20SCLL	UsbHost/LPC24xx.h	/^#define I20SCLL /;"	d
+I20STAT	UsbHost/LPC24xx.h	/^#define I20STAT /;"	d
+I21ADR	UsbHost/LPC24xx.h	/^#define I21ADR /;"	d
+I21CONCLR	UsbHost/LPC24xx.h	/^#define I21CONCLR /;"	d
+I21CONSET	UsbHost/LPC24xx.h	/^#define I21CONSET /;"	d
+I21DAT	UsbHost/LPC24xx.h	/^#define I21DAT /;"	d
+I21SCLH	UsbHost/LPC24xx.h	/^#define I21SCLH /;"	d
+I21SCLL	UsbHost/LPC24xx.h	/^#define I21SCLL /;"	d
+I21STAT	UsbHost/LPC24xx.h	/^#define I21STAT /;"	d
+I22ADR	UsbHost/LPC24xx.h	/^#define I22ADR /;"	d
+I22CONCLR	UsbHost/LPC24xx.h	/^#define I22CONCLR /;"	d
+I22CONSET	UsbHost/LPC24xx.h	/^#define I22CONSET /;"	d
+I22DAT	UsbHost/LPC24xx.h	/^#define I22DAT /;"	d
+I22SCLH	UsbHost/LPC24xx.h	/^#define I22SCLH /;"	d
+I22SCLL	UsbHost/LPC24xx.h	/^#define I22SCLL /;"	d
+I22STAT	UsbHost/LPC24xx.h	/^#define I22STAT /;"	d
+I2C0_BASE_ADDR	UsbHost/LPC24xx.h	/^#define I2C0_BASE_ADDR	/;"	d
+I2C1_BASE_ADDR	UsbHost/LPC24xx.h	/^#define I2C1_BASE_ADDR	/;"	d
+I2C2_BASE_ADDR	UsbHost/LPC24xx.h	/^#define I2C2_BASE_ADDR	/;"	d
+I2S_BASE_ADDR	UsbHost/LPC24xx.h	/^#define I2S_BASE_ADDR	/;"	d
+I2S_DAI	UsbHost/LPC24xx.h	/^#define I2S_DAI /;"	d
+I2S_DAO	UsbHost/LPC24xx.h	/^#define I2S_DAO /;"	d
+I2S_DMA1	UsbHost/LPC24xx.h	/^#define I2S_DMA1 /;"	d
+I2S_DMA2	UsbHost/LPC24xx.h	/^#define I2S_DMA2 /;"	d
+I2S_IRQ	UsbHost/LPC24xx.h	/^#define I2S_IRQ /;"	d
+I2S_RXRATE	UsbHost/LPC24xx.h	/^#define I2S_RXRATE /;"	d
+I2S_RX_FIFO	UsbHost/LPC24xx.h	/^#define I2S_RX_FIFO /;"	d
+I2S_STATE	UsbHost/LPC24xx.h	/^#define I2S_STATE /;"	d
+I2S_TXRATE	UsbHost/LPC24xx.h	/^#define I2S_TXRATE /;"	d
+I2S_TX_FIFO	UsbHost/LPC24xx.h	/^#define I2S_TX_FIFO /;"	d
+INQUIRY_LENGTH	UsbHost/usbhost_ms.h	/^#define    INQUIRY_LENGTH /;"	d
+INTWAKE	UsbHost/LPC24xx.h	/^#define INTWAKE /;"	d
+IO0_INT_CLR	UsbHost/LPC24xx.h	/^#define IO0_INT_CLR /;"	d
+IO0_INT_EN_F	UsbHost/LPC24xx.h	/^#define IO0_INT_EN_F /;"	d
+IO0_INT_EN_R	UsbHost/LPC24xx.h	/^#define IO0_INT_EN_R /;"	d
+IO0_INT_STAT_F	UsbHost/LPC24xx.h	/^#define IO0_INT_STAT_F /;"	d
+IO0_INT_STAT_R	UsbHost/LPC24xx.h	/^#define IO0_INT_STAT_R /;"	d
+IO2_INT_CLR	UsbHost/LPC24xx.h	/^#define IO2_INT_CLR /;"	d
+IO2_INT_EN_F	UsbHost/LPC24xx.h	/^#define IO2_INT_EN_F /;"	d
+IO2_INT_EN_R	UsbHost/LPC24xx.h	/^#define IO2_INT_EN_R /;"	d
+IO2_INT_STAT_F	UsbHost/LPC24xx.h	/^#define IO2_INT_STAT_F /;"	d
+IO2_INT_STAT_R	UsbHost/LPC24xx.h	/^#define IO2_INT_STAT_R /;"	d
+IOCLR0	UsbHost/LPC24xx.h	/^#define IOCLR0 /;"	d
+IOCLR1	UsbHost/LPC24xx.h	/^#define IOCLR1 /;"	d
+IODIR0	UsbHost/LPC24xx.h	/^#define IODIR0 /;"	d
+IODIR1	UsbHost/LPC24xx.h	/^#define IODIR1 /;"	d
+IOPIN0	UsbHost/LPC24xx.h	/^#define IOPIN0 /;"	d
+IOPIN1	UsbHost/LPC24xx.h	/^#define IOPIN1 /;"	d
+IOSET0	UsbHost/LPC24xx.h	/^#define IOSET0 /;"	d
+IOSET1	UsbHost/LPC24xx.h	/^#define IOSET1 /;"	d
+IO_INT_STAT	UsbHost/LPC24xx.h	/^#define IO_INT_STAT /;"	d
+IRCTRIM	UsbHost/LPC24xx.h	/^#define IRCTRIM /;"	d
+IntTable	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  IntTable[32];         \/* Interrupt Table                                          *\/$/;"	m	struct:hcca
+LAST_ENTRY	UsbHost/usbhost_fat.h	/^#define    LAST_ENTRY /;"	d
+LCD_BASE_ADDR	UsbHost/LPC24xx.h	/^#define LCD_BASE_ADDR	/;"	d
+LCD_CFG	UsbHost/LPC24xx.h	/^#define LCD_CFG /;"	d
+LCD_CTRL	UsbHost/LPC24xx.h	/^#define LCD_CTRL /;"	d
+LCD_INTCLR	UsbHost/LPC24xx.h	/^#define LCD_INTCLR /;"	d
+LCD_INTMSK	UsbHost/LPC24xx.h	/^#define LCD_INTMSK /;"	d
+LCD_INTRAW	UsbHost/LPC24xx.h	/^#define LCD_INTRAW /;"	d
+LCD_INTSTAT	UsbHost/LPC24xx.h	/^#define LCD_INTSTAT /;"	d
+LCD_LE	UsbHost/LPC24xx.h	/^#define LCD_LE /;"	d
+LCD_LPBASE	UsbHost/LPC24xx.h	/^#define LCD_LPBASE /;"	d
+LCD_LPCURR	UsbHost/LPC24xx.h	/^#define LCD_LPCURR /;"	d
+LCD_PAL	UsbHost/LPC24xx.h	/^#define LCD_PAL /;"	d
+LCD_POL	UsbHost/LPC24xx.h	/^#define LCD_POL /;"	d
+LCD_TIMH	UsbHost/LPC24xx.h	/^#define LCD_TIMH /;"	d
+LCD_TIMV	UsbHost/LPC24xx.h	/^#define LCD_TIMV /;"	d
+LCD_UPBASE	UsbHost/LPC24xx.h	/^#define LCD_UPBASE /;"	d
+LCD_UPCURR	UsbHost/LPC24xx.h	/^#define LCD_UPCURR /;"	d
+LED_Init	UsbHost/LPC2478hw.c	/^void LED_Init(void)$/;"	f
+LED_Init	UsbHost/LPC2478hw.h	/^void LED_Init(void);$/;"	p
+LED_Output	UsbHost/LPC2478hw.c	/^void LED_Output(unsigned char ledvalue)$/;"	f
+LED_Output	UsbHost/LPC2478hw.h	/^void LED_Output(unsigned char ledvalue);$/;"	p
+LFN_ENTRY	UsbHost/usbhost_fat.h	/^#define    LFN_ENTRY /;"	d
+LPC2478CLK_H	UsbHost/LPC2478clk.h	/^#define  LPC2478CLK_H$/;"	d
+LPC2478HW_H_	UsbHost/LPC2478hw.h	/^#define LPC2478HW_H_$/;"	d
+MAC_BASE_ADDR	UsbHost/LPC24xx.h	/^#define MAC_BASE_ADDR	/;"	d
+MAC_CLRT	UsbHost/LPC24xx.h	/^#define MAC_CLRT /;"	d
+MAC_COMMAND	UsbHost/LPC24xx.h	/^#define MAC_COMMAND /;"	d
+MAC_FLOWCONTROLCNT	UsbHost/LPC24xx.h	/^#define MAC_FLOWCONTROLCNT /;"	d
+MAC_FLOWCONTROLSTS	UsbHost/LPC24xx.h	/^#define MAC_FLOWCONTROLSTS /;"	d
+MAC_HASHFILTERH	UsbHost/LPC24xx.h	/^#define MAC_HASHFILTERH /;"	d
+MAC_HASHFILTERL	UsbHost/LPC24xx.h	/^#define MAC_HASHFILTERL /;"	d
+MAC_INTCLEAR	UsbHost/LPC24xx.h	/^#define MAC_INTCLEAR /;"	d
+MAC_INTENABLE	UsbHost/LPC24xx.h	/^#define MAC_INTENABLE /;"	d
+MAC_INTSET	UsbHost/LPC24xx.h	/^#define MAC_INTSET /;"	d
+MAC_INTSTATUS	UsbHost/LPC24xx.h	/^#define MAC_INTSTATUS /;"	d
+MAC_IPGR	UsbHost/LPC24xx.h	/^#define MAC_IPGR /;"	d
+MAC_IPGT	UsbHost/LPC24xx.h	/^#define MAC_IPGT /;"	d
+MAC_MAC1	UsbHost/LPC24xx.h	/^#define MAC_MAC1 /;"	d
+MAC_MAC2	UsbHost/LPC24xx.h	/^#define MAC_MAC2 /;"	d
+MAC_MADR	UsbHost/LPC24xx.h	/^#define MAC_MADR /;"	d
+MAC_MAXF	UsbHost/LPC24xx.h	/^#define MAC_MAXF /;"	d
+MAC_MCFG	UsbHost/LPC24xx.h	/^#define MAC_MCFG /;"	d
+MAC_MCMD	UsbHost/LPC24xx.h	/^#define MAC_MCMD /;"	d
+MAC_MIND	UsbHost/LPC24xx.h	/^#define MAC_MIND /;"	d
+MAC_MODULEID	UsbHost/LPC24xx.h	/^#define MAC_MODULEID /;"	d
+MAC_MRDD	UsbHost/LPC24xx.h	/^#define MAC_MRDD /;"	d
+MAC_MWTD	UsbHost/LPC24xx.h	/^#define MAC_MWTD /;"	d
+MAC_POWERDOWN	UsbHost/LPC24xx.h	/^#define MAC_POWERDOWN /;"	d
+MAC_RSV	UsbHost/LPC24xx.h	/^#define MAC_RSV /;"	d
+MAC_RXCONSUMEINDEX	UsbHost/LPC24xx.h	/^#define MAC_RXCONSUMEINDEX /;"	d
+MAC_RXDESCRIPTOR	UsbHost/LPC24xx.h	/^#define MAC_RXDESCRIPTOR /;"	d
+MAC_RXDESCRIPTORNUM	UsbHost/LPC24xx.h	/^#define MAC_RXDESCRIPTORNUM /;"	d
+MAC_RXFILTERCTRL	UsbHost/LPC24xx.h	/^#define MAC_RXFILTERCTRL /;"	d
+MAC_RXFILTERWOLCLR	UsbHost/LPC24xx.h	/^#define MAC_RXFILTERWOLCLR /;"	d
+MAC_RXFILTERWOLSTS	UsbHost/LPC24xx.h	/^#define MAC_RXFILTERWOLSTS /;"	d
+MAC_RXPRODUCEINDEX	UsbHost/LPC24xx.h	/^#define MAC_RXPRODUCEINDEX /;"	d
+MAC_RXSTATUS	UsbHost/LPC24xx.h	/^#define MAC_RXSTATUS /;"	d
+MAC_SA0	UsbHost/LPC24xx.h	/^#define MAC_SA0 /;"	d
+MAC_SA1	UsbHost/LPC24xx.h	/^#define MAC_SA1 /;"	d
+MAC_SA2	UsbHost/LPC24xx.h	/^#define MAC_SA2 /;"	d
+MAC_STATUS	UsbHost/LPC24xx.h	/^#define MAC_STATUS /;"	d
+MAC_SUPP	UsbHost/LPC24xx.h	/^#define MAC_SUPP /;"	d
+MAC_TEST	UsbHost/LPC24xx.h	/^#define MAC_TEST /;"	d
+MAC_TSV0	UsbHost/LPC24xx.h	/^#define MAC_TSV0 /;"	d
+MAC_TSV1	UsbHost/LPC24xx.h	/^#define MAC_TSV1 /;"	d
+MAC_TXCONSUMEINDEX	UsbHost/LPC24xx.h	/^#define MAC_TXCONSUMEINDEX /;"	d
+MAC_TXDESCRIPTOR	UsbHost/LPC24xx.h	/^#define MAC_TXDESCRIPTOR /;"	d
+MAC_TXDESCRIPTORNUM	UsbHost/LPC24xx.h	/^#define MAC_TXDESCRIPTORNUM /;"	d
+MAC_TXPRODUCEINDEX	UsbHost/LPC24xx.h	/^#define MAC_TXPRODUCEINDEX /;"	d
+MAC_TXSTATUS	UsbHost/LPC24xx.h	/^#define MAC_TXSTATUS /;"	d
+MAMCR	UsbHost/LPC24xx.h	/^#define MAMCR /;"	d
+MAMTIM	UsbHost/LPC24xx.h	/^#define MAMTIM /;"	d
+MASS_STORAGE_CLASS	UsbHost/usbhost_ms.h	/^#define    MASS_STORAGE_CLASS /;"	d
+MASS_STORAGE_PROTOCOL_BO	UsbHost/usbhost_ms.h	/^#define    MASS_STORAGE_PROTOCOL_BO /;"	d
+MASS_STORAGE_SUBCLASS_SCSI	UsbHost/usbhost_ms.h	/^#define    MASS_STORAGE_SUBCLASS_SCSI /;"	d
+MATCH_FOUND	UsbHost/usbhost_err.h	/^#define  MATCH_FOUND /;"	d
+MATCH_NOT_FOUND	UsbHost/usbhost_err.h	/^#define  MATCH_NOT_FOUND /;"	d
+MAXPACKET_SIZE	UsbHost/LPC24xx.h	/^#define MAXPACKET_SIZE /;"	d
+MAX_BUFFER_SIZE	UsbHost/usbhost_main.h	/^#define  MAX_BUFFER_SIZE /;"	d
+MAX_FILE_DESCRIPTORS	UsbHost/usbhost_fat.c	/^#define MAX_FILE_DESCRIPTORS /;"	d	file:
+MCI_ARGUMENT	UsbHost/LPC24xx.h	/^#define MCI_ARGUMENT /;"	d
+MCI_BASE_ADDR	UsbHost/LPC24xx.h	/^#define MCI_BASE_ADDR	/;"	d
+MCI_CLEAR	UsbHost/LPC24xx.h	/^#define MCI_CLEAR /;"	d
+MCI_CLOCK	UsbHost/LPC24xx.h	/^#define MCI_CLOCK /;"	d
+MCI_COMMAND	UsbHost/LPC24xx.h	/^#define MCI_COMMAND /;"	d
+MCI_DATA_CNT	UsbHost/LPC24xx.h	/^#define MCI_DATA_CNT /;"	d
+MCI_DATA_CTRL	UsbHost/LPC24xx.h	/^#define MCI_DATA_CTRL /;"	d
+MCI_DATA_LEN	UsbHost/LPC24xx.h	/^#define MCI_DATA_LEN /;"	d
+MCI_DATA_TMR	UsbHost/LPC24xx.h	/^#define MCI_DATA_TMR /;"	d
+MCI_FIFO	UsbHost/LPC24xx.h	/^#define MCI_FIFO /;"	d
+MCI_FIFO_CNT	UsbHost/LPC24xx.h	/^#define MCI_FIFO_CNT /;"	d
+MCI_MASK0	UsbHost/LPC24xx.h	/^#define MCI_MASK0 /;"	d
+MCI_MASK1	UsbHost/LPC24xx.h	/^#define MCI_MASK1 /;"	d
+MCI_POWER	UsbHost/LPC24xx.h	/^#define MCI_POWER /;"	d
+MCI_RESP0	UsbHost/LPC24xx.h	/^#define MCI_RESP0 /;"	d
+MCI_RESP1	UsbHost/LPC24xx.h	/^#define MCI_RESP1 /;"	d
+MCI_RESP2	UsbHost/LPC24xx.h	/^#define MCI_RESP2 /;"	d
+MCI_RESP3	UsbHost/LPC24xx.h	/^#define MCI_RESP3 /;"	d
+MCI_RESP_CMD	UsbHost/LPC24xx.h	/^#define MCI_RESP_CMD /;"	d
+MCI_STATUS	UsbHost/LPC24xx.h	/^#define MCI_STATUS /;"	d
+MEMMAP	UsbHost/LPC24xx.h	/^#define MEMMAP /;"	d
+MS_BlkSize	UsbHost/usbhost_ms.c	/^USB_INT32U  MS_BlkSize;$/;"	v
+MS_BulkRecv	UsbHost/usbhost_ms.c	/^USB_INT32S  MS_BulkRecv (          USB_INT32U   block_number,$/;"	f
+MS_BulkRecv	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_BulkRecv          (          USB_INT32U    block_number,$/;"	p
+MS_BulkSend	UsbHost/usbhost_ms.c	/^USB_INT32S  MS_BulkSend (          USB_INT32U   block_number,$/;"	f
+MS_BulkSend	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_BulkSend          (          USB_INT32U    block_number,$/;"	p
+MS_DATA_DIR	UsbHost/usbhost_ms.h	/^} MS_DATA_DIR;$/;"	t	typeref:enum:ms_data_dir
+MS_DATA_DIR_IN	UsbHost/usbhost_ms.h	/^    MS_DATA_DIR_IN     = 0x80,$/;"	e	enum:ms_data_dir
+MS_DATA_DIR_NONE	UsbHost/usbhost_ms.h	/^    MS_DATA_DIR_NONE   = 0x01$/;"	e	enum:ms_data_dir
+MS_DATA_DIR_OUT	UsbHost/usbhost_ms.h	/^    MS_DATA_DIR_OUT    = 0x00,$/;"	e	enum:ms_data_dir
+MS_GET_MAX_LUN_REQ	UsbHost/usbhost_ms.h	/^#define    MS_GET_MAX_LUN_REQ /;"	d
+MS_GetMaxLUN	UsbHost/usbhost_ms.c	/^USB_INT32S  MS_GetMaxLUN (void)$/;"	f
+MS_GetMaxLUN	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_GetMaxLUN         (void);$/;"	p
+MS_GetSenseInfo	UsbHost/usbhost_ms.c	/^USB_INT32S  MS_GetSenseInfo (void)$/;"	f
+MS_GetSenseInfo	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_GetSenseInfo      (void);$/;"	p
+MS_Init	UsbHost/usbhost_ms.c	/^USB_INT32S MS_Init (USB_INT32U *blkSize, USB_INT32U *numBlks, USB_INT08U *inquiryResult)$/;"	f
+MS_Init	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_Init (USB_INT32U *blkSize, USB_INT32U *numBlks, USB_INT08U *inquiryResult);$/;"	p
+MS_Inquire	UsbHost/usbhost_ms.c	/^USB_INT32S MS_Inquire (USB_INT08U *response)$/;"	f
+MS_Inquire	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_Inquire (USB_INT08U *response);$/;"	p
+MS_ParseConfiguration	UsbHost/usbhost_ms.c	/^USB_INT32S  MS_ParseConfiguration (void)$/;"	f
+MS_ParseConfiguration	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_ParseConfiguration(void);$/;"	p
+MS_ReadCapacity	UsbHost/usbhost_ms.c	/^USB_INT32S MS_ReadCapacity (USB_INT32U *numBlks, USB_INT32U *blkSize)$/;"	f
+MS_ReadCapacity	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_ReadCapacity (USB_INT32U *numBlks, USB_INT32U *blkSize);$/;"	p
+MS_TestUnitReady	UsbHost/usbhost_ms.c	/^USB_INT32S  MS_TestUnitReady (void)$/;"	f
+MS_TestUnitReady	UsbHost/usbhost_ms.h	/^USB_INT32S  MS_TestUnitReady     (void);$/;"	p
+MYSTRING_H_	UsbHost/mystring.h	/^#define MYSTRING_H_$/;"	d
+Main_Copy	UsbHost/usbhost_main.c	/^void  Main_Copy (void)$/;"	f
+Main_Copy	UsbHost/usbhost_main.h	/^void  Main_Copy (void);$/;"	p
+Main_Read	UsbHost/usbhost_main.c	/^void  Main_Read (void)$/;"	f
+Main_Read	UsbHost/usbhost_main.h	/^void  Main_Read (void);$/;"	p
+Main_Write	UsbHost/usbhost_main.c	/^void  Main_Write (void)$/;"	f
+Main_Write	UsbHost/usbhost_main.h	/^void  Main_Write(void);$/;"	p
+MemCpy	UsbHost/mystring.c	/^void *MemCpy(void *dest, const void *src, unsigned int count)$/;"	f
+MemCpy	UsbHost/mystring.h	/^extern void *MemCpy(void *dest, const void *src, unsigned int count);$/;"	p
+NDD_REQ_INT_CLR	UsbHost/LPC24xx.h	/^#define NDD_REQ_INT_CLR /;"	d
+NDD_REQ_INT_SET	UsbHost/LPC24xx.h	/^#define NDD_REQ_INT_SET /;"	d
+NDD_REQ_INT_STAT	UsbHost/LPC24xx.h	/^#define NDD_REQ_INT_STAT /;"	d
+Next	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  Next;                 \/* Physical address of next Endpoint descriptor             *\/$/;"	m	struct:hcEd
+Next	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  Next;                 \/* Physical pointer to next Transfer Descriptor             *\/$/;"	m	struct:hcTd
+NumFATs	UsbHost/usbhost_fat.h	/^    USB_INT08U    NumFATs;                   \/* Number of FAT copies                                        *\/$/;"	m	struct:boot_sec
+OK	UsbHost/usbhost_err.h	/^#define  OK /;"	d
+OR_CMD_STATUS_BLF	UsbHost/usbhost_lpc2468.h	/^#define  OR_CMD_STATUS_BLF /;"	d
+OR_CMD_STATUS_CLF	UsbHost/usbhost_lpc2468.h	/^#define  OR_CMD_STATUS_CLF /;"	d
+OR_CMD_STATUS_HCR	UsbHost/usbhost_lpc2468.h	/^#define  OR_CMD_STATUS_HCR /;"	d
+OR_CONTROL_BLE	UsbHost/usbhost_lpc2468.h	/^#define  OR_CONTROL_BLE /;"	d
+OR_CONTROL_CLE	UsbHost/usbhost_lpc2468.h	/^#define  OR_CONTROL_CLE /;"	d
+OR_CONTROL_HCFS	UsbHost/usbhost_lpc2468.h	/^#define  OR_CONTROL_HCFS /;"	d
+OR_CONTROL_HC_OPER	UsbHost/usbhost_lpc2468.h	/^#define  OR_CONTROL_HC_OPER /;"	d
+OR_INTR_ENABLE_MIE	UsbHost/usbhost_lpc2468.h	/^#define  OR_INTR_ENABLE_MIE /;"	d
+OR_INTR_ENABLE_RHSC	UsbHost/usbhost_lpc2468.h	/^#define  OR_INTR_ENABLE_RHSC /;"	d
+OR_INTR_ENABLE_WDH	UsbHost/usbhost_lpc2468.h	/^#define  OR_INTR_ENABLE_WDH /;"	d
+OR_INTR_STATUS_RHSC	UsbHost/usbhost_lpc2468.h	/^#define  OR_INTR_STATUS_RHSC /;"	d
+OR_INTR_STATUS_WDH	UsbHost/usbhost_lpc2468.h	/^#define  OR_INTR_STATUS_WDH /;"	d
+OR_RH_PORT_CCS	UsbHost/usbhost_lpc2468.h	/^#define  OR_RH_PORT_CCS /;"	d
+OR_RH_PORT_CSC	UsbHost/usbhost_lpc2468.h	/^#define  OR_RH_PORT_CSC /;"	d
+OR_RH_PORT_PRS	UsbHost/usbhost_lpc2468.h	/^#define  OR_RH_PORT_PRS /;"	d
+OR_RH_PORT_PRSC	UsbHost/usbhost_lpc2468.h	/^#define  OR_RH_PORT_PRSC /;"	d
+OR_RH_STATUS_DRWE	UsbHost/usbhost_lpc2468.h	/^#define  OR_RH_STATUS_DRWE /;"	d
+OR_RH_STATUS_LPSC	UsbHost/usbhost_lpc2468.h	/^#define  OR_RH_STATUS_LPSC /;"	d
+OTG_CLK_CTRL	UsbHost/LPC24xx.h	/^#define OTG_CLK_CTRL /;"	d
+OTG_CLK_STAT	UsbHost/LPC24xx.h	/^#define OTG_CLK_STAT /;"	d
+OTG_I2C_CLKHI	UsbHost/LPC24xx.h	/^#define OTG_I2C_CLKHI /;"	d
+OTG_I2C_CLKLO	UsbHost/LPC24xx.h	/^#define OTG_I2C_CLKLO /;"	d
+OTG_I2C_CTL	UsbHost/LPC24xx.h	/^#define OTG_I2C_CTL /;"	d
+OTG_I2C_RX	UsbHost/LPC24xx.h	/^#define OTG_I2C_RX /;"	d
+OTG_I2C_STS	UsbHost/LPC24xx.h	/^#define OTG_I2C_STS /;"	d
+OTG_I2C_TX	UsbHost/LPC24xx.h	/^#define OTG_I2C_TX /;"	d
+OTG_INT_CLR	UsbHost/LPC24xx.h	/^#define OTG_INT_CLR /;"	d
+OTG_INT_EN	UsbHost/LPC24xx.h	/^#define OTG_INT_EN /;"	d
+OTG_INT_SET	UsbHost/LPC24xx.h	/^#define OTG_INT_SET /;"	d
+OTG_INT_STAT	UsbHost/LPC24xx.h	/^#define OTG_INT_STAT /;"	d
+OTG_STAT_CTRL	UsbHost/LPC24xx.h	/^#define OTG_STAT_CTRL /;"	d
+OTG_TIMER	UsbHost/LPC24xx.h	/^#define OTG_TIMER /;"	d
+PARTCFG	UsbHost/LPC24xx.h	/^#define PARTCFG /;"	d
+PARTCFG_BASE_ADDR	UsbHost/LPC24xx.h	/^#define PARTCFG_BASE_ADDR	/;"	d
+PCLKSEL0	UsbHost/LPC24xx.h	/^#define PCLKSEL0 /;"	d
+PCLKSEL1	UsbHost/LPC24xx.h	/^#define PCLKSEL1 /;"	d
+PCON	UsbHost/LPC24xx.h	/^#define PCON /;"	d
+PCONP	UsbHost/LPC24xx.h	/^#define PCONP /;"	d
+PINMODE0	UsbHost/LPC24xx.h	/^#define PINMODE0 /;"	d
+PINMODE1	UsbHost/LPC24xx.h	/^#define PINMODE1 /;"	d
+PINMODE2	UsbHost/LPC24xx.h	/^#define PINMODE2 /;"	d
+PINMODE3	UsbHost/LPC24xx.h	/^#define PINMODE3 /;"	d
+PINMODE4	UsbHost/LPC24xx.h	/^#define PINMODE4 /;"	d
+PINMODE5	UsbHost/LPC24xx.h	/^#define PINMODE5 /;"	d
+PINMODE6	UsbHost/LPC24xx.h	/^#define PINMODE6 /;"	d
+PINMODE7	UsbHost/LPC24xx.h	/^#define PINMODE7 /;"	d
+PINMODE8	UsbHost/LPC24xx.h	/^#define PINMODE8 /;"	d
+PINMODE9	UsbHost/LPC24xx.h	/^#define PINMODE9 /;"	d
+PINSEL0	UsbHost/LPC24xx.h	/^#define PINSEL0 /;"	d
+PINSEL1	UsbHost/LPC24xx.h	/^#define PINSEL1 /;"	d
+PINSEL10	UsbHost/LPC24xx.h	/^#define PINSEL10 /;"	d
+PINSEL11	UsbHost/LPC24xx.h	/^#define PINSEL11 /;"	d
+PINSEL2	UsbHost/LPC24xx.h	/^#define PINSEL2 /;"	d
+PINSEL3	UsbHost/LPC24xx.h	/^#define PINSEL3 /;"	d
+PINSEL4	UsbHost/LPC24xx.h	/^#define PINSEL4 /;"	d
+PINSEL5	UsbHost/LPC24xx.h	/^#define PINSEL5 /;"	d
+PINSEL6	UsbHost/LPC24xx.h	/^#define PINSEL6 /;"	d
+PINSEL7	UsbHost/LPC24xx.h	/^#define PINSEL7 /;"	d
+PINSEL8	UsbHost/LPC24xx.h	/^#define PINSEL8 /;"	d
+PINSEL9	UsbHost/LPC24xx.h	/^#define PINSEL9 /;"	d
+PINSEL_BASE_ADDR	UsbHost/LPC24xx.h	/^#define PINSEL_BASE_ADDR	/;"	d
+PLLCFG	UsbHost/LPC24xx.h	/^#define PLLCFG /;"	d
+PLLCON	UsbHost/LPC24xx.h	/^#define PLLCON /;"	d
+PLLFEED	UsbHost/LPC24xx.h	/^#define PLLFEED /;"	d
+PLLSTAT	UsbHost/LPC24xx.h	/^#define PLLSTAT /;"	d
+PLL_Feed	UsbHost/LPC2478clk.c	/^static void PLL_Feed(void)$/;"	f	file:
+PLL_Init	UsbHost/LPC2478clk.c	/^void PLL_Init(void)$/;"	f
+PLL_Init	UsbHost/LPC2478clk.h	/^void PLL_Init(void);$/;"	p
+PRINT_ENABLE	UsbHost/usbhost_lpc2468.h	/^#define  PRINT_ENABLE /;"	d
+PRINT_Err	UsbHost/usbhost_lpc2468.h	/^#define  PRINT_Err(/;"	d
+PRINT_Log	UsbHost/usbhost_lpc2468.h	/^#define  PRINT_Log(/;"	d
+PWM0CCR	UsbHost/LPC24xx.h	/^#define PWM0CCR /;"	d
+PWM0CR0	UsbHost/LPC24xx.h	/^#define PWM0CR0 /;"	d
+PWM0CR1	UsbHost/LPC24xx.h	/^#define PWM0CR1 /;"	d
+PWM0CTCR	UsbHost/LPC24xx.h	/^#define PWM0CTCR /;"	d
+PWM0IR	UsbHost/LPC24xx.h	/^#define PWM0IR /;"	d
+PWM0LER	UsbHost/LPC24xx.h	/^#define PWM0LER /;"	d
+PWM0MCR	UsbHost/LPC24xx.h	/^#define PWM0MCR /;"	d
+PWM0MR0	UsbHost/LPC24xx.h	/^#define PWM0MR0 /;"	d
+PWM0MR1	UsbHost/LPC24xx.h	/^#define PWM0MR1 /;"	d
+PWM0MR2	UsbHost/LPC24xx.h	/^#define PWM0MR2 /;"	d
+PWM0MR3	UsbHost/LPC24xx.h	/^#define PWM0MR3 /;"	d
+PWM0MR4	UsbHost/LPC24xx.h	/^#define PWM0MR4 /;"	d
+PWM0MR5	UsbHost/LPC24xx.h	/^#define PWM0MR5 /;"	d
+PWM0MR6	UsbHost/LPC24xx.h	/^#define PWM0MR6 /;"	d
+PWM0PC	UsbHost/LPC24xx.h	/^#define PWM0PC /;"	d
+PWM0PCR	UsbHost/LPC24xx.h	/^#define PWM0PCR /;"	d
+PWM0PR	UsbHost/LPC24xx.h	/^#define PWM0PR /;"	d
+PWM0TC	UsbHost/LPC24xx.h	/^#define PWM0TC /;"	d
+PWM0TCR	UsbHost/LPC24xx.h	/^#define PWM0TCR /;"	d
+PWM0_BASE_ADDR	UsbHost/LPC24xx.h	/^#define PWM0_BASE_ADDR	/;"	d
+PWM1CCR	UsbHost/LPC24xx.h	/^#define PWM1CCR /;"	d
+PWM1CR0	UsbHost/LPC24xx.h	/^#define PWM1CR0 /;"	d
+PWM1CR1	UsbHost/LPC24xx.h	/^#define PWM1CR1 /;"	d
+PWM1CTCR	UsbHost/LPC24xx.h	/^#define PWM1CTCR /;"	d
+PWM1IR	UsbHost/LPC24xx.h	/^#define PWM1IR /;"	d
+PWM1LER	UsbHost/LPC24xx.h	/^#define PWM1LER /;"	d
+PWM1MCR	UsbHost/LPC24xx.h	/^#define PWM1MCR /;"	d
+PWM1MR0	UsbHost/LPC24xx.h	/^#define PWM1MR0 /;"	d
+PWM1MR1	UsbHost/LPC24xx.h	/^#define PWM1MR1 /;"	d
+PWM1MR2	UsbHost/LPC24xx.h	/^#define PWM1MR2 /;"	d
+PWM1MR3	UsbHost/LPC24xx.h	/^#define PWM1MR3 /;"	d
+PWM1MR4	UsbHost/LPC24xx.h	/^#define PWM1MR4 /;"	d
+PWM1MR5	UsbHost/LPC24xx.h	/^#define PWM1MR5 /;"	d
+PWM1MR6	UsbHost/LPC24xx.h	/^#define PWM1MR6 /;"	d
+PWM1PC	UsbHost/LPC24xx.h	/^#define PWM1PC /;"	d
+PWM1PCR	UsbHost/LPC24xx.h	/^#define PWM1PCR /;"	d
+PWM1PR	UsbHost/LPC24xx.h	/^#define PWM1PR /;"	d
+PWM1TC	UsbHost/LPC24xx.h	/^#define PWM1TC /;"	d
+PWM1TCR	UsbHost/LPC24xx.h	/^#define PWM1TCR /;"	d
+PWM1_BASE_ADDR	UsbHost/LPC24xx.h	/^#define PWM1_BASE_ADDR	/;"	d
+PrintBootSec	UsbHost/usbhost_fat.h	/^void        PrintBootSec    (void);$/;"	p
+RDONLY	UsbHost/usbhost_fat.h	/^#define    RDONLY /;"	d
+RDWR	UsbHost/usbhost_fat.h	/^#define    RDWR /;"	d
+REALIZE_EP	UsbHost/LPC24xx.h	/^#define REALIZE_EP /;"	d
+RSIR	UsbHost/LPC24xx.h	/^#define RSIR /;"	d
+RTC_ALDOM	UsbHost/LPC24xx.h	/^#define RTC_ALDOM /;"	d
+RTC_ALDOW	UsbHost/LPC24xx.h	/^#define RTC_ALDOW /;"	d
+RTC_ALDOY	UsbHost/LPC24xx.h	/^#define RTC_ALDOY /;"	d
+RTC_ALHOUR	UsbHost/LPC24xx.h	/^#define RTC_ALHOUR /;"	d
+RTC_ALMIN	UsbHost/LPC24xx.h	/^#define RTC_ALMIN /;"	d
+RTC_ALMON	UsbHost/LPC24xx.h	/^#define RTC_ALMON /;"	d
+RTC_ALSEC	UsbHost/LPC24xx.h	/^#define RTC_ALSEC /;"	d
+RTC_ALYEAR	UsbHost/LPC24xx.h	/^#define RTC_ALYEAR /;"	d
+RTC_AMR	UsbHost/LPC24xx.h	/^#define RTC_AMR /;"	d
+RTC_BASE_ADDR	UsbHost/LPC24xx.h	/^#define RTC_BASE_ADDR	/;"	d
+RTC_CCR	UsbHost/LPC24xx.h	/^#define RTC_CCR /;"	d
+RTC_CIIR	UsbHost/LPC24xx.h	/^#define RTC_CIIR /;"	d
+RTC_CISS	UsbHost/LPC24xx.h	/^#define RTC_CISS /;"	d
+RTC_CTC	UsbHost/LPC24xx.h	/^#define RTC_CTC /;"	d
+RTC_CTIME0	UsbHost/LPC24xx.h	/^#define RTC_CTIME0 /;"	d
+RTC_CTIME1	UsbHost/LPC24xx.h	/^#define RTC_CTIME1 /;"	d
+RTC_CTIME2	UsbHost/LPC24xx.h	/^#define RTC_CTIME2 /;"	d
+RTC_DOM	UsbHost/LPC24xx.h	/^#define RTC_DOM /;"	d
+RTC_DOW	UsbHost/LPC24xx.h	/^#define RTC_DOW /;"	d
+RTC_DOY	UsbHost/LPC24xx.h	/^#define RTC_DOY /;"	d
+RTC_HOUR	UsbHost/LPC24xx.h	/^#define RTC_HOUR /;"	d
+RTC_ILR	UsbHost/LPC24xx.h	/^#define RTC_ILR /;"	d
+RTC_MIN	UsbHost/LPC24xx.h	/^#define RTC_MIN /;"	d
+RTC_MONTH	UsbHost/LPC24xx.h	/^#define RTC_MONTH /;"	d
+RTC_PREFRAC	UsbHost/LPC24xx.h	/^#define RTC_PREFRAC /;"	d
+RTC_PREINT	UsbHost/LPC24xx.h	/^#define RTC_PREINT /;"	d
+RTC_SEC	UsbHost/LPC24xx.h	/^#define RTC_SEC /;"	d
+RTC_YEAR	UsbHost/LPC24xx.h	/^#define RTC_YEAR /;"	d
+RX_DATA	UsbHost/LPC24xx.h	/^#define RX_DATA /;"	d
+RX_PLENGTH	UsbHost/LPC24xx.h	/^#define RX_PLENGTH /;"	d
+ReadBE16U	UsbHost/usbhost_lpc2468.c	/^USB_INT16U  ReadBE16U (volatile  USB_INT08U  *pmem)$/;"	f
+ReadBE16U	UsbHost/usbhost_lpc2468.h	/^USB_INT16U  ReadBE16U     (volatile  USB_INT08U  *pmem);$/;"	p
+ReadBE32U	UsbHost/usbhost_lpc2468.c	/^USB_INT32U  ReadBE32U (volatile  USB_INT08U  *pmem)$/;"	f
+ReadBE32U	UsbHost/usbhost_lpc2468.h	/^USB_INT32U  ReadBE32U     (volatile  USB_INT08U  *pmem);$/;"	p
+ReadLE16U	UsbHost/usbhost_lpc2468.c	/^USB_INT16U  ReadLE16U (volatile  USB_INT08U  *pmem)$/;"	f
+ReadLE16U	UsbHost/usbhost_lpc2468.h	/^USB_INT16U  ReadLE16U     (volatile  USB_INT08U  *pmem);$/;"	p
+ReadLE32U	UsbHost/usbhost_lpc2468.c	/^USB_INT32U  ReadLE32U (volatile  USB_INT08U  *pmem)$/;"	f
+ReadLE32U	UsbHost/usbhost_lpc2468.h	/^USB_INT32U  ReadLE32U     (volatile  USB_INT08U  *pmem);$/;"	p
+Reserved	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT08U  Reserved[116];        \/* Reserved for future use                                  *\/$/;"	m	struct:hcca
+RootDirSec	UsbHost/usbhost_fat.h	/^    USB_INT32U    RootDirSec;                \/* Sectors occupied by root directory                          *\/$/;"	m	struct:boot_sec
+RootDirStartSec	UsbHost/usbhost_fat.h	/^    USB_INT32U    RootDirStartSec;           \/* Starting sector of the root directory                       *\/$/;"	m	struct:boot_sec
+RootEntCnt	UsbHost/usbhost_fat.h	/^    USB_INT16U    RootEntCnt;                \/* Root entry count                                            *\/$/;"	m	struct:boot_sec
+RsvdSecCnt	UsbHost/usbhost_fat.h	/^    USB_INT16U    RsvdSecCnt;                \/* Reserved sector count                                       *\/$/;"	m	struct:boot_sec
+S0SPCCR	UsbHost/LPC24xx.h	/^#define S0SPCCR /;"	d
+S0SPCR	UsbHost/LPC24xx.h	/^#define S0SPCR /;"	d
+S0SPDR	UsbHost/LPC24xx.h	/^#define S0SPDR /;"	d
+S0SPINT	UsbHost/LPC24xx.h	/^#define S0SPINT /;"	d
+S0SPSR	UsbHost/LPC24xx.h	/^#define S0SPSR /;"	d
+SCB_BASE_ADDR	UsbHost/LPC24xx.h	/^#define SCB_BASE_ADDR	/;"	d
+SCS	UsbHost/LPC24xx.h	/^#define SCS /;"	d
+SCSI_CMD_INQUIRY	UsbHost/usbhost_ms.h	/^#define  SCSI_CMD_INQUIRY /;"	d
+SCSI_CMD_READ_10	UsbHost/usbhost_ms.h	/^#define  SCSI_CMD_READ_10 /;"	d
+SCSI_CMD_READ_CAPACITY	UsbHost/usbhost_ms.h	/^#define  SCSI_CMD_READ_CAPACITY /;"	d
+SCSI_CMD_REQUEST_SENSE	UsbHost/usbhost_ms.h	/^#define  SCSI_CMD_REQUEST_SENSE /;"	d
+SCSI_CMD_TEST_UNIT_READY	UsbHost/usbhost_ms.h	/^#define  SCSI_CMD_TEST_UNIT_READY /;"	d
+SCSI_CMD_WRITE_10	UsbHost/usbhost_ms.h	/^#define  SCSI_CMD_WRITE_10 /;"	d
+SET_ADDRESS	UsbHost/usbhost_lpc2468.h	/^#define  SET_ADDRESS /;"	d
+SET_CONFIGURATION	UsbHost/usbhost_lpc2468.h	/^#define  SET_CONFIGURATION /;"	d
+SET_INTERFACE	UsbHost/usbhost_lpc2468.h	/^#define  SET_INTERFACE /;"	d
+SFN_ENTRY	UsbHost/usbhost_fat.h	/^#define    SFN_ENTRY /;"	d
+SPI0_BASE_ADDR	UsbHost/LPC24xx.h	/^#define SPI0_BASE_ADDR	/;"	d
+SSP0CPSR	UsbHost/LPC24xx.h	/^#define SSP0CPSR /;"	d
+SSP0CR0	UsbHost/LPC24xx.h	/^#define SSP0CR0 /;"	d
+SSP0CR1	UsbHost/LPC24xx.h	/^#define SSP0CR1 /;"	d
+SSP0DMACR	UsbHost/LPC24xx.h	/^#define SSP0DMACR /;"	d
+SSP0DR	UsbHost/LPC24xx.h	/^#define SSP0DR /;"	d
+SSP0ICR	UsbHost/LPC24xx.h	/^#define SSP0ICR /;"	d
+SSP0IMSC	UsbHost/LPC24xx.h	/^#define SSP0IMSC /;"	d
+SSP0MIS	UsbHost/LPC24xx.h	/^#define SSP0MIS /;"	d
+SSP0RIS	UsbHost/LPC24xx.h	/^#define SSP0RIS /;"	d
+SSP0SR	UsbHost/LPC24xx.h	/^#define SSP0SR /;"	d
+SSP0_BASE_ADDR	UsbHost/LPC24xx.h	/^#define SSP0_BASE_ADDR	/;"	d
+SSP1CPSR	UsbHost/LPC24xx.h	/^#define SSP1CPSR /;"	d
+SSP1CR0	UsbHost/LPC24xx.h	/^#define SSP1CR0 /;"	d
+SSP1CR1	UsbHost/LPC24xx.h	/^#define SSP1CR1 /;"	d
+SSP1DMACR	UsbHost/LPC24xx.h	/^#define SSP1DMACR /;"	d
+SSP1DR	UsbHost/LPC24xx.h	/^#define SSP1DR /;"	d
+SSP1ICR	UsbHost/LPC24xx.h	/^#define SSP1ICR /;"	d
+SSP1IMSC	UsbHost/LPC24xx.h	/^#define SSP1IMSC /;"	d
+SSP1MIS	UsbHost/LPC24xx.h	/^#define SSP1MIS /;"	d
+SSP1RIS	UsbHost/LPC24xx.h	/^#define SSP1RIS /;"	d
+SSP1SR	UsbHost/LPC24xx.h	/^#define SSP1SR /;"	d
+SSP1_BASE_ADDR	UsbHost/LPC24xx.h	/^#define SSP1_BASE_ADDR	/;"	d
+STATIC_MEM0_BASE	UsbHost/LPC24xx.h	/^#define STATIC_MEM0_BASE	/;"	d
+STATIC_MEM1_BASE	UsbHost/LPC24xx.h	/^#define STATIC_MEM1_BASE	/;"	d
+STATIC_MEM2_BASE	UsbHost/LPC24xx.h	/^#define STATIC_MEM2_BASE	/;"	d
+STATIC_MEM3_BASE	UsbHost/LPC24xx.h	/^#define STATIC_MEM3_BASE	/;"	d
+SYS_ERR_INT_CLR	UsbHost/LPC24xx.h	/^#define SYS_ERR_INT_CLR /;"	d
+SYS_ERR_INT_SET	UsbHost/LPC24xx.h	/^#define SYS_ERR_INT_SET /;"	d
+SYS_ERR_INT_STAT	UsbHost/LPC24xx.h	/^#define SYS_ERR_INT_STAT /;"	d
+SecPerClus	UsbHost/usbhost_fat.h	/^    USB_INT08U    SecPerClus;                \/* Sectors per cluster                                         *\/$/;"	m	struct:boot_sec
+Status	UsbHost/usbhost_fat.h	/^    USB_INT08U  Status;                      \/* File's open status                                          *\/$/;"	m	struct:file_entry
+T0CCR	UsbHost/LPC24xx.h	/^#define T0CCR /;"	d
+T0CR0	UsbHost/LPC24xx.h	/^#define T0CR0 /;"	d
+T0CR1	UsbHost/LPC24xx.h	/^#define T0CR1 /;"	d
+T0CTCR	UsbHost/LPC24xx.h	/^#define T0CTCR /;"	d
+T0EMR	UsbHost/LPC24xx.h	/^#define T0EMR /;"	d
+T0IR	UsbHost/LPC24xx.h	/^#define T0IR /;"	d
+T0MCR	UsbHost/LPC24xx.h	/^#define T0MCR /;"	d
+T0MR0	UsbHost/LPC24xx.h	/^#define T0MR0 /;"	d
+T0MR1	UsbHost/LPC24xx.h	/^#define T0MR1 /;"	d
+T0MR2	UsbHost/LPC24xx.h	/^#define T0MR2 /;"	d
+T0MR3	UsbHost/LPC24xx.h	/^#define T0MR3 /;"	d
+T0PC	UsbHost/LPC24xx.h	/^#define T0PC /;"	d
+T0PR	UsbHost/LPC24xx.h	/^#define T0PR /;"	d
+T0TC	UsbHost/LPC24xx.h	/^#define T0TC /;"	d
+T0TCR	UsbHost/LPC24xx.h	/^#define T0TCR /;"	d
+T1CCR	UsbHost/LPC24xx.h	/^#define T1CCR /;"	d
+T1CR0	UsbHost/LPC24xx.h	/^#define T1CR0 /;"	d
+T1CR1	UsbHost/LPC24xx.h	/^#define T1CR1 /;"	d
+T1CTCR	UsbHost/LPC24xx.h	/^#define T1CTCR /;"	d
+T1EMR	UsbHost/LPC24xx.h	/^#define T1EMR /;"	d
+T1IR	UsbHost/LPC24xx.h	/^#define T1IR /;"	d
+T1MCR	UsbHost/LPC24xx.h	/^#define T1MCR /;"	d
+T1MR0	UsbHost/LPC24xx.h	/^#define T1MR0 /;"	d
+T1MR1	UsbHost/LPC24xx.h	/^#define T1MR1 /;"	d
+T1MR2	UsbHost/LPC24xx.h	/^#define T1MR2 /;"	d
+T1MR3	UsbHost/LPC24xx.h	/^#define T1MR3 /;"	d
+T1PC	UsbHost/LPC24xx.h	/^#define T1PC /;"	d
+T1PR	UsbHost/LPC24xx.h	/^#define T1PR /;"	d
+T1TC	UsbHost/LPC24xx.h	/^#define T1TC /;"	d
+T1TCR	UsbHost/LPC24xx.h	/^#define T1TCR /;"	d
+T2CCR	UsbHost/LPC24xx.h	/^#define T2CCR /;"	d
+T2CR0	UsbHost/LPC24xx.h	/^#define T2CR0 /;"	d
+T2CR1	UsbHost/LPC24xx.h	/^#define T2CR1 /;"	d
+T2CTCR	UsbHost/LPC24xx.h	/^#define T2CTCR /;"	d
+T2EMR	UsbHost/LPC24xx.h	/^#define T2EMR /;"	d
+T2IR	UsbHost/LPC24xx.h	/^#define T2IR /;"	d
+T2MCR	UsbHost/LPC24xx.h	/^#define T2MCR /;"	d
+T2MR0	UsbHost/LPC24xx.h	/^#define T2MR0 /;"	d
+T2MR1	UsbHost/LPC24xx.h	/^#define T2MR1 /;"	d
+T2MR2	UsbHost/LPC24xx.h	/^#define T2MR2 /;"	d
+T2MR3	UsbHost/LPC24xx.h	/^#define T2MR3 /;"	d
+T2PC	UsbHost/LPC24xx.h	/^#define T2PC /;"	d
+T2PR	UsbHost/LPC24xx.h	/^#define T2PR /;"	d
+T2TC	UsbHost/LPC24xx.h	/^#define T2TC /;"	d
+T2TCR	UsbHost/LPC24xx.h	/^#define T2TCR /;"	d
+T3CCR	UsbHost/LPC24xx.h	/^#define T3CCR /;"	d
+T3CR0	UsbHost/LPC24xx.h	/^#define T3CR0 /;"	d
+T3CR1	UsbHost/LPC24xx.h	/^#define T3CR1 /;"	d
+T3CTCR	UsbHost/LPC24xx.h	/^#define T3CTCR /;"	d
+T3EMR	UsbHost/LPC24xx.h	/^#define T3EMR /;"	d
+T3IR	UsbHost/LPC24xx.h	/^#define T3IR /;"	d
+T3MCR	UsbHost/LPC24xx.h	/^#define T3MCR /;"	d
+T3MR0	UsbHost/LPC24xx.h	/^#define T3MR0 /;"	d
+T3MR1	UsbHost/LPC24xx.h	/^#define T3MR1 /;"	d
+T3MR2	UsbHost/LPC24xx.h	/^#define T3MR2 /;"	d
+T3MR3	UsbHost/LPC24xx.h	/^#define T3MR3 /;"	d
+T3PC	UsbHost/LPC24xx.h	/^#define T3PC /;"	d
+T3PR	UsbHost/LPC24xx.h	/^#define T3PR /;"	d
+T3TC	UsbHost/LPC24xx.h	/^#define T3TC /;"	d
+T3TCR	UsbHost/LPC24xx.h	/^#define T3TCR /;"	d
+TDBufNonVol	UsbHost/usbhost_lpc2468.c	/^          USB_INT16U  *TDBufNonVol;               \/* Identical to TDBuffer just to reduce compiler warnings *\/$/;"	v
+TDBuffer	UsbHost/usbhost_lpc2468.c	/^volatile  USB_INT08U  *TDBuffer;                  \/* Current Buffer Pointer of transfer descriptor          *\/$/;"	v
+TDBuffer	UsbHost/usbhost_lpc2468.h	/^extern  volatile  USB_INT08U  *TDBuffer;        \/* Current Buffer Pointer of transfer descriptor            *\/$/;"	x
+TDHead	UsbHost/usbhost_lpc2468.c	/^volatile  HCTD        *TDHead;                    \/* Head transfer descriptor structure                     *\/$/;"	v
+TDHead	UsbHost/usbhost_lpc2468.h	/^extern  volatile  HCTD        *TDHead;          \/* Head transfer descriptor structure                       *\/$/;"	x
+TDTail	UsbHost/usbhost_lpc2468.c	/^volatile  HCTD        *TDTail;                    \/* Tail transfer descriptor structure                     *\/$/;"	v
+TDTail	UsbHost/usbhost_lpc2468.h	/^extern  volatile  HCTD        *TDTail;          \/* Tail transfer descriptor structure                       *\/$/;"	x
+TD_CC	UsbHost/usbhost_lpc2468.h	/^#define  TD_CC /;"	d
+TD_DELAY_INT	UsbHost/usbhost_lpc2468.h	/^#define  TD_DELAY_INT(/;"	d
+TD_IN	UsbHost/usbhost_lpc2468.h	/^#define  TD_IN /;"	d
+TD_OUT	UsbHost/usbhost_lpc2468.h	/^#define  TD_OUT /;"	d
+TD_ROUNDING	UsbHost/usbhost_lpc2468.h	/^#define  TD_ROUNDING /;"	d
+TD_SETUP	UsbHost/usbhost_lpc2468.h	/^#define  TD_SETUP /;"	d
+TD_TOGGLE_0	UsbHost/usbhost_lpc2468.h	/^#define  TD_TOGGLE_0 /;"	d
+TD_TOGGLE_1	UsbHost/usbhost_lpc2468.h	/^#define  TD_TOGGLE_1 /;"	d
+TMR0_BASE_ADDR	UsbHost/LPC24xx.h	/^#define TMR0_BASE_ADDR	/;"	d
+TMR1_BASE_ADDR	UsbHost/LPC24xx.h	/^#define TMR1_BASE_ADDR	/;"	d
+TMR2_BASE_ADDR	UsbHost/LPC24xx.h	/^#define TMR2_BASE_ADDR	/;"	d
+TMR3_BASE_ADDR	UsbHost/LPC24xx.h	/^#define TMR3_BASE_ADDR	/;"	d
+TX_DATA	UsbHost/LPC24xx.h	/^#define TX_DATA /;"	d
+TX_PLENGTH	UsbHost/LPC24xx.h	/^#define TX_PLENGTH /;"	d
+TailTd	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT32U  TailTd;               \/* Physical address of tail in Transfer descriptor list     *\/$/;"	m	struct:hcEd
+TotSec16	UsbHost/usbhost_fat.h	/^    USB_INT16U    TotSec16;                  \/* Total sectors in the disk. !=0 if TotSec32 = 0              *\/$/;"	m	struct:boot_sec
+TotSec32	UsbHost/usbhost_fat.h	/^    USB_INT32U    TotSec32;                  \/* Total sectors in the disk. !=0 if TotSec16 = 0              *\/$/;"	m	struct:boot_sec
+U0ACR	UsbHost/LPC24xx.h	/^#define U0ACR /;"	d
+U0DLL	UsbHost/LPC24xx.h	/^#define U0DLL /;"	d
+U0DLM	UsbHost/LPC24xx.h	/^#define U0DLM /;"	d
+U0FCR	UsbHost/LPC24xx.h	/^#define U0FCR /;"	d
+U0FDR	UsbHost/LPC24xx.h	/^#define U0FDR /;"	d
+U0ICR	UsbHost/LPC24xx.h	/^#define U0ICR /;"	d
+U0IER	UsbHost/LPC24xx.h	/^#define U0IER /;"	d
+U0IIR	UsbHost/LPC24xx.h	/^#define U0IIR /;"	d
+U0LCR	UsbHost/LPC24xx.h	/^#define U0LCR /;"	d
+U0LSR	UsbHost/LPC24xx.h	/^#define U0LSR /;"	d
+U0RBR	UsbHost/LPC24xx.h	/^#define U0RBR /;"	d
+U0SCR	UsbHost/LPC24xx.h	/^#define U0SCR /;"	d
+U0TER	UsbHost/LPC24xx.h	/^#define U0TER /;"	d
+U0THR	UsbHost/LPC24xx.h	/^#define U0THR /;"	d
+U1ACR	UsbHost/LPC24xx.h	/^#define U1ACR /;"	d
+U1DLL	UsbHost/LPC24xx.h	/^#define U1DLL /;"	d
+U1DLM	UsbHost/LPC24xx.h	/^#define U1DLM /;"	d
+U1FCR	UsbHost/LPC24xx.h	/^#define U1FCR /;"	d
+U1FDR	UsbHost/LPC24xx.h	/^#define U1FDR /;"	d
+U1IER	UsbHost/LPC24xx.h	/^#define U1IER /;"	d
+U1IIR	UsbHost/LPC24xx.h	/^#define U1IIR /;"	d
+U1LCR	UsbHost/LPC24xx.h	/^#define U1LCR /;"	d
+U1LSR	UsbHost/LPC24xx.h	/^#define U1LSR /;"	d
+U1MCR	UsbHost/LPC24xx.h	/^#define U1MCR /;"	d
+U1MSR	UsbHost/LPC24xx.h	/^#define U1MSR /;"	d
+U1RBR	UsbHost/LPC24xx.h	/^#define U1RBR /;"	d
+U1SCR	UsbHost/LPC24xx.h	/^#define U1SCR /;"	d
+U1TER	UsbHost/LPC24xx.h	/^#define U1TER /;"	d
+U1THR	UsbHost/LPC24xx.h	/^#define U1THR /;"	d
+U2ACR	UsbHost/LPC24xx.h	/^#define U2ACR /;"	d
+U2DLL	UsbHost/LPC24xx.h	/^#define U2DLL /;"	d
+U2DLM	UsbHost/LPC24xx.h	/^#define U2DLM /;"	d
+U2FCR	UsbHost/LPC24xx.h	/^#define U2FCR /;"	d
+U2FDR	UsbHost/LPC24xx.h	/^#define U2FDR /;"	d
+U2ICR	UsbHost/LPC24xx.h	/^#define U2ICR /;"	d
+U2IER	UsbHost/LPC24xx.h	/^#define U2IER /;"	d
+U2IIR	UsbHost/LPC24xx.h	/^#define U2IIR /;"	d
+U2LCR	UsbHost/LPC24xx.h	/^#define U2LCR /;"	d
+U2LSR	UsbHost/LPC24xx.h	/^#define U2LSR /;"	d
+U2RBR	UsbHost/LPC24xx.h	/^#define U2RBR /;"	d
+U2SCR	UsbHost/LPC24xx.h	/^#define U2SCR /;"	d
+U2TER	UsbHost/LPC24xx.h	/^#define U2TER /;"	d
+U2THR	UsbHost/LPC24xx.h	/^#define U2THR /;"	d
+U3ACR	UsbHost/LPC24xx.h	/^#define U3ACR /;"	d
+U3DLL	UsbHost/LPC24xx.h	/^#define U3DLL /;"	d
+U3DLM	UsbHost/LPC24xx.h	/^#define U3DLM /;"	d
+U3FCR	UsbHost/LPC24xx.h	/^#define U3FCR /;"	d
+U3FDR	UsbHost/LPC24xx.h	/^#define U3FDR /;"	d
+U3ICR	UsbHost/LPC24xx.h	/^#define U3ICR /;"	d
+U3IER	UsbHost/LPC24xx.h	/^#define U3IER /;"	d
+U3IIR	UsbHost/LPC24xx.h	/^#define U3IIR /;"	d
+U3LCR	UsbHost/LPC24xx.h	/^#define U3LCR /;"	d
+U3LSR	UsbHost/LPC24xx.h	/^#define U3LSR /;"	d
+U3RBR	UsbHost/LPC24xx.h	/^#define U3RBR /;"	d
+U3SCR	UsbHost/LPC24xx.h	/^#define U3SCR /;"	d
+U3TER	UsbHost/LPC24xx.h	/^#define U3TER /;"	d
+U3THR	UsbHost/LPC24xx.h	/^#define U3THR /;"	d
+UART0_BASE_ADDR	UsbHost/LPC24xx.h	/^#define UART0_BASE_ADDR	/;"	d
+UART1_BASE_ADDR	UsbHost/LPC24xx.h	/^#define UART1_BASE_ADDR	/;"	d
+UART2_BASE_ADDR	UsbHost/LPC24xx.h	/^#define UART2_BASE_ADDR	/;"	d
+UART3_BASE_ADDR	UsbHost/LPC24xx.h	/^#define UART3_BASE_ADDR	/;"	d
+UART_Init	UsbHost/usbhost_uart.c	/^void  UART_Init(USB_INT32U baudrate)$/;"	f
+UART_Init	UsbHost/usbhost_uart.h	/^void  UART_Init  (      USB_INT32U   baudrate);$/;"	p
+UART_PORT	UsbHost/usbhost_uart.h	/^#define UART_PORT /;"	d
+UART_PrintChar	UsbHost/usbhost_uart.c	/^void  UART_PrintChar (USB_INT08U ch)$/;"	f
+UART_PrintChar	UsbHost/usbhost_uart.h	/^void  UART_PrintChar (      USB_INT08U   ch);$/;"	p
+UART_PrintStr	UsbHost/usbhost_uart.c	/^void  UART_PrintStr (const USB_INT08U *str)$/;"	f
+UART_PrintStr	UsbHost/usbhost_uart.h	/^void  UART_PrintStr  (const USB_INT08U  *str);$/;"	p
+UART_Printf	UsbHost/usbhost_uart.c	/^void  UART_Printf (const  USB_INT08U *format, ...)$/;"	f
+UART_Printf	UsbHost/usbhost_uart.h	/^void  UART_Printf(const USB_INT08U  *format, ...);$/;"	p
+UDCA_HEAD	UsbHost/LPC24xx.h	/^#define UDCA_HEAD /;"	d
+USBCLKCFG	UsbHost/LPC24xx.h	/^#define USBCLKCFG /;"	d
+USBClkCtrl	UsbHost/LPC24xx.h	/^#define USBClkCtrl /;"	d
+USBClkSt	UsbHost/LPC24xx.h	/^#define USBClkSt /;"	d
+USBClk_Init	UsbHost/LPC2478clk.c	/^void USBClk_Init(void)$/;"	f
+USBClk_Init	UsbHost/LPC2478clk.h	/^void USBClk_Init(void);$/;"	p
+USBHC_BASE_ADDR	UsbHost/LPC24xx.h	/^#define USBHC_BASE_ADDR	/;"	d
+USBHOST_CPU_H	UsbHost/usbhost_cpu.h	/^#define  USBHOST_CPU_H$/;"	d
+USBHOST_ERR_H	UsbHost/usbhost_err.h	/^#define  USBHOST_ERR_H$/;"	d
+USBHOST_FAT_H	UsbHost/usbhost_fat.h	/^#define  USBHOST_FAT_H$/;"	d
+USBHOST_INC_H	UsbHost/usbhost_inc.h	/^#define  USBHOST_INC_H$/;"	d
+USBHOST_LPC2468_H	UsbHost/usbhost_lpc2468.h	/^#define USBHOST_LPC2468_H$/;"	d
+USBHOST_MAIN_H	UsbHost/usbhost_main.h	/^#define  USBHOST_MAIN_H$/;"	d
+USBHOST_MS_H	UsbHost/usbhost_ms.h	/^#define  USBHOST_MS_H$/;"	d
+USBHOST_UART_H	UsbHost/usbhost_uart.h	/^#define USBHOST_UART_H$/;"	d
+USBH_SET_CONFIGURATION	UsbHost/usbhost_lpc2468.h	/^#define  USBH_SET_CONFIGURATION(/;"	d
+USBH_SET_INTERFACE	UsbHost/usbhost_lpc2468.h	/^#define  USBH_SET_INTERFACE(/;"	d
+USBOTG_BASE_ADDR	UsbHost/LPC24xx.h	/^#define USBOTG_BASE_ADDR	/;"	d
+USBOTG_CLK_BASE_ADDR	UsbHost/LPC24xx.h	/^#define USBOTG_CLK_BASE_ADDR	/;"	d
+USBOTG_I2C_BASE_ADDR	UsbHost/LPC24xx.h	/^#define USBOTG_I2C_BASE_ADDR	/;"	d
+USBPortSel	UsbHost/LPC24xx.h	/^#define USBPortSel /;"	d
+USB_BASE_ADDR	UsbHost/LPC24xx.h	/^#define USB_BASE_ADDR	/;"	d
+USB_CTRL	UsbHost/LPC24xx.h	/^#define USB_CTRL /;"	d
+USB_DESCRIPTOR_TYPE_CONFIGURATION	UsbHost/usbhost_lpc2468.h	/^#define  USB_DESCRIPTOR_TYPE_CONFIGURATION /;"	d
+USB_DESCRIPTOR_TYPE_DEVICE	UsbHost/usbhost_lpc2468.h	/^#define  USB_DESCRIPTOR_TYPE_DEVICE /;"	d
+USB_DESCRIPTOR_TYPE_ENDPOINT	UsbHost/usbhost_lpc2468.h	/^#define  USB_DESCRIPTOR_TYPE_ENDPOINT /;"	d
+USB_DESCRIPTOR_TYPE_INTERFACE	UsbHost/usbhost_lpc2468.h	/^#define  USB_DESCRIPTOR_TYPE_INTERFACE /;"	d
+USB_DESCRIPTOR_TYPE_STRING	UsbHost/usbhost_lpc2468.h	/^#define  USB_DESCRIPTOR_TYPE_STRING /;"	d
+USB_DEVICE_TO_HOST	UsbHost/usbhost_lpc2468.h	/^#define  USB_DEVICE_TO_HOST /;"	d
+USB_HOST_TO_DEVICE	UsbHost/usbhost_lpc2468.h	/^#define  USB_HOST_TO_DEVICE /;"	d
+USB_INT08S	UsbHost/usbhost_cpu.h	/^typedef  signed   char   USB_INT08S;$/;"	t
+USB_INT08U	UsbHost/usbhost_cpu.h	/^typedef  unsigned char   USB_INT08U;$/;"	t
+USB_INT16S	UsbHost/usbhost_cpu.h	/^typedef  signed   short  USB_INT16S;$/;"	t
+USB_INT16U	UsbHost/usbhost_cpu.h	/^typedef  unsigned short  USB_INT16U;$/;"	t
+USB_INT32S	UsbHost/usbhost_cpu.h	/^typedef  signed   int    USB_INT32S;$/;"	t
+USB_INT32U	UsbHost/usbhost_cpu.h	/^typedef  unsigned int    USB_INT32U;$/;"	t
+USB_INT_BASE_ADDR	UsbHost/LPC24xx.h	/^#define USB_INT_BASE_ADDR	/;"	d
+USB_INT_STAT	UsbHost/LPC24xx.h	/^#define USB_INT_STAT /;"	d
+USB_RECIPIENT_DEVICE	UsbHost/usbhost_lpc2468.h	/^#define  USB_RECIPIENT_DEVICE /;"	d
+USB_RECIPIENT_INTERFACE	UsbHost/usbhost_lpc2468.h	/^#define  USB_RECIPIENT_INTERFACE /;"	d
+USB_REQUEST_TYPE_CLASS	UsbHost/usbhost_lpc2468.h	/^#define  USB_REQUEST_TYPE_CLASS /;"	d
+Unknown	UsbHost/usbhost_lpc2468.h	/^    volatile  USB_INT08U  Unknown[4];           \/* Unused                                                   *\/$/;"	m	struct:hcca
+UserBuffer	UsbHost/usbhost_lpc2468.c	/^volatile  USB_INT08U  *UserBuffer;                \/* Buffer used by application                             *\/$/;"	v
+UserBuffer	UsbHost/usbhost_lpc2468.h	/^extern  volatile  USB_INT08U  *UserBuffer;      \/* Buffer used by application                               *\/$/;"	x
+VICFIQStatus	UsbHost/LPC24xx.h	/^#define VICFIQStatus /;"	d
+VICIRQStatus	UsbHost/LPC24xx.h	/^#define VICIRQStatus /;"	d
+VICIntEnClr	UsbHost/LPC24xx.h	/^#define VICIntEnClr /;"	d
+VICIntEnable	UsbHost/LPC24xx.h	/^#define VICIntEnable /;"	d
+VICIntSelect	UsbHost/LPC24xx.h	/^#define VICIntSelect /;"	d
+VICProtection	UsbHost/LPC24xx.h	/^#define VICProtection /;"	d
+VICRawIntr	UsbHost/LPC24xx.h	/^#define VICRawIntr /;"	d
+VICSWPrioMask	UsbHost/LPC24xx.h	/^#define VICSWPrioMask /;"	d
+VICSoftInt	UsbHost/LPC24xx.h	/^#define VICSoftInt /;"	d
+VICSoftIntClr	UsbHost/LPC24xx.h	/^#define VICSoftIntClr /;"	d
+VICVectAddr	UsbHost/LPC24xx.h	/^#define VICVectAddr /;"	d
+VICVectAddr0	UsbHost/LPC24xx.h	/^#define VICVectAddr0 /;"	d
+VICVectAddr1	UsbHost/LPC24xx.h	/^#define VICVectAddr1 /;"	d
+VICVectAddr10	UsbHost/LPC24xx.h	/^#define VICVectAddr10 /;"	d
+VICVectAddr11	UsbHost/LPC24xx.h	/^#define VICVectAddr11 /;"	d
+VICVectAddr12	UsbHost/LPC24xx.h	/^#define VICVectAddr12 /;"	d
+VICVectAddr13	UsbHost/LPC24xx.h	/^#define VICVectAddr13 /;"	d
+VICVectAddr14	UsbHost/LPC24xx.h	/^#define VICVectAddr14 /;"	d
+VICVectAddr15	UsbHost/LPC24xx.h	/^#define VICVectAddr15 /;"	d
+VICVectAddr16	UsbHost/LPC24xx.h	/^#define VICVectAddr16 /;"	d
+VICVectAddr17	UsbHost/LPC24xx.h	/^#define VICVectAddr17 /;"	d
+VICVectAddr18	UsbHost/LPC24xx.h	/^#define VICVectAddr18 /;"	d
+VICVectAddr19	UsbHost/LPC24xx.h	/^#define VICVectAddr19 /;"	d
+VICVectAddr2	UsbHost/LPC24xx.h	/^#define VICVectAddr2 /;"	d
+VICVectAddr20	UsbHost/LPC24xx.h	/^#define VICVectAddr20 /;"	d
+VICVectAddr21	UsbHost/LPC24xx.h	/^#define VICVectAddr21 /;"	d
+VICVectAddr22	UsbHost/LPC24xx.h	/^#define VICVectAddr22 /;"	d
+VICVectAddr23	UsbHost/LPC24xx.h	/^#define VICVectAddr23 /;"	d
+VICVectAddr24	UsbHost/LPC24xx.h	/^#define VICVectAddr24 /;"	d
+VICVectAddr25	UsbHost/LPC24xx.h	/^#define VICVectAddr25 /;"	d
+VICVectAddr26	UsbHost/LPC24xx.h	/^#define VICVectAddr26 /;"	d
+VICVectAddr27	UsbHost/LPC24xx.h	/^#define VICVectAddr27 /;"	d
+VICVectAddr28	UsbHost/LPC24xx.h	/^#define VICVectAddr28 /;"	d
+VICVectAddr29	UsbHost/LPC24xx.h	/^#define VICVectAddr29 /;"	d
+VICVectAddr3	UsbHost/LPC24xx.h	/^#define VICVectAddr3 /;"	d
+VICVectAddr30	UsbHost/LPC24xx.h	/^#define VICVectAddr30 /;"	d
+VICVectAddr31	UsbHost/LPC24xx.h	/^#define VICVectAddr31 /;"	d
+VICVectAddr4	UsbHost/LPC24xx.h	/^#define VICVectAddr4 /;"	d
+VICVectAddr5	UsbHost/LPC24xx.h	/^#define VICVectAddr5 /;"	d
+VICVectAddr6	UsbHost/LPC24xx.h	/^#define VICVectAddr6 /;"	d
+VICVectAddr7	UsbHost/LPC24xx.h	/^#define VICVectAddr7 /;"	d
+VICVectAddr8	UsbHost/LPC24xx.h	/^#define VICVectAddr8 /;"	d
+VICVectAddr9	UsbHost/LPC24xx.h	/^#define VICVectAddr9 /;"	d
+VICVectCntl0	UsbHost/LPC24xx.h	/^#define VICVectCntl0 /;"	d
+VICVectCntl1	UsbHost/LPC24xx.h	/^#define VICVectCntl1 /;"	d
+VICVectCntl10	UsbHost/LPC24xx.h	/^#define VICVectCntl10 /;"	d
+VICVectCntl11	UsbHost/LPC24xx.h	/^#define VICVectCntl11 /;"	d
+VICVectCntl12	UsbHost/LPC24xx.h	/^#define VICVectCntl12 /;"	d
+VICVectCntl13	UsbHost/LPC24xx.h	/^#define VICVectCntl13 /;"	d
+VICVectCntl14	UsbHost/LPC24xx.h	/^#define VICVectCntl14 /;"	d
+VICVectCntl15	UsbHost/LPC24xx.h	/^#define VICVectCntl15 /;"	d
+VICVectCntl16	UsbHost/LPC24xx.h	/^#define VICVectCntl16 /;"	d
+VICVectCntl17	UsbHost/LPC24xx.h	/^#define VICVectCntl17 /;"	d
+VICVectCntl18	UsbHost/LPC24xx.h	/^#define VICVectCntl18 /;"	d
+VICVectCntl19	UsbHost/LPC24xx.h	/^#define VICVectCntl19 /;"	d
+VICVectCntl2	UsbHost/LPC24xx.h	/^#define VICVectCntl2 /;"	d
+VICVectCntl20	UsbHost/LPC24xx.h	/^#define VICVectCntl20 /;"	d
+VICVectCntl21	UsbHost/LPC24xx.h	/^#define VICVectCntl21 /;"	d
+VICVectCntl22	UsbHost/LPC24xx.h	/^#define VICVectCntl22 /;"	d
+VICVectCntl23	UsbHost/LPC24xx.h	/^#define VICVectCntl23 /;"	d
+VICVectCntl24	UsbHost/LPC24xx.h	/^#define VICVectCntl24 /;"	d
+VICVectCntl25	UsbHost/LPC24xx.h	/^#define VICVectCntl25 /;"	d
+VICVectCntl26	UsbHost/LPC24xx.h	/^#define VICVectCntl26 /;"	d
+VICVectCntl27	UsbHost/LPC24xx.h	/^#define VICVectCntl27 /;"	d
+VICVectCntl28	UsbHost/LPC24xx.h	/^#define VICVectCntl28 /;"	d
+VICVectCntl29	UsbHost/LPC24xx.h	/^#define VICVectCntl29 /;"	d
+VICVectCntl3	UsbHost/LPC24xx.h	/^#define VICVectCntl3 /;"	d
+VICVectCntl30	UsbHost/LPC24xx.h	/^#define VICVectCntl30 /;"	d
+VICVectCntl31	UsbHost/LPC24xx.h	/^#define VICVectCntl31 /;"	d
+VICVectCntl4	UsbHost/LPC24xx.h	/^#define VICVectCntl4 /;"	d
+VICVectCntl5	UsbHost/LPC24xx.h	/^#define VICVectCntl5 /;"	d
+VICVectCntl6	UsbHost/LPC24xx.h	/^#define VICVectCntl6 /;"	d
+VICVectCntl7	UsbHost/LPC24xx.h	/^#define VICVectCntl7 /;"	d
+VICVectCntl8	UsbHost/LPC24xx.h	/^#define VICVectCntl8 /;"	d
+VICVectCntl9	UsbHost/LPC24xx.h	/^#define VICVectCntl9 /;"	d
+VICVectPriority0	UsbHost/LPC24xx.h	/^#define VICVectPriority0 /;"	d
+VICVectPriority1	UsbHost/LPC24xx.h	/^#define VICVectPriority1 /;"	d
+VICVectPriority10	UsbHost/LPC24xx.h	/^#define VICVectPriority10 /;"	d
+VICVectPriority11	UsbHost/LPC24xx.h	/^#define VICVectPriority11 /;"	d
+VICVectPriority12	UsbHost/LPC24xx.h	/^#define VICVectPriority12 /;"	d
+VICVectPriority13	UsbHost/LPC24xx.h	/^#define VICVectPriority13 /;"	d
+VICVectPriority14	UsbHost/LPC24xx.h	/^#define VICVectPriority14 /;"	d
+VICVectPriority15	UsbHost/LPC24xx.h	/^#define VICVectPriority15 /;"	d
+VICVectPriority16	UsbHost/LPC24xx.h	/^#define VICVectPriority16 /;"	d
+VICVectPriority17	UsbHost/LPC24xx.h	/^#define VICVectPriority17 /;"	d
+VICVectPriority18	UsbHost/LPC24xx.h	/^#define VICVectPriority18 /;"	d
+VICVectPriority19	UsbHost/LPC24xx.h	/^#define VICVectPriority19 /;"	d
+VICVectPriority2	UsbHost/LPC24xx.h	/^#define VICVectPriority2 /;"	d
+VICVectPriority20	UsbHost/LPC24xx.h	/^#define VICVectPriority20 /;"	d
+VICVectPriority21	UsbHost/LPC24xx.h	/^#define VICVectPriority21 /;"	d
+VICVectPriority22	UsbHost/LPC24xx.h	/^#define VICVectPriority22 /;"	d
+VICVectPriority23	UsbHost/LPC24xx.h	/^#define VICVectPriority23 /;"	d
+VICVectPriority24	UsbHost/LPC24xx.h	/^#define VICVectPriority24 /;"	d
+VICVectPriority25	UsbHost/LPC24xx.h	/^#define VICVectPriority25 /;"	d
+VICVectPriority26	UsbHost/LPC24xx.h	/^#define VICVectPriority26 /;"	d
+VICVectPriority27	UsbHost/LPC24xx.h	/^#define VICVectPriority27 /;"	d
+VICVectPriority28	UsbHost/LPC24xx.h	/^#define VICVectPriority28 /;"	d
+VICVectPriority29	UsbHost/LPC24xx.h	/^#define VICVectPriority29 /;"	d
+VICVectPriority3	UsbHost/LPC24xx.h	/^#define VICVectPriority3 /;"	d
+VICVectPriority30	UsbHost/LPC24xx.h	/^#define VICVectPriority30 /;"	d
+VICVectPriority31	UsbHost/LPC24xx.h	/^#define VICVectPriority31 /;"	d
+VICVectPriority4	UsbHost/LPC24xx.h	/^#define VICVectPriority4 /;"	d
+VICVectPriority5	UsbHost/LPC24xx.h	/^#define VICVectPriority5 /;"	d
+VICVectPriority6	UsbHost/LPC24xx.h	/^#define VICVectPriority6 /;"	d
+VICVectPriority7	UsbHost/LPC24xx.h	/^#define VICVectPriority7 /;"	d
+VICVectPriority8	UsbHost/LPC24xx.h	/^#define VICVectPriority8 /;"	d
+VICVectPriority9	UsbHost/LPC24xx.h	/^#define VICVectPriority9 /;"	d
+VIC_BASE_ADDR	UsbHost/LPC24xx.h	/^#define VIC_BASE_ADDR	/;"	d
+WDCLKSEL	UsbHost/LPC24xx.h	/^#define WDCLKSEL /;"	d
+WDFEED	UsbHost/LPC24xx.h	/^#define WDFEED /;"	d
+WDG_BASE_ADDR	UsbHost/LPC24xx.h	/^#define WDG_BASE_ADDR	/;"	d
+WDMOD	UsbHost/LPC24xx.h	/^#define WDMOD /;"	d
+WDTC	UsbHost/LPC24xx.h	/^#define WDTC /;"	d
+WDTV	UsbHost/LPC24xx.h	/^#define WDTV /;"	d
+WRITE_SIZE	UsbHost/usbhost_main.h	/^#define  WRITE_SIZE /;"	d
+WriteBE16U	UsbHost/usbhost_lpc2468.c	/^void  WriteBE16U (volatile  USB_INT08U  *pmem,$/;"	f
+WriteBE16U	UsbHost/usbhost_lpc2468.h	/^void        WriteBE16U    (volatile  USB_INT08U  *pmem,$/;"	p
+WriteBE32U	UsbHost/usbhost_lpc2468.c	/^void  WriteBE32U (volatile  USB_INT08U  *pmem,$/;"	f
+WriteBE32U	UsbHost/usbhost_lpc2468.h	/^void        WriteBE32U    (volatile  USB_INT08U  *pmem,$/;"	p
+WriteLE16U	UsbHost/usbhost_lpc2468.c	/^void  WriteLE16U (volatile  USB_INT08U  *pmem,$/;"	f
+WriteLE16U	UsbHost/usbhost_lpc2468.h	/^void        WriteLE16U    (volatile  USB_INT08U  *pmem,$/;"	p
+WriteLE32U	UsbHost/usbhost_lpc2468.c	/^void  WriteLE32U (volatile  USB_INT08U  *pmem,$/;"	f
+WriteLE32U	UsbHost/usbhost_lpc2468.h	/^void        WriteLE32U    (volatile  USB_INT08U  *pmem,$/;"	p
+__LPC24xx_H	UsbHost/LPC24xx.h	/^#define __LPC24xx_H$/;"	d
+_sbrk	UsbHost/mystring.c	/^int*  _sbrk(int incr)$/;"	f
+_sbrk	UsbHost/mystring.h	/^extern int*  _sbrk(int incr);$/;"	p
+boot_sec	UsbHost/usbhost_fat.h	/^typedef struct boot_sec {$/;"	s
+data_abort_handler	start.S	/^data_abort_handler:		\/* DATA ABORT handler *\/$/;"	l
+data_abort_vector	start.S	/^data_abort_vector:$/;"	l
+file_entry	UsbHost/usbhost_fat.h	/^typedef  struct  file_entry {$/;"	s
+fiq_handler	start.S	/^fiq_handler:	\/* FIQ handler *\/$/;"	l
+fiq_vector	start.S	/^fiq_vector:$/;"	l
+gUSBConnected	UsbHost/usbhost_lpc2468.c	/^int gUSBConnected;$/;"	v
+hcEd	UsbHost/usbhost_lpc2468.h	/^typedef struct hcEd {                       \/* ----------- HostController EndPoint Descriptor ------------- *\/$/;"	s
+hcTd	UsbHost/usbhost_lpc2468.h	/^typedef struct hcTd {                       \/* ------------ HostController Transfer Descriptor ------------ *\/$/;"	s
+hcca	UsbHost/usbhost_lpc2468.h	/^typedef struct hcca {                       \/* ----------- Host Controller Communication Area ------------  *\/$/;"	s
+intstack	target.c	/^static unsigned int intstack[DEFAULT_ISTKSZ];		\/* interrupt stack *\/$/;"	v	file:
+irq_handler	start.S	/^irq_handler:	\/* FIQ handler *\/$/;"	l
+irq_vector	start.S	/^irq_vector:$/;"	l
+main	UsbHost/usbhost_main.c	/^int main()$/;"	f
+ms_data_dir	UsbHost/usbhost_ms.h	/^typedef enum  ms_data_dir {$/;"	g
+p_intstack	target.c	/^unsigned int * const p_intstack = &intstack[DEFAULT_ISTKSZ];$/;"	v
+prefech_vector	start.S	/^prefech_vector:$/;"	l
+prefetch_handler	start.S	/^prefetch_handler:	\/* PREFETCH handler *\/$/;"	l
+reset_vector	start.S	/^reset_vector:$/;"	l
+start	start.S	/^start:$/;"	l
+start_1	start.S	/^start_1:$/;"	l
+start_2	start.S	/^start_2:$/;"	l
+start_3	start.S	/^start_3:$/;"	l
+start_4	start.S	/^start_4:$/;"	l
+start_5	start.S	/^start_5:$/;"	l
+start_6	start.S	/^start_6:$/;"	l
+swi_handler	start.S	/^swi_handler:$/;"	l
+swi_vector	start.S	/^swi_vector:$/;"	l
+undef_handler	start.S	/^undef_handler:$/;"	l
+undef_vector	start.S	/^undef_vector:$/;"	l
+vector_ref_tbl	start.S	/^vector_ref_tbl:$/;"	l
+vector_table	start.S	/^vector_table:$/;"	l

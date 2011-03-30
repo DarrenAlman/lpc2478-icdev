@@ -1,0 +1,374 @@
+
+usbhost.elf:     file format elf32-littlearm
+usbhost.elf
+architecture: arm, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0xa0004ef4
+
+Program Header:
+0x70000001 off    0x0001cc70 vaddr 0xa000cc70 paddr 0xa000cc70 align 2**2
+         filesz 0x00000008 memsz 0x00000008 flags r--
+    LOAD off    0x00008000 vaddr 0x40000000 paddr 0x40000000 align 2**15
+         filesz 0x0000003c memsz 0x0000003c flags r--
+    LOAD off    0x00010000 vaddr 0xa0000000 paddr 0xa0000000 align 2**15
+         filesz 0x0000d4d0 memsz 0x000355dc flags rwx
+private flags = 5000002: [Version5 EABI] [has entry point]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .vector       0000003c  40000000  40000000  00008000  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text         0000c84c  a0000000  a0000000  00010000  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       00000420  a000c850  a000c850  0001c850  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .ARM.exidx    00000008  a000cc70  a000cc70  0001cc70  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .data         00000858  a000cc78  a000cc78  0001cc78  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .bss          0002810c  a000d4d0  a000d4d0  0001d4d0  2**2
+                  ALLOC
+  6 .ARM.attributes 00000030  00000000  00000000  0001d4d0  2**0
+                  CONTENTS, READONLY
+  7 .comment      000001ae  00000000  00000000  0001d500  2**0
+                  CONTENTS, READONLY
+  8 .debug_aranges 00000120  00000000  00000000  0001d6ae  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_pubnames 0000062f  00000000  00000000  0001d7ce  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_info   00002067  00000000  00000000  0001ddfd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_abbrev 00000890  00000000  00000000  0001fe64  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_line   000008fc  00000000  00000000  000206f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_frame  00000fd8  00000000  00000000  00020ff0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_str    00000a6f  00000000  00000000  00021fc8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_loc    00000c24  00000000  00000000  00022a37  2**0
+                  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+40000000 l    d  .vector	00000000 .vector
+a0000000 l    d  .text	00000000 .text
+a000c850 l    d  .rodata	00000000 .rodata
+a000cc70 l    d  .ARM.exidx	00000000 .ARM.exidx
+a000cc78 l    d  .data	00000000 .data
+a000d4d0 l    d  .bss	00000000 .bss
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_pubnames	00000000 .debug_pubnames
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000040 l       *ABS*	00000000 UND_STACK_SIZE
+00000040 l       *ABS*	00000000 ABT_STACK_SIZE
+00000040 l       *ABS*	00000000 FIQ_STACK_SIZE
+00000100 l       *ABS*	00000000 IRQ_STACK_SIZE
+00000400 l       *ABS*	00000000 SYS_STACK_SIZE
+00000010 l       *ABS*	00000000 MODE_USR
+00000011 l       *ABS*	00000000 MODE_FIQ
+00000012 l       *ABS*	00000000 MODE_IRQ
+00000013 l       *ABS*	00000000 MODE_SVC
+00000017 l       *ABS*	00000000 MODE_ABT
+0000001b l       *ABS*	00000000 MODE_UND
+0000001f l       *ABS*	00000000 MODE_SYS
+00000080 l       *ABS*	00000000 I_BIT
+00000040 l       *ABS*	00000000 F_BIT
+40000020 l       .vector	00000000 reset_vector
+40000024 l       .vector	00000000 undef_vector
+40000028 l       .vector	00000000 swi_vector
+4000002c l       .vector	00000000 prefech_vector
+40000030 l       .vector	00000000 data_abort_vector
+40000038 l       .vector	00000000 fiq_vector
+40000034 l       .vector	00000000 irq_vector
+a0004f58 l       .text	00000000 start_1
+a0004f78 l       .text	00000000 start_3
+a0004f6c l       .text	00000000 start_2
+a0004f9c l       .text	00000000 start_5
+a0004f8c l       .text	00000000 start_4
+a0004fac l       .text	00000000 start_6
+00000000 l    df *ABS*	00000000 target.c
+a000d4d0 l       .bss	00000000 intstack
+00000000 l    df *ABS*	00000000 LPC2478clk.c
+a0000000 l     F .text	0000003c PLL_Feed
+00000000 l    df *ABS*	00000000 LPC2478hw.c
+00000000 l    df *ABS*	00000000 lpc_i2c.c
+00000000 l    df *ABS*	00000000 mystring.c
+a00354d0 l       .bss	00000000 heap_end.2421
+00000000 l    df *ABS*	00000000 usbhost_fat.c
+a00354d4 l       .bss	00000000 FAT_BootSec
+a00354fc l       .bss	00000000 FAT_FileEntry
+a000c878 l     O .rodata	00000009 __FUNCTION__.2414
+00000000 l    df *ABS*	00000000 usbhost_lpc2468.c
+a000c954 l     O .rodata	0000000d __FUNCTION__.2647
+00000000 l    df *ABS*	00000000 usbhost_main.c
+00000000 l    df *ABS*	00000000 usbhost_ms.c
+a000ca80 l     O .rodata	00000008 __FUNCTION__.2413
+a0035538 l       .bss	00000000 tag_cnt.2716
+00000000 l    df *ABS*	00000000 usbhost_uart.c
+a003553c l       .bss	00000000 buffer.2470
+a0004fe8 l       .text	00000000 .udivsi3_nodiv0
+a0005104 l       .text	00000000 .divsi3_nodiv0
+00000000 l    df *ABS*	00000000 vsprintf.c
+00000000 l    df *ABS*	00000000 impure.c
+a000cc88 l     O .data	00000428 impure_data
+00000000 l    df *ABS*	00000000 vfprintf.c
+a00052c4 l     F .text	00000188 __sprint_r
+a000ca8c l     O .rodata	00000010 blanks.3587
+a000ca9c l     O .rodata	00000010 zeroes.3588
+00000000 l    df *ABS*	00000000 dtoa.c
+a00073e0 l     F .text	000001e8 quorem
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 locale.c
+a000caac l     O .rodata	00000004 charset
+a000cab0 l     O .rodata	00000030 lconv
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 memchr.c
+00000000 l    df *ABS*	00000000 memcpy.c
+00000000 l    df *ABS*	00000000 memmove.c
+00000000 l    df *ABS*	00000000 mlock.c
+00000000 l    df *ABS*	00000000 mprec.c
+a000cba8 l     O .rodata	0000000c p05.2435
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 s_isinfd.c
+00000000 l    df *ABS*	00000000 s_isnand.c
+00000000 l    df *ABS*	00000000 sbrkr.c
+00000000 l    df *ABS*	00000000 strcmp.c
+a000aec4 l     F .text	0000019c strcmp_unaligned
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 memset.c
+00000000 l    df *ABS*	00000000 reent.c
+00000000 l    df *ABS*	00000000 bpabi.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+a0009e3c g     F .text	00000050 _mprec_log10
+a0009f08 g     F .text	00000088 __any_on
+a000cbe0 g     O .rodata	00000028 __mprec_tinytens
+a000bdd0 g     F .text	00000018 __aeabi_dcmple
+a000b2f8 g     F .text	0000002c cleanup_glue
+a000beb0 g     F .text	00000044 __gnu_uldivmod_helper
+a0004e2c g     F .text	00000084 UART_PrintStr
+a0000c38 g     F .text	00000154 FILE_Open
+a000bce4 g     F .text	00000088 __cmpdf2
+a0035530 g     O .bss	00000004 HOST_WdhIntr
+a000bce4 g     F .text	00000088 __eqdf2
+a0003f28 g     F .text	000002c0 MS_ParseConfiguration
+a0001274 g     F .text	0000007c FAT_ChkEntType
+a000bf38 g     F .text	00000490 __divdi3
+a00355a8 g     O .bss	00000004 TDBufNonVol
+a000b7d8 g     F .text	00000060 __floatdidf
+a0005298 g     F .text	0000002c vsprintf
+a0008f58 g     F .text	00000060 _setlocale_r
+a0009b00 g     F .text	00000004 __malloc_unlock
+a0002b88 g     F .text	0000027c Host_Isr
+a0004fb0 g       .text	00000000 undef_handler
+a00012f0 g     F .text	000002a8 FILE_Read
+a0002748 g     F .text	0000004c Host_DelayMS
+a00099c8 g     F .text	00000134 memmove
+a0009f90 g     F .text	00000088 _Balloc
+a000c850 g     O .rodata	00000004 p_intstack
+a00034a8 g     F .text	000000f0 Host_CtrlSend
+a000bcd4 g     F .text	00000098 __gtdf2
+a0003908 g     F .text	0000004c WriteLE16U
+a00355d8 g     O .bss	00000004 errno
+a000c84c g       *ABS*	00000000 _etext
+a0002e04 g     F .text	00000250 Host_ProcessTD
+a000bd88 g     F .text	00000018 __aeabi_cdcmple
+a0004c64 g     F .text	0000017c UART_Init
+a00006e0 g     F .text	00000090 MemCpy
+a0035534 g     O .bss	00000001 HOST_TDControlStatus
+a0003a58 g     F .text	00000054 ReadBE16U
+a003552c g     O .bss	00000004 HOST_RhscIntr
+a00097c4 g     F .text	00000204 memcpy
+a000423c g     F .text	0000011c MS_GetSenseInfo
+a000bd6c g     F .text	00000034 __aeabi_cdrcmple
+a000544c g     F .text	00001f90 _svfprintf_r
+a000b75c g     F .text	00000028 __floatsidf
+a000bcdc g     F .text	00000090 __ltdf2
+a000be74 g     F .text	00000000 __aeabi_uldivmod
+a00038b4 g     F .text	00000054 ReadLE16U
+a0004de0 g     F .text	0000004c UART_PrintChar
+a0009d98 g     F .text	000000a4 __ratio
+a000d4d0 g       *ABS*	00000000 __idata_end
+a000003c g     F .text	0000013c PLL_Init
+a0004fe8 g     F .text	000000f4 __udivsi3
+40000020 g       .vector	00000000 vector_ref_tbl
+a000cae0 g     O .rodata	000000c8 __mprec_tens
+a0003954 g     F .text	0000008c ReadBE32U
+a0008f30 g     F .text	00000010 __locale_charset
+a0001184 g     F .text	000000f0 FAT_StrCaseCmp
+a0035574 g     O .bss	00000004 __malloc_top_pad
+a0003b80 g     F .text	000000a8 Main_Read
+a000d0b0 g     O .data	00000004 __mb_cur_max
+a000b738 g     F .text	00000024 __aeabi_ui2d
+a0008f40 g     F .text	0000000c _localeconv_r
+a000a5b0 g     F .text	00000024 __i2b
+a000b41c g     F .text	00000000 __aeabi_drsub
+a000adf0 g     F .text	00000040 _sbrk_r
+a00001a0 g     F .text	000000f0 LED_Init
+a000d0b4 g     O .data	0000000c __lc_ctype
+a000bdb8 g     F .text	00000018 __aeabi_dcmplt
+a00355ac g     O .bss	00000004 FATBuffer
+a00355a0 g     O .bss	00000004 __malloc_max_sbrked_mem
+a000b784 g     F .text	00000040 __extendsfdf2
+a000bac8 g     F .text	0000020c __aeabi_ddiv
+a0000490 g     F .text	00000118 I2CReadByte
+a000b428 g     F .text	00000310 __adddf3
+a0009cd4 g     F .text	000000c4 __b2d
+a000b838 g     F .text	00000290 __aeabi_dmul
+a00355d4 g     O .bss	00000004 MS_BlkSize
+a000ca88 g     O .rodata	00000004 _global_impure_ptr
+a000a89c g     F .text	000004f4 _realloc_r
+a00355dc g       .bss	00000000 __bss_end
+a000c3c8 g     F .text	0000043c __udivdi3
+a000cbb8 g     O .rodata	00000028 __mprec_bigtens
+a000a7b4 g     F .text	000000e8 __s2b
+a000b738 g     F .text	00000024 __floatunsidf
+a0000770 g     F .text	00000070 _sbrk
+a0009c0c g     F .text	00000068 __mcmp
+a0000290 g     F .text	0000008c LED_Output
+a000b324 g     F .text	000000f8 _reclaim_reent
+a0009b20 g     F .text	00000058 __hi0bits
+a000be18 g     F .text	0000005c __fixdfsi
+a00020a8 g     F .text	000000d8 FAT_UpdateFAT
+a0004a08 g     F .text	0000025c Fill_MSCommand
+a000b428 g     F .text	00000310 __aeabi_dadd
+a00355b0 g     O .bss	00000004 Hcca
+a000bcdc g     F .text	00000090 __ledf2
+a000a6b8 g     F .text	000000fc __pow5mult
+40000000 g       .vector	00000000 vector_table
+a000b7c4 g     F .text	00000074 __aeabi_ul2d
+a0035568 g     O .bss	00000004 __nlocale_changed
+a000b288 g     F .text	00000070 _wrapup_reent
+a00036c8 g     F .text	0000004c Host_EDInit
+a00050fc g     F .text	00000000 __aeabi_idiv
+a0001f98 g     F .text	00000110 FAT_GetFreeClus
+a000be00 g     F .text	00000018 __aeabi_dcmpgt
+a000c804 g     F .text	00000048 __clzsi2
+a00096f0 g     F .text	000000d4 memchr
+a0000d8c g     F .text	00000188 FAT_FindEntry
+a0008cbc g     F .text	00000274 _free_r
+a0000178 g     F .text	00000028 USBClk_Init
+a000bde8 g     F .text	00000018 __aeabi_dcmpge
+a003556c g     O .bss	00000004 __mlocale_changed
+a000b424 g     F .text	00000314 __aeabi_dsub
+a000d4c8 g     O .data	00000004 __malloc_sbrk_base
+a000b7c4 g     F .text	00000074 __floatundidf
+a000a2a8 g     F .text	00000114 __lshift
+a00039e0 g     F .text	00000078 WriteBE32U
+a00026e0 g     F .text	00000068 FAT_GetEndClus
+a000a3bc g     F .text	000001f4 __multiply
+a0035578 g     O .bss	00000028 __malloc_current_mallinfo
+a0004fb8 g       .text	00000000 prefetch_handler
+a000a018 g     F .text	00000110 __d2b
+00000000 g       *ABS*	00000000 software_init_hook
+a000b75c g     F .text	00000028 __aeabi_i2d
+a000443c g     F .text	00000178 MS_ReadCapacity
+a0002180 g     F .text	00000090 FAT_UpdateEntry
+a0000f14 g     F .text	000000d8 FAT_GetSFN
+a00041e8 g     F .text	00000054 MS_GetMaxLUN
+a000383c g     F .text	00000078 WriteLE32U
+a0005244  w    F .text	00000004 __aeabi_ldiv0
+a000bac8 g     F .text	0000020c __divdf3
+a0009e8c g     F .text	0000007c __copybits
+a000d0c0 g     O .data	00000408 __malloc_av_
+a000031c g     F .text	0000008c Delay_ms
+a000b838 g     F .text	00000290 __muldf3
+a00355b4 g     O .bss	00000004 TDTail
+a000cc78 g     O .data	00000004 Hello
+a0009afc g     F .text	00000004 __malloc_lock
+a0003d48 g     F .text	00000100 Main_Copy
+a000b0c0 g     F .text	0000009c _calloc_r
+a000d4d0 g       .bss	00000000 __bss_start
+a000b15c g     F .text	0000012c memset
+a0003af8 g     F .text	00000088 main
+a00355a4 g     O .bss	00000004 __malloc_max_total_mem
+a00355b8 g     O .bss	00000004 EDBulkOut
+a0004fe8 g     F .text	00000000 __aeabi_uidiv
+a00355bc g     O .bss	00000004 UserBuffer
+a00355c0 g     O .bss	00000004 gUSBConnected
+a00355c4 g     O .bss	00000004 TDBuffer
+a0004734 g     F .text	00000194 MS_BulkRecv
+a00075c8 g     F .text	000015f8 _dtoa_r
+a0008fd4 g     F .text	0000071c _malloc_r
+a0004fbc g       .text	00000000 data_abort_handler
+a000b7d8 g     F .text	00000060 __aeabi_l2d
+a00048c8 g     F .text	00000140 MS_BulkSend
+a0003c28 g     F .text	00000120 Main_Write
+00000000 g       *ABS*	00000000 hardware_init_hook
+a00027dc g     F .text	000003ac Host_Init
+a0004fb4 g       .text	00000000 swi_handler
+a0001ebc g     F .text	000000dc FAT_GetNextClus
+a00050fc g     F .text	00000128 __divsi3
+a0008bc0 g     F .text	000000fc _malloc_trim_r
+a0000000 g       .text	00000000 __text
+a000377c g     F .text	00000034 Host_WDHWait
+a000ae30 g     F .text	00000094 strcmp
+a000bce4 g     F .text	00000088 __nedf2
+a000367c g     F .text	0000004c Host_TDInit
+a0035570 g     O .bss	00000004 _PathLocale
+a0004358 g     F .text	000000e4 MS_TestUnitReady
+a0005248 g     F .text	00000050 _vsprintf_r
+a0008fb8 g     F .text	0000001c setlocale
+a000cc80 g     O .data	00000004 _impure_ptr
+a0004fc0 g       .text	00000000 fiq_handler
+a000189c g     F .text	000002ec FILE_Write
+a0004fc4 g       .text	00000000 irq_handler
+a0009c74 g     F .text	00000060 __ulp
+a000ad90 g     F .text	00000030 __isinfd
+a00033b8 g     F .text	000000f0 Host_CtrlRecv
+a00355c8 g     O .bss	00000004 EDBulkIn
+a0003598 g     F .text	000000e4 Host_FillSetup
+a00355cc g     O .bss	00000004 EDCtrl
+a0002290 g     F .text	0000011c FAT_GetFreeEntry
+a0008f4c g     F .text	0000000c localeconv
+a0003aac g     F .text	0000004c WriteBE16U
+a00050dc g     F .text	00000020 __aeabi_uidivmod
+a000bda0 g     F .text	00000018 __aeabi_dcmpeq
+a000d4d0 g       *ABS*	00000000 _edata
+a00003a8 g     F .text	000000e8 I2CInit
+a00355d0 g     O .bss	00000004 TDHead
+a00037b0 g     F .text	0000008c ReadLE32U
+a00355dc g       *ABS*	00000000 _end
+a0001b88 g     F .text	00000334 FAT_ClusWrite
+a000d4cc g     O .data	00000004 __malloc_trim_threshold
+a0002794 g     F .text	00000048 Host_DelayUS
+a0001598 g     F .text	00000304 FAT_ClusRead
+a000a128 g     F .text	00000180 __mdiff
+a000be18 g     F .text	0000005c __aeabi_d2iz
+a0004ef4 g       .text	00000000 start
+a000cc78 g       *ABS*	00000000 __idata_start
+a0005244  w    F .text	00000004 __aeabi_idiv0
+a0002210 g     F .text	00000080 FAT_CreateEntry
+a000adc0 g     F .text	00000030 __isnand
+a00007e0 g     F .text	000003b0 FAT_Init
+a00045b4 g     F .text	00000180 MS_Inquire
+a000b060 g     F .text	00000060 strlen
+a0004eb0 g     F .text	00000044 UART_Printf
+a0003e48 g     F .text	000000e0 MS_Init
+a000bd88 g     F .text	00000018 __aeabi_cdcmpeq
+a00025e0 g     F .text	00000100 FILE_Close
+a000bcd4 g     F .text	00000098 __gedf2
+a000bef4 g     F .text	00000044 __gnu_ldivmod_helper
+a00023ac g     F .text	00000234 FAT_PutSFN
+a0003054 g     F .text	00000364 Host_EnumDev
+a000b784 g     F .text	00000040 __aeabi_f2d
+a000cc78 g       .data	00000000 __data_start
+a0000fec g     F .text	000000b4 FAT_GetSfnName
+a00010a0 g     F .text	000000e4 FAT_GetSfnExt
+a000b424 g     F .text	00000314 __subdf3
+a0000b90 g     F .text	000000a8 FAT_GetFATType
+a0009b78 g     F .text	00000094 __lo0bits
+a0005224 g     F .text	00000020 __aeabi_idivmod
+a0003714 g     F .text	00000068 Host_HCCAInit
+a00005a8 g     F .text	00000138 I2CWriteByte
+a000a5d4 g     F .text	000000e4 __multadd
+a0009b04 g     F .text	0000001c _Bfree
+
+
