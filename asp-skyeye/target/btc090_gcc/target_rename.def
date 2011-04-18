@@ -1,0 +1,1 @@
+INCLUDE "arm_gcc/at91sam7s/chip"

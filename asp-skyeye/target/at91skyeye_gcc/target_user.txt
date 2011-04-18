@@ -1,0 +1,320 @@
+=====================================================================
+                        AT91SKYEYEターゲット依存部
+                                  Last Modified: 2010 May 19 11:42:35
+=====================================================================
+
+○概要
+
+AT91SKYEYEターゲット依存部は，オープンソースのプロセッサシミュレータで
+ある，Skyeye上の ARM7TDMI をベースとした AT91 システムをサポートしてい
+る．
+
+○SkyEye
+
+本カーネルを動作させるためには，TOPPERSプロジェクトから公開されている，
+SkyEye -V1.2 DeviceManager Extension 2.0.3 以降 が必要となる．
+
+○カーネルの使用リソース
+
+カーネルは以下のリソースを使用する．
+
+  ・RAM
+     コードとデータを配置する．
+     使用量はオブジェクト数に依存する．
+  
+  ・TC1
+     カーネル内部のティックの生成に用いる．
+     
+  ・USART0
+     コンソールの出力に使用．
+
+
+○デバッグ環境
+
+デバッグ環境としては，skyeyeのサポートする方法を用いることができる．
+arm-elf-gdb によるデバッグの動作確認を行った．
+
+
+○コンパイラ
+
+GCC 4.3.3 (Sourcery G++ Lite 2009q1-161) で動作確認を行った．動作確認
+した GCC は，以下のサイトからWindows版のバイナリをダウンロードして使用
+した．
+
+  http://www.codesourcery.com/
+
+上記コンパイラをインストールする際には，空白が含まれるディレクトリにイ
+ンストールしないこと（インストーラが作成するインストールディレクトリ自
+体に空白が含まれるため注意すること）．
+
+○カーネル終了時の処理
+
+ext_ker が呼び出されカーネル終了時には，at91skyeye.h にある 
+at91skyeye_exit() が実行される．ディフォルトでは，特に処理は記述されて
+いない．独自の処理処理を追加したい場合は，at91skyeye_exit() の内容を書
+き換えること．
+
+○ gcovによるカバレッジ取得
+
+gcovによるカバレッジを取得したい場合には，Makefileで ENABLE_GCOV を 
+true に定義すること．
+
+プロファイルを取得するには，ext_ker()を呼び出してカーネルを呼び出す必
+要がある．
+
+カーネル実行後にカーネルがあるディレクトリで以下のコマンドを実行すると，
+カバレッジの結果が xxx.c.gcov に出力される．
+
+ $arm-none-eabi-gcov.exe *.gcda
+
+カバレッジの結果をhtml化するlcovを使うためには，lcovに以下のパッチが必
+要となる(_orgがlcov 1.7のオリジナルファイル)．
+
+--------------------------------------------------------------------------
+*** geninfo_org Sun Aug  2 12:47:32 2009
+--- geninfo     Sun Aug  2 12:52:26 2009
+*************** sub process_dafile($)
+*** 647,653 ****
+        if ($preserve_paths)
+        {
+                $gcov_error = system_no_output(1, $gcov_tool, $da_filename,
+!                                              "-o", $object_dir,
+                                               "--preserve-paths",
+                                               "-b");
+        }
+--- 647,654 ----
+        if ($preserve_paths)
+        {
+                $gcov_error = system_no_output(1, $gcov_tool, $da_filename,
+! #2009-08-02 : honda modify
+! #                                            "-o", $object_dir,
+                                               "--preserve-paths",
+                                               "-b");
+        }
+*************** sub process_dafile($)
+*** 721,727 ****
+        foreach $gcov_file (@gcov_list)
+        {
+                ($source, $object) = read_gcov_header($gcov_file);
+! 
+                if (defined($source))
+                {
+                        $source = solve_relative_path($base_dir, $source);
+--- 722,729 ----
+        foreach $gcov_file (@gcov_list)
+        {
+                ($source, $object) = read_gcov_header($gcov_file);
+!               #2009-08-02 : honda midify
+!               $source =~ s/(.*)\r$/$1/;
+                if (defined($source))
+                {
+                        $source = solve_relative_path($base_dir, $source);
+--------------------------------------------------------------------------
+*** genhtml_org Sun Aug  2 13:16:05 2009
+--- genhtml     Sun Aug  2 13:16:19 2009
+*************** sub write_frameset(*$$$)
+*** 3488,3497 ****
+        write_html($_[0], <<END_OF_HTML)
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+  
+!       <html lang="en">
+  
+        <head>
+!         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">          <title>$_[3]</title>
+          <link rel="stylesheet" type="text/css" href="$_[1]gcov.css">
+        </head>
+--- 3488,3497 ----
+        write_html($_[0], <<END_OF_HTML)
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+  
+!       <html lang="ja">
+  
+        <head>
+!         <meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+          <title>$_[3]</title>
+          <link rel="stylesheet" type="text/css" href="$_[1]gcov.css">
+        </head>
+*************** sub write_overview(*$$$$)
+*** 3550,3560 ****
+        write_html($_[0], <<END_OF_HTML)
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+  
+!       <html lang="en">
+  
+        <head>
+          <title>$_[3]</title>
+!         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">          <link rel="stylesheet" type="text/css" href="$_[1]gcov.css">
+        </head>
+  
+--- 3550,3560 ----
+        write_html($_[0], <<END_OF_HTML)
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+  
+!       <html lang="ja">
+  
+        <head>
+          <title>$_[3]</title>
+!         <meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+          <link rel="stylesheet" type="text/css" href="$_[1]gcov.css">
+        </head>
+  
+*************** sub get_html_prolog($)
+*** 4749,4758 ****
+                $result = <<END_OF_HTML
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+  
+! <html lang="en">
+  
+  <head>
+!   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>\@pagetitle\@</title>
+    <link rel="stylesheet" type="text/css" href="\@basedir\@gcov.css">
+  </head>
+--- 4749,4758 ----
+                $result = <<END_OF_HTML
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+  
+! <html lang="ja">
+  
+  <head>
+!   <meta http-equiv="Content-Type" content="text/html; charset=ECU-JP">
+    <title>\@pagetitle\@</title>
+    <link rel="stylesheet" type="text/css" href="\@basedir\@gcov.css">
+  </head>
+--------------------------------------------------------------------------
+*** lcov_org    Mon Nov 17 22:50:26 2008
+--- lcov        Sun Aug  2 23:41:19 2009
+*************** sub merge_func_data($$$)
+*** 1338,1344 ****
+        my %result;
+        my $func;
+  
+!       %result = %{$funcdata1};
+  
+        foreach $func (keys(%{$funcdata2})) {
+                my $line1 = $result{$func};
+--- 1338,1350 ----
+        my %result;
+        my $func;
+  
+!       #2009-08-02 honda
+!       if(ref $funcdata1 eq 'HASH'){ 
+!               %result = %{$funcdata1};
+!       }
+!       else {
+!                       return \%result;
+!       }
+  
+        foreach $func (keys(%{$funcdata2})) {
+                my $line1 = $result{$func};
+*************** sub add_fnccount($$)
+*** 1370,1376 ****
+        my $f_hit;
+        my $function;
+  
+!       %result = %{$fnccount1};
+        foreach $function (keys(%{$fnccount2})) {
+                $result{$function} += $fnccount2->{$function};
+        }
+--- 1376,1388 ----
+        my $f_hit;
+        my $function;
+  
+!       #2009-08-02 honda
+!       if(ref $fnccount1 eq 'HASH'){ 
+!               %result = %{$fnccount1};
+!       } else {
+!               return (\%result, $f_found, $f_hit);
+!       }
+! 
+        foreach $function (keys(%{$fnccount2})) {
+                $result{$function} += $fnccount2->{$function};
+        }
+--------------------------------------------------------------------------
+
+カバレッジの取得後，以下のコマンドを実行すると，coverage_html 以下にカ
+バレッジ結果のhtmlが生成される．
+
+   $make lcov
+
+○各種設定の変更
+
+幾つかのパラメータは変更可能になっている．設定ファイル毎に設定可能項目
+は次のようになっている．
+
+●Makefile.target の設定項目
+
+・GCC_TARGET
+  GCCの suffix を定義
+
+・INCLUDES
+  インクルード指定
+
+・COPTS
+  Cコンパイラへのオプション
+
+・LDFLAGS
+  リンカへのオプション
+
+●target_config.h の設定項目
+
+・DEFAULT_ISTKSZ
+  ディフォルトの非タスクコンテキスト用のスタックサイズ
+
+・SIL_DLY_TIM1/2
+  微少時間待ちのための定義
+
+
+○変更履歴
+
+2010/05/19
+・割込み受け付け時に，システムの割込み優先度マスクを受け付けた割込みの
+  割込み優先度に設定していなかった問題を修正．
+
+2010/04/21
+・SkyEye DeviceManager Extension 2.1.0 に対応．
+・起動時にSkyEyeのバージョンを確認するように変更．
+
+2009/12/19
+・起動時に software_init_hook() を呼び出すように変更．
+
+2009/11/30
+・リンカスクリプトを generic-hosted.ld ベースから，
+  armulator-ram-hosted.ld ベースに変更．
+  コード・データサイズを大きくすると，標準関数やgcovが正しく動作しない
+  問題を解決．同時に skyeye.conf のメモリの設定をリンカスクリプトの内
+  容と統一．
+
+2009/11/13
+・スタックを kernel_cfg.c で確保するように変更．
+
+2009/10/18
+・TLV 1.1rc対応．
+  ・サイクルカウンタの有効化．
+  ・TRACE_GET_TIM()を定義．
+  
+2009/08/02
+・lcovのサポート．
+
+2009/08/01
+・newlibのサポート．サポートに伴い，SkyEyeはTOPPERSプロジェクトから公
+  開している SkyEye -V1.2 DeviceManager Extension 2.0.3 以降 が必要と
+  なる．
+・gcovのサポート．
+
+2009/07/09
+・target_timer_initialize()でタイマ周期にTIMER_CLOCKの値を反映するよう
+  に修正．
+
+2009/05/18
+・共通部 1.4.0 追従．
+・コンパイラを Sourcery G++ Lite に変更．
+
+2009/01/29
+・サイクルカウンタのサポート
+  ・トレースログ機能で用いる
+  ・使用するためには，TOPPERSで拡張済みのskyeyeが必要となる
+
+2008/11/4
+・Skyeye-1.2.6に対応
+  ・Skyeye-1.2.6で追加されたUART受信割り込み許可・禁止レジスタに対応

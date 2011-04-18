@@ -1,0 +1,103 @@
+#
+#  @(#) $Id: Makefile.target 839 2008-03-20 14:50:50Z honda $
+# 
+
+#
+#		Makefile のターゲット依存部（AT91SKYEYE用）
+#
+
+#
+#  ボード名，プロセッサ名，開発環境名の定義
+#
+BOARD = at91skyeye
+PRC = arm
+TOOL = gcc
+
+#
+#  コンパイルオプション
+#
+INCLUDES := $(INCLUDES) -I$(TARGETDIR)
+COPTS := $(COPTS) -mcpu=arm7tdmi -mlittle-endian
+LDFLAGS := $(LDFLAGS) -mcpu=arm7tdmi  -N -mlittle-endian
+
+#
+#  カーネルに関する定義
+#
+KERNEL_DIR := $(KERNEL_DIR) $(TARGETDIR)
+KERNEL_ASMOBJS := $(KERNEL_ASMOBJS) target_support.o
+KERNEL_COBJS := $(KERNEL_COBJS) target_config.o target_timer.o
+
+#
+#  システムサービスに関する定義
+#
+SYSSVC_DIR := $(SYSSVC_DIR)
+SYSSVC_COBJS := $(SYSSVC_COBJS) target_serial.o 
+
+#
+#  コンフィギュレータ関係の変数の定義
+#
+CFG_TABS := $(CFG_TABS) --cfg1-def-table $(TARGETDIR)/target_def.csv
+
+#
+#  トレースログに関する設定
+#
+ifeq ($(ENABLE_TRACE),true)
+      COPTS := $(COPTS) -DTOPPERS_ENABLE_TRACE
+      KERNEL_DIR := $(KERNEL_DIR) $(SRCDIR)/arch/logtrace
+      KERNEL_COBJS := $(KERNEL_COBJS) trace_config.o trace_dump.o
+endif
+
+#
+#  GNU開発環境のターゲットアーキテクチャの定義
+#
+GCC_TARGET = arm-none-eabi
+
+#
+#  リンカスクリプトの定義
+#
+LDSCRIPT = $(TARGETDIR)/at91skyeye.ld
+
+#
+#  スタートアップモジュールに関する定義
+#
+#  at91skyeye.ldに「STARTUP(start.o)」を記述したため，スタートアップモジュー
+#  ルの名前をHIDDEN_OBJSに定義する．
+#
+HIDDEN_OBJS = start.o
+
+$(HIDDEN_OBJS): %.o: %.S
+	$(CC) -c $(CFLAGS) $(KERNEL_CFLAGS) $<
+
+$(HIDDEN_OBJS:.o=.d): %.d: %.S
+	@$(PERL) $(SRCDIR)/utils/makedep -C $(CC) \
+		-O "$(CFLAGS) $(KERNEL_CFLAGS)" $< >> Makefile.depend
+
+LDFLAGS := $(LDFLAGS)
+
+#
+#  依存関係の定義
+#
+cfg1_out.c: $(TARGETDIR)/target_def.csv
+kernel_cfg.timestamp: $(TARGETDIR)/target.tf
+$(OBJFILE): $(TARGETDIR)/target_check.tf
+
+#
+#  プロセッサ依存部のインクルード
+#
+include $(SRCDIR)/arch/$(PRC)_$(TOOL)/common/Makefile.core
+
+#
+#  gcovを有効に
+#
+ifeq ($(ENABLE_GCOV),true)
+      COPTS := $(COPTS) -fprofile-arcs -ftest-coverage
+      LIBS := $(LIBS) -lgcov
+      CLEAN_FILES := $(CLEAN_FILES) *.gcda *.gcno *.gcov asp_test.info asp_base.info asp_total.info
+
+lcov:
+	rm -f makeoffset.gcno cfg1_out.*
+	lcov -c -d . -o asp_base.info -i --gcov-tool $(GCC_TARGET)-gcov.exe
+	lcov -c -d . -o asp_test.info --gcov-tool $(GCC_TARGET)-gcov.exe
+	lcov -a asp_base.info -a asp_test.info -o asp_total.info
+	genhtml -k asp_total.info --show-details -o coverage_html --num-spaces 4
+endif
