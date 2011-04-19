@@ -1,5 +1,6 @@
- #include "SST89x5xxRD2.H"
- #include "lpc2478_lcd.h"
+#include "SST89x5xxRD2.H"
+#include "lpc2478_lcd.h"
+
 uint8_t code nihao[] = {
 0x00,0x60,0x7F,0x4A,0xDA,0x6A,0x6A,0x58,
 0x00,0x5E,0x64,0xA4,0x9F,0xA4,0x64,0x8C,
@@ -312,56 +313,58 @@ uint8_t code num[] ={
 	/*for(k=0;k<4;k++)
 	{
 		LCD_Chip_Select(k);
-		//Ð¾Æ¬Ñ¡Ôñ
+		//Ð¾Æ¬Ñ¡ï¿½ï¿½
 		for(j=0;j<8;j++)
 		{
 			LCD_Write_CMD(0xb8+j);
-			//Ò³µØÖ·ÉèÖÃ
+			//Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			LCD_Write_CMD(0x40);
-			//ÁÐµØÖ·ÉèÖÃ
+			//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			for(i=0;i<64;i++)
 				LCD_Write_Char(0x00);
 		}
 	}*/
 	LCD_ClrScreen();
+	//LCD_Locate();
+	Delay(2000);
+	//LCD_Read_Char();
 	for(k=0;k<16;k++)
 	{
-		//Ð¾Æ¬Ñ¡Ôñ
-		for(j=0;j<32;j++)
+		for(j=0;j<12;j++)
 		{
-			LCD_PutDot(k*3,j*4,k%2);
+			LCD_PutDot(k*4,4*j,1);
 		}
 	}
 	Delay(10000);
 	
 
 	/*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);
-	LCD_Write_CMD(0xb8+0);	 //Ò³µØÖ·ÉèÖÃ
-	LCD_Write_CMD(0x40);		//ÁÐµØÖ·ÉèÖÃ
+	LCD_Write_CMD(0xb8+0);	 //Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
+	LCD_Write_CMD(0x40);		//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 	LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
 	for(i=0;i<32;i++)
 	{
 		LCD_Write_Char(nihao[i]);
 	}*/
 	/*LCD_CHIP_SEL_1();//LCD_Chip_Select(1);
-	LCD_Write_CMD(0xb8+2);	 //Ò³µØÖ·ÉèÖÃ
-	LCD_Write_CMD(0x40);		//ÁÐµØÖ·ÉèÖÃ
+	LCD_Write_CMD(0xb8+2);	 //Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
+	LCD_Write_CMD(0x40);		//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 	LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
 	for(i=0;i<32;i++)
 	{
 		LCD_Write_Char(nihao[i]);
 	}
 	LCD_CHIP_SEL_2();//LCD_Chip_Select(0);
-	LCD_Write_CMD(0xb8+4);	 //Ò³µØÖ·ÉèÖÃ
-	LCD_Write_CMD(0x40);		//ÁÐµØÖ·ÉèÖÃ
+	LCD_Write_CMD(0xb8+4);	 //Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
+	LCD_Write_CMD(0x40);		//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 	LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
 	for(i=0;i<32;i++)
 	{
 		LCD_Write_Char(nihao[i]);
 	}
 	LCD_CHIP_SEL_3();//LCD_Chip_Select(1);
-	LCD_Write_CMD(0xb8+6);	 //Ò³µØÖ·ÉèÖÃ
-	LCD_Write_CMD(0x40);		//ÁÐµØÖ·ÉèÖÃ
+	LCD_Write_CMD(0xb8+6);	 //Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
+	LCD_Write_CMD(0x40);		//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 	LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
 	for(i=0;i<32;i++)
 	{
@@ -385,9 +388,9 @@ uint8_t code num[] ={
 		LCD_Locate(46,i*4);
 		LCD_Write_Char(0xa5);
 		LCD_Write_Char(0x5a); */
-		/*LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡Ôñ
+		/*LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡ï¿½ï¿½
 		LCD_Write_CMD(0xb8+j);
-			//Ò³µØÖ·ÉèÖÃ
+			//Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 		LCD_Write_CMD(0x40);
 		for(k=0;k<8;i++){
 			LCD_Write_Char
@@ -396,14 +399,14 @@ uint8_t code num[] ={
 	//}
 	for(k=0;k<4;k++)
 	{
-		LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡Ôñ
+		LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡ï¿½ï¿½
 		for(j=0;j<4;j++)
 		{
-			LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡Ôñ
+			LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡ï¿½ï¿½
 			//while (LCD_Read_Status() & 0x80);
-			LCD_Write_CMD(0xb8+2*j);	 //Ò³µØÖ·ÉèÖÃ
+			LCD_Write_CMD(0xb8+2*j);	 //Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			//while (LCD_Read_Status() & 0x80);
-			LCD_Write_CMD(0x40);		//ÁÐµØÖ·ÉèÖÃ
+			LCD_Write_CMD(0x40);		//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			for(i=0;i<64;i++)
 			{
 				n=2*i+128*k;
@@ -411,9 +414,9 @@ uint8_t code num[] ={
 				LCD_Write_Char(num[n]);
 				
 			}
-			LCD_Write_CMD(0xb8+2*j+1);	 //Ò³µØÖ·ÉèÖÃ
+			LCD_Write_CMD(0xb8+2*j+1);	 //Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			//while (LCD_Read_Status() & 0x80);
-			LCD_Write_CMD(0x40);		//ÁÐµØÖ·ÉèÖÃ
+			LCD_Write_CMD(0x40);		//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			for(i=0;i<64;i++)
 			{
 				n=2*i+128*k+1;
@@ -430,14 +433,14 @@ uint8_t code num[] ={
 	Delay(10000);
 	/*for(k=0;k<4;k++)
 	{
-		LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡Ôñ
+		LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡ï¿½ï¿½
 		for(j=0;j<8;j++)
 		{
-			//LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡Ôñ
+			//LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡ï¿½ï¿½
 			//while (LCD_Read_Status() & 0x80);
-			LCD_Write_CMD(0xb8+j);	 //Ò³µØÖ·ÉèÖÃ
+			LCD_Write_CMD(0xb8+j);	 //Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			//while (LCD_Read_Status() & 0x80);
-			LCD_Write_CMD(0x40);		//ÁÐµØÖ·ÉèÖÃ
+			LCD_Write_CMD(0x40);		//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			for(i=0;i<64;i++)
 			{
 				n=i+256*(j%2)+64*k;
@@ -454,13 +457,13 @@ uint8_t code num[] ={
 
 	/*	for(k=4;k>0;k--)
 	{
-		LCD_Chip_Select(k-1);	   //Ð¾Æ¬Ñ¡Ôñ
+		LCD_Chip_Select(k-1);	   //Ð¾Æ¬Ñ¡ï¿½ï¿½
 		for(j=0;j<8;j++)
 		{
 			//while (LCD_Read_Status() & 0x80);
-			LCD_Write_CMD(0xb8+j);	 //Ò³µØÖ·ÉèÖÃ
+			LCD_Write_CMD(0xb8+j);	 //Ò³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			//while (LCD_Read_Status() & 0x80);
-			LCD_Write_CMD(0x40);		//ÁÐµØÖ·ÉèÖÃ
+			LCD_Write_CMD(0x40);		//ï¿½Ðµï¿½Ö·ï¿½ï¿½ï¿½ï¿½
 			for(i=0;i<64;i++)
 			{
 				n=i+256*(j%2)+64*(k-1);
@@ -481,7 +484,7 @@ uint8_t code num[] ={
 		i = (i > 64)?0:i;
 		i++;
 		for (k=0;k<4;k++){
-			LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡Ôñ
+			LCD_Chip_Select(k);	   //Ð¾Æ¬Ñ¡ï¿½ï¿½
 			LCD_Write_CMD(LCD_DISPLAY_START_ADDR|i);
 		}
 		

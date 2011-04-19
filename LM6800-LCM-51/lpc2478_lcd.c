@@ -48,6 +48,9 @@ ERCD LCD_Write_CMD(uint8_t cmdcode)
     LCD_R_W_LOW();
     LCD_OUT_DATA(cmdcode);          /*output cmd  on the bus*/
     LCD_E_HIGH_LOW();               /*when E high->low data appear on the bus*/
+	_nop_();
+	_nop_();
+	_nop_();
     return ERCD_OK;
 }
 /** 
@@ -65,6 +68,9 @@ ERCD LCD_Write_Char(uint8_t char_data)
     LCD_R_W_LOW();
     LCD_OUT_DATA(char_data);        /*output data on the bus*/
     LCD_E_HIGH_LOW();               /*when E high->low(falling edge) data appear on the bus*/
+	_nop_();
+	_nop_();
+	_nop_();
     return ERCD_OK;
 }
 /** 
@@ -76,12 +82,16 @@ ERCD LCD_Write_Char(uint8_t char_data)
 uint8_t LCD_Read_Char(void)
 {
     uint8_t data_read;
+    while(LCD_Read_Status() & 0x90);
     /*when read data ,a dummy read is needed*/
     LCD_RS_HIGH();                   /*when RS=1 R/W=1,read data from the displayram*/
     LCD_R_W_HIGH();
 	LCD_E_HIGH();                    /*when E=1 and device is selected data appear*/
     data_read = LCD_IN_DATA();       /*in data on the bus*/
     LCD_E_LOW(); 
+	_nop_();
+	_nop_();
+	_nop_();
     return data_read;				 /*must pull low here*/
 }
 /** 
@@ -94,7 +104,9 @@ uint8_t LCD_Read_Status(void)
 {
     uint8_t status;
     /*when read status ,a dummy read is not needed*/
-	//LCD_OUT_DATA(0xff);
+	LCD_OUT_DATA(0x00);
+	_nop_();
+	_nop_();
     LCD_RS_LOW();                  /*when RS=0 R/W=1,read status ofthe l*/
     LCD_R_W_HIGH();
 	LCD_E_HIGH();                   /*when E=1 and device is selecte dat ppear*/
@@ -133,6 +145,9 @@ ERCD LCD_Chip_Select(uint8_t chipsel)
             break;
     }
 	//Delay(1);
+	_nop_();
+	_nop_();
+	_nop_();
     return ERCD_OK;
 }
 /* 
@@ -170,11 +185,14 @@ ERCD LCD_PutDot(uint16_t row, uint16_t col, uint8_t dot_state)
 {
 	
 	uint8_t ram;
+	LCD_Write_CMD(LCD_DISPLAY_ON);
 	LCD_Locate(row,col);
 	ram = LCD_Read_Char();
 	ram = LCD_Read_Char();
-	ram = (ram & (~(1<<(row%8)))) | (dot_state<<(row%8));
+	ram = (ram & (~(1<<(row%8))) & 0xff) | (dot_state<<(row%8));
+	LCD_Locate(row,col);
     LCD_Write_Char(ram);
+    return ERCD_OK;
 }
 
 ERCD LCD_ClrScreen(void)
@@ -183,16 +201,14 @@ ERCD LCD_ClrScreen(void)
 	for(k=0;k<4;k++)
 	{
 		LCD_Chip_Select(k);
-		//芯片选择
 		for(j=0;j<8;j++)
 		{
-			LCD_Write_CMD(0xb8+j);
-			//页地址设置
-			LCD_Write_CMD(0x40);
-			//列地址设置
+			LCD_Write_CMD(LCD_SET_X_ADDRESS|j);
+			LCD_Write_CMD(LCD_SET_Y_ADDRESS);
 			for(i=0;i<64;i++)
 				LCD_Write_Char(0x00);
 		}
 	}
-	LCD_Locate(0,0);	
+	LCD_Locate(0,0);
+	return ERCD_OK;
 }

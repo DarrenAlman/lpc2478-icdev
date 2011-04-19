@@ -11,9 +11,9 @@
 #ifndef  LPC2478_LCD_H
 #define  LPC2478_LCD_H
 
+#include "SST89x5xxRD2.H"
+#include "INTRINS.H"
 
-
-#include  "SST89x5xxRD2.H"
 
 typedef  unsigned long   uint32_t;
 typedef  signed   long   int32_t;
@@ -60,7 +60,7 @@ sbit E_PIN = P0^4;
 #define LCD_R_W_LOW()     LCD_R_W = 0 /*read or write signal low*/
 #define LCD_E_HIGH()      LCD_E = 1   /*Enable signal high*/
 #define LCD_E_LOW()       LCD_E = 0   /*Enable signal low*/
-#define LCD_E_HIGH_LOW()  {LCD_E_HIGH();LCD_E_LOW();} /*E falling edge*/
+#define LCD_E_HIGH_LOW()  {LCD_E_HIGH();_nop_();LCD_E_LOW();} /*E falling edge*/
 #define LCD_IN_DATA()     LCD_DATA_BUS /*the lcd data bus*/
 #define LCD_OUT_DATA(c)   LCD_DATA_BUS = (c) /*output data on the data bus*/
 #define DELAY_US()    {}                   /*delay 1 us*/

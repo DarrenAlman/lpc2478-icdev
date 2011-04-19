@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 20:53:16 PAGE 1   
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 22:55:10 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE LPC2478_LCD
@@ -57,175 +57,187 @@ line level    source
   48   1          LCD_R_W_LOW();
   49   1          LCD_OUT_DATA(cmdcode);          /*output cmd  on the bus*/
   50   1          LCD_E_HIGH_LOW();               /*when E high->low data appear on the bus*/
-  51   1          return ERCD_OK;
-  52   1      }
-  53          /** 
-  54           * 
-  55           * 
-C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 20:53:16 PAGE 2   
+  51   1              _nop_();
+  52   1              _nop_();
+  53   1              _nop_();
+  54   1          return ERCD_OK;
+  55   1      }
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 22:55:10 PAGE 2   
 
-  56           * @param char_data 
+  56          /** 
   57           * 
-  58           * @return 
-  59           */
-  60          ERCD LCD_Write_Char(uint8_t char_data)
-  61          {
-  62   1          while(LCD_Read_Status() & 0x90);
-  63   1              //LCD_E_LOW();
-  64   1              LCD_RS_HIGH();                  /*when RS=1 R/W=0,cmd write the data bus*/
-  65   1          LCD_R_W_LOW();
-  66   1          LCD_OUT_DATA(char_data);        /*output data on the bus*/
-  67   1          LCD_E_HIGH_LOW();               /*when E high->low(falling edge) data appear on the bus*/
-  68   1          return ERCD_OK;
-  69   1      }
-  70          /** 
-  71           * 
-  72           * 
-  73           * 
-  74           * @return 
-  75           */
-  76          uint8_t LCD_Read_Char(void)
-  77          {
-  78   1          uint8_t data_read;
-  79   1          /*when read data ,a dummy read is needed*/
-  80   1          LCD_RS_HIGH();                   /*when RS=1 R/W=1,read data from the displayram*/
-  81   1          LCD_R_W_HIGH();
-  82   1              LCD_E_HIGH();                    /*when E=1 and device is selected data appear*/
-  83   1          data_read = LCD_IN_DATA();       /*in data on the bus*/
-  84   1          LCD_E_LOW(); 
-  85   1          return data_read;                            /*must pull low here*/
-  86   1      }
-  87          /** 
-  88           * 
-  89           * 
-  90           * 
-  91           * @return 
-  92           */
-  93          uint8_t LCD_Read_Status(void)
-  94          {
-  95   1          uint8_t status;
-  96   1          /*when read status ,a dummy read is not needed*/
-  97   1              //LCD_OUT_DATA(0xff);
-  98   1          LCD_RS_LOW();                  /*when RS=0 R/W=1,read status ofthe l*/
-  99   1          LCD_R_W_HIGH();
- 100   1              LCD_E_HIGH();                   /*when E=1 and device is selecte dat ppear*/
- 101   1          status= LCD_IN_DATA();         /*n data on the bus*/    
- 102   1              LCD_E_LOW();                            /*must pull low here*/
- 103   1          return status;
- 104   1      }
- 105          /** 
- 106            
- 107            * 
- 108            * param cipsel 
- 109            * 
- 110            * @return 
- 111            */
- 112          ERCD LCD_Chip_Select(uint8_t chipsel)
- 113          {
- 114   1          if (chipsel > 3){
- 115   2              return ERCD_ARG_ERR;
- 116   2          }
- 117   1              //LCD_CHIP_SEL_OUTPUT();
-C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 20:53:16 PAGE 3   
+  58           * 
+  59           * @param char_data 
+  60           * 
+  61           * @return 
+  62           */
+  63          ERCD LCD_Write_Char(uint8_t char_data)
+  64          {
+  65   1          while(LCD_Read_Status() & 0x90);
+  66   1              //LCD_E_LOW();
+  67   1              LCD_RS_HIGH();                  /*when RS=1 R/W=0,cmd write the data bus*/
+  68   1          LCD_R_W_LOW();
+  69   1          LCD_OUT_DATA(char_data);        /*output data on the bus*/
+  70   1          LCD_E_HIGH_LOW();               /*when E high->low(falling edge) data appear on the bus*/
+  71   1              _nop_();
+  72   1              _nop_();
+  73   1              _nop_();
+  74   1          return ERCD_OK;
+  75   1      }
+  76          /** 
+  77           * 
+  78           * 
+  79           * 
+  80           * @return 
+  81           */
+  82          uint8_t LCD_Read_Char(void)
+  83          {
+  84   1          uint8_t data_read;
+  85   1          while(LCD_Read_Status() & 0x90);
+  86   1          /*when read data ,a dummy read is needed*/
+  87   1          LCD_RS_HIGH();                   /*when RS=1 R/W=1,read data from the displayram*/
+  88   1          LCD_R_W_HIGH();
+  89   1              LCD_E_HIGH();                    /*when E=1 and device is selected data appear*/
+  90   1          data_read = LCD_IN_DATA();       /*in data on the bus*/
+  91   1          LCD_E_LOW(); 
+  92   1              _nop_();
+  93   1              _nop_();
+  94   1              _nop_();
+  95   1          return data_read;                            /*must pull low here*/
+  96   1      }
+  97          /** 
+  98           * 
+  99           * 
+ 100           * 
+ 101           * @return 
+ 102           */
+ 103          uint8_t LCD_Read_Status(void)
+ 104          {
+ 105   1          uint8_t status;
+ 106   1          /*when read status ,a dummy read is not needed*/
+ 107   1              LCD_OUT_DATA(0x00);
+ 108   1              _nop_();
+ 109   1              _nop_();
+ 110   1          LCD_RS_LOW();                  /*when RS=0 R/W=1,read status ofthe l*/
+ 111   1          LCD_R_W_HIGH();
+ 112   1              LCD_E_HIGH();                   /*when E=1 and device is selecte dat ppear*/
+ 113   1          status= LCD_IN_DATA();         /*n data on the bus*/    
+ 114   1              LCD_E_LOW();                            /*must pull low here*/
+ 115   1          return status;
+ 116   1      }
+ 117          /** 
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 22:55:10 PAGE 3   
 
- 118   1              //Delay(1);
- 119   1          switch (chipsel){
- 120   2              case 0:
- 121   2                  LCD_CHIP_SEL_0();
- 122   2                  break;
- 123   2              case 1:
- 124   2                  LCD_CHIP_SEL_1();
- 125   2                  break;
- 126   2              case 2:
- 127   2                  LCD_CHIP_SEL_2();
- 128   2                  break;
- 129   2              case 3:
- 130   2                  LCD_CHIP_SEL_3();
- 131   2                  break;
- 132   2              default:
- 133   2                  break;
- 134   2          }
- 135   1              //Delay(1);
- 136   1          return ERCD_OK;
- 137   1      }
- 138          /* 
- 139          * 
- 140          * 
- 141          * @ara row 
- 142           * @param col 
- 143           * 
- 144           * @return 
- 145           */
- 146          ERCD LCD_Locate(uint16_t row, uint16_t col)
- 147          {
- 148   1          uint8_t chipsel = 0;
- 149   1              gl_curRow = row;
- 150   1              gl_curCol = col;
- 151   1          if ( (col < LCD_COLS) && (row < LCD_ROWS) ){ /*check if the row and col is over range */
- 152   2              chipsel = col / LCD_CHIP_WIDTH;
- 153   2              LCD_Chip_Select(chipsel);
- 154   2          } else {
- 155   2              return ERCD_ARG_ERR;
- 156   2          }
- 157   1          LCD_Write_CMD(LCD_SET_X_ADDRESS|(row>>3)); /*Page address*/
- 158   1          LCD_Write_CMD(LCD_SET_Y_ADDRESS|(col%LCD_CHIP_WIDTH));
- 159   1          return ERCD_OK;
- 160   1      }
- 161          
- 162          
- 163          /*-----------------------------------------------------------------------*/
- 164          /* Put a character                                                       */
- 165          /*-----------------------------------------------------------------------*/
- 166          
- 167          
- 168          
- 169          ERCD LCD_PutDot(uint16_t row, uint16_t col, uint8_t dot_state)
- 170          {
- 171   1              
- 172   1              uint8_t ram;
- 173   1              LCD_Locate(row,col);
- 174   1              ram = LCD_Read_Char();
- 175   1              ram = LCD_Read_Char();
- 176   1              ram = (ram & (~(1<<(row%8)))) | (dot_state<<(row%8));
- 177   1          LCD_Write_Char(ram);
- 178   1      }
-*** WARNING C173 IN LINE 178 OF LPC2478_LCD.C: missing return-expression
-C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 20:53:16 PAGE 4   
+ 118            
+ 119            * 
+ 120            * param cipsel 
+ 121            * 
+ 122            * @return 
+ 123            */
+ 124          ERCD LCD_Chip_Select(uint8_t chipsel)
+ 125          {
+ 126   1          if (chipsel > 3){
+ 127   2              return ERCD_ARG_ERR;
+ 128   2          }
+ 129   1              //LCD_CHIP_SEL_OUTPUT();
+ 130   1              //Delay(1);
+ 131   1          switch (chipsel){
+ 132   2              case 0:
+ 133   2                  LCD_CHIP_SEL_0();
+ 134   2                  break;
+ 135   2              case 1:
+ 136   2                  LCD_CHIP_SEL_1();
+ 137   2                  break;
+ 138   2              case 2:
+ 139   2                  LCD_CHIP_SEL_2();
+ 140   2                  break;
+ 141   2              case 3:
+ 142   2                  LCD_CHIP_SEL_3();
+ 143   2                  break;
+ 144   2              default:
+ 145   2                  break;
+ 146   2          }
+ 147   1              //Delay(1);
+ 148   1              _nop_();
+ 149   1              _nop_();
+ 150   1              _nop_();
+ 151   1          return ERCD_OK;
+ 152   1      }
+ 153          /* 
+ 154          * 
+ 155          * 
+ 156          * @ara row 
+ 157           * @param col 
+ 158           * 
+ 159           * @return 
+ 160           */
+ 161          ERCD LCD_Locate(uint16_t row, uint16_t col)
+ 162          {
+ 163   1          uint8_t chipsel = 0;
+ 164   1              gl_curRow = row;
+ 165   1              gl_curCol = col;
+ 166   1          if ( (col < LCD_COLS) && (row < LCD_ROWS) ){ /*check if the row and col is over range */
+ 167   2              chipsel = col / LCD_CHIP_WIDTH;
+ 168   2              LCD_Chip_Select(chipsel);
+ 169   2          } else {
+ 170   2              return ERCD_ARG_ERR;
+ 171   2          }
+ 172   1          LCD_Write_CMD(LCD_SET_X_ADDRESS|(row>>3)); /*Page address*/
+ 173   1          LCD_Write_CMD(LCD_SET_Y_ADDRESS|(col%LCD_CHIP_WIDTH));
+ 174   1          return ERCD_OK;
+ 175   1      }
+ 176          
+ 177          
+ 178          /*-----------------------------------------------------------------------*/
+ 179          /* Put a character                                                       */
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 22:55:10 PAGE 4   
 
- 179          
- 180          ERCD LCD_ClrScreen(void)
- 181          {
- 182   1              uint16_t i ,j, k;
- 183   1              for(k=0;k<4;k++)
- 184   1              {
- 185   2                      LCD_Chip_Select(k);
- 186   2                      //芯片选择
- 187   2                      for(j=0;j<8;j++)
- 188   2                      {
- 189   3                              LCD_Write_CMD(0xb8+j);
- 190   3                              //页地址设置
- 191   3                              LCD_Write_CMD(0x40);
- 192   3                              //列地址设置
- 193   3                              for(i=0;i<64;i++)
- 194   3                                      LCD_Write_Char(0x00);
- 195   3                      }
- 196   2              }
- 197   1              LCD_Locate(0,0);        
- 198   1      }
-*** WARNING C173 IN LINE 198 OF LPC2478_LCD.C: missing return-expression
-*** WARNING C290 IN LINE 178 OF LPC2478_LCD.C: missing return value
-*** WARNING C290 IN LINE 198 OF LPC2478_LCD.C: missing return value
+ 180          /*-----------------------------------------------------------------------*/
+ 181          
+ 182          
+ 183          
+ 184          ERCD LCD_PutDot(uint16_t row, uint16_t col, uint8_t dot_state)
+ 185          {
+ 186   1              
+ 187   1              uint8_t ram;
+ 188   1              LCD_Write_CMD(LCD_DISPLAY_ON);
+ 189   1              LCD_Locate(row,col);
+ 190   1              ram = LCD_Read_Char();
+ 191   1              ram = LCD_Read_Char();
+ 192   1              ram = (ram & (~(1<<(row%8))) & 0xff) | (dot_state<<(row%8));
+ 193   1              LCD_Locate(row,col);
+ 194   1          LCD_Write_Char(ram);
+ 195   1          return ERCD_OK;
+ 196   1      }
+ 197          
+ 198          ERCD LCD_ClrScreen(void)
+ 199          {
+ 200   1              uint16_t i ,j, k;
+ 201   1              for(k=0;k<4;k++)
+ 202   1              {
+ 203   2                      LCD_Chip_Select(k);
+ 204   2                      for(j=0;j<8;j++)
+ 205   2                      {
+ 206   3                              LCD_Write_CMD(LCD_SET_X_ADDRESS|j);
+ 207   3                              LCD_Write_CMD(LCD_SET_Y_ADDRESS);
+ 208   3                              for(i=0;i<64;i++)
+ 209   3                                      LCD_Write_Char(0x00);
+ 210   3                      }
+ 211   2              }
+ 212   1              LCD_Locate(0,0);
+ 213   1              return ERCD_OK;
+ 214   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    402    ----
+   CODE SIZE        =    463    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      4      14
+   DATA SIZE        =      4      17
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  4 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
