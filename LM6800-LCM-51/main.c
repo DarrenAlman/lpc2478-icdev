@@ -337,10 +337,31 @@ uint8_t code num[] ={
 		}
 	}
 	Delay(10000);*/
-	LCD_Locate(8,64);
-	LCD_PutAsc(ASC_8X8,'a');
+	/*for(k=0;k<4;k++)
+	{
+		LCD_Chip_Select(k);	   //оƬѡ��
+		for(j=0;j<4;j++)
+		{
+			LCD_Write_CMD(0xb8+2*j);	 //ҳ��ַ����
+			//while (LCD_Read_Status() & 0x80);
+			LCD_Write_CMD(0x40);		//�е�ַ����
+			for(i=0;i<64;i++)
+			{
+				n=i+64*k;
+				//while (LCD_Read_Status() & 0x80);
+				LCD_Write_Char(gl_asckey8X8[n]);
 
+			}
+		}
 
+	}*/
+	LCD_Locate(6,32);
+	LCD_PutAsc(ASC_8X16,'{');
+	LCD_PutAsc(ASC_8X16,'A');
+	LCD_PutAsc(ASC_8X8,'B');
+	LCD_PutAsc(ASC_8X8,'C');
+	LCD_PutAsc(ASC_8X8,'d');
+	Delay(5000);
 	/*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);
 	LCD_Write_CMD(0xb8+0);	 //ҳ��ַ����
 	LCD_Write_CMD(0x40);		//�е�ַ����

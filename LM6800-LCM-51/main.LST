@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 1   
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   53          0x00,0x60,0x7F,0x4A,0xDA,0x6A,0x6A,0x58,
   54          0x00,0x5E,0x64,0xA4,0x9F,0xA4,0x64,0x8C,
   55          0x00,0x60,0x7F,0x4A,0xDA,0x6A,0x6A,0x58,
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 2   
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 2   
 
   56          0x00,0x5E,0x64,0xA4,0x9F,0xA4,0x64,0x8C,
   57          0x00,0x60,0x7F,0x4A,0xDA,0x6A,0x6A,0x58,
@@ -126,7 +126,7 @@ line level    source
  115          0x00,0x00,0x00,0x08,0x38,0xC8,0x00,0xC8,
  116          0x38,0x08,0x00,0x00,0x00,0x00,0x00,0x00,
  117          0x00,0x00,0x00,0x08,0xF8,0x08,0x00,0x00,
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 3   
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 3   
 
  118          0x00,0x00,0x00,0x08,0xF8,0xF8,0x00,0xF8,
  119          0xF8,0x08,0x00,0x00,0xE0,0x10,0x88,0x88,
@@ -190,7 +190,7 @@ line level    source
  177          0x00,0x00,0x30,0x30,0x08,0x28,0x04,0x24,
  178          0x04,0x22,0x04,0x21,0x88,0x20,0x70,0x20,/*"2",2*/
  179          
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 4   
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 4   
 
  180          0x00,0x00,0x10,0x08,0x08,0x10,0x84,0x20,
  181          0x84,0x20,0x84,0x20,0x48,0x11,0x30,0x0E,/*"3",3*/
@@ -254,7 +254,7 @@ line level    source
  239          0x40,0x14,0xC0,0x12,0xC0,0x13,0x00,0x00,/*"2",2*/
  240          
  241          0x00,0x00,0x40,0x60,0x60,0x20,0x20,0x22,
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 5   
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 5   
 
  242          0x20,0x13,0xE0,0x1E,0x00,0x00,0x00,0x00,/*"3",3*/
  243          
@@ -318,7 +318,7 @@ line level    source
  301   1              uint8_t status = 0;
  302   1              //while(1);
  303   1              LCD_CSC = 1;
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 6   
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 6   
 
  304   1              LCD_CSB = 1;
  305   1              LCD_CSA = 1;
@@ -356,187 +356,208 @@ line level    source
  337   1                      }
  338   1              }
  339   1              Delay(10000);*/
- 340   1              LCD_Locate(8,64);
- 341   1              LCD_PutAsc(ASC_8X8,'a');
- 342   1      
- 343   1      
- 344   1              /*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);
- 345   1              LCD_Write_CMD(0xb8+0);   //ҳ��ַ����
- 346   1              LCD_Write_CMD(0x40);            //�е�ַ����
- 347   1              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
- 348   1              for(i=0;i<32;i++)
- 349   1              {
- 350   1                      LCD_Write_Char(nihao[i]);
- 351   1              }*/
- 352   1              /*LCD_CHIP_SEL_1();//LCD_Chip_Select(1);
- 353   1              LCD_Write_CMD(0xb8+2);   //ҳ��ַ����
- 354   1              LCD_Write_CMD(0x40);            //�е�ַ����
- 355   1              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
- 356   1              for(i=0;i<32;i++)
- 357   1              {
- 358   1                      LCD_Write_Char(nihao[i]);
- 359   1              }
- 360   1              LCD_CHIP_SEL_2();//LCD_Chip_Select(0);
- 361   1              LCD_Write_CMD(0xb8+4);   //ҳ��ַ����
- 362   1              LCD_Write_CMD(0x40);            //�е�ַ����
- 363   1              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
- 364   1              for(i=0;i<32;i++)
- 365   1              {
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 7   
+ 340   1              /*for(k=0;k<4;k++)
+ 341   1              {
+ 342   1                      LCD_Chip_Select(k);        //оƬѡ��
+ 343   1                      for(j=0;j<4;j++)
+ 344   1                      {
+ 345   1                              LCD_Write_CMD(0xb8+2*j);         //ҳ��ַ����
+ 346   1                              //while (LCD_Read_Status() & 0x80);
+ 347   1                              LCD_Write_CMD(0x40);            //�е�ַ����
+ 348   1                              for(i=0;i<64;i++)
+ 349   1                              {
+ 350   1                                      n=i+64*k;
+ 351   1                                      //while (LCD_Read_Status() & 0x80);
+ 352   1                                      LCD_Write_Char(gl_asckey8X8[n]);
+ 353   1      
+ 354   1                              }
+ 355   1                      }
+ 356   1      
+ 357   1              }*/
+ 358   1              LCD_Locate(6,32);
+ 359   1              LCD_PutAsc(ASC_8X16,'{');
+ 360   1              LCD_PutAsc(ASC_8X16,'A');
+ 361   1              LCD_PutAsc(ASC_8X8,'B');
+ 362   1              LCD_PutAsc(ASC_8X8,'C');
+ 363   1              LCD_PutAsc(ASC_8X8,'d');
+ 364   1              Delay(5000);
+ 365   1              /*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 7   
 
- 366   1                      LCD_Write_Char(nihao[i]);
- 367   1              }
- 368   1              LCD_CHIP_SEL_3();//LCD_Chip_Select(1);
- 369   1              LCD_Write_CMD(0xb8+6);   //ҳ��ַ����
- 370   1              LCD_Write_CMD(0x40);            //�е�ַ����
- 371   1              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
- 372   1              for(i=0;i<32;i++)
- 373   1              {
- 374   1                      LCD_Write_Char(nihao[i]);
- 375   1              }*/
- 376   1      
- 377   1              
- 378   1              
- 379   1              //LCD_Locate(2,201);
- 380   1              //LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
- 381   1              /*for(i=0;i<10;i++)
- 382   1              {
- 383   1                      
- 384   1                      //while (LCD_Read_Status() & 0x80);
- 385   1              /*      LCD_Locate(2,i*4);
- 386   1                      LCD_Write_Char(0xa5);
- 387   1                      LCD_Write_Char(0x5a);
- 388   1                      LCD_Locate(25,i*4);
- 389   1                      LCD_Write_Char(0xa5);
- 390   1                      LCD_Write_Char(0x5a);
- 391   1                      LCD_Locate(46,i*4);
- 392   1                      LCD_Write_Char(0xa5);
- 393   1                      LCD_Write_Char(0x5a); */
- 394   1                      /*LCD_Chip_Select(k);      //оƬѡ��
- 395   1                      LCD_Write_CMD(0xb8+j);
- 396   1                              //ҳ��ַ����
- 397   1                      LCD_Write_CMD(0x40);
- 398   1                      for(k=0;k<8;i++){
- 399   1                              LCD_Write_Char
- 400   1                      } */
- 401   1                      
- 402   1              //}
- 403   1              for(k=0;k<4;k++)
- 404   1              {
- 405   2                      LCD_Chip_Select(k);        //оƬѡ��
- 406   2                      for(j=0;j<4;j++)
- 407   2                      {
- 408   3                              LCD_Chip_Select(k);        //оƬѡ��
- 409   3                              //while (LCD_Read_Status() & 0x80);
- 410   3                              LCD_Write_CMD(0xb8+2*j);         //ҳ��ַ����
- 411   3                              //while (LCD_Read_Status() & 0x80);
- 412   3                              LCD_Write_CMD(0x40);            //�е�ַ����
- 413   3                              for(i=0;i<64;i++)
- 414   3                              {
- 415   4                                      n=2*i+128*k;
- 416   4                                      //while (LCD_Read_Status() & 0x80);
- 417   4                                      LCD_Write_Char(num[n]);
- 418   4                                      
- 419   4                              }
- 420   3                              LCD_Write_CMD(0xb8+2*j+1);       //ҳ��ַ����
- 421   3                              //while (LCD_Read_Status() & 0x80);
- 422   3                              LCD_Write_CMD(0x40);            //�е�ַ����
- 423   3                              for(i=0;i<64;i++)
- 424   3                              {
- 425   4                                      n=2*i+128*k+1;
- 426   4                                      //while (LCD_Read_Status() & 0x80);
- 427   4                                      LCD_Write_Char(num[n]);
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 8   
+ 366   1              LCD_Write_CMD(0xb8+0);   //ҳ��ַ����
+ 367   1              LCD_Write_CMD(0x40);            //�е�ַ����
+ 368   1              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
+ 369   1              for(i=0;i<32;i++)
+ 370   1              {
+ 371   1                      LCD_Write_Char(nihao[i]);
+ 372   1              }*/
+ 373   1              /*LCD_CHIP_SEL_1();//LCD_Chip_Select(1);
+ 374   1              LCD_Write_CMD(0xb8+2);   //ҳ��ַ����
+ 375   1              LCD_Write_CMD(0x40);            //�е�ַ����
+ 376   1              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
+ 377   1              for(i=0;i<32;i++)
+ 378   1              {
+ 379   1                      LCD_Write_Char(nihao[i]);
+ 380   1              }
+ 381   1              LCD_CHIP_SEL_2();//LCD_Chip_Select(0);
+ 382   1              LCD_Write_CMD(0xb8+4);   //ҳ��ַ����
+ 383   1              LCD_Write_CMD(0x40);            //�е�ַ����
+ 384   1              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
+ 385   1              for(i=0;i<32;i++)
+ 386   1              {
+ 387   1                      LCD_Write_Char(nihao[i]);
+ 388   1              }
+ 389   1              LCD_CHIP_SEL_3();//LCD_Chip_Select(1);
+ 390   1              LCD_Write_CMD(0xb8+6);   //ҳ��ַ����
+ 391   1              LCD_Write_CMD(0x40);            //�е�ַ����
+ 392   1              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
+ 393   1              for(i=0;i<32;i++)
+ 394   1              {
+ 395   1                      LCD_Write_Char(nihao[i]);
+ 396   1              }*/
+ 397   1      
+ 398   1              
+ 399   1              
+ 400   1              //LCD_Locate(2,201);
+ 401   1              //LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
+ 402   1              /*for(i=0;i<10;i++)
+ 403   1              {
+ 404   1                      
+ 405   1                      //while (LCD_Read_Status() & 0x80);
+ 406   1              /*      LCD_Locate(2,i*4);
+ 407   1                      LCD_Write_Char(0xa5);
+ 408   1                      LCD_Write_Char(0x5a);
+ 409   1                      LCD_Locate(25,i*4);
+ 410   1                      LCD_Write_Char(0xa5);
+ 411   1                      LCD_Write_Char(0x5a);
+ 412   1                      LCD_Locate(46,i*4);
+ 413   1                      LCD_Write_Char(0xa5);
+ 414   1                      LCD_Write_Char(0x5a); */
+ 415   1                      /*LCD_Chip_Select(k);      //оƬѡ��
+ 416   1                      LCD_Write_CMD(0xb8+j);
+ 417   1                              //ҳ��ַ����
+ 418   1                      LCD_Write_CMD(0x40);
+ 419   1                      for(k=0;k<8;i++){
+ 420   1                              LCD_Write_Char
+ 421   1                      } */
+ 422   1                      
+ 423   1              //}
+ 424   1              for(k=0;k<4;k++)
+ 425   1              {
+ 426   2                      LCD_Chip_Select(k);        //оƬѡ��
+ 427   2                      for(j=0;j<4;j++)
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 8   
 
- 428   4                                      
- 429   4                              }
- 430   3                      } 
- 431   2      
- 432   2              }
- 433   1              
- 434   1              //LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
- 435   1      
- 436   1              Delay(10000);
- 437   1              /*for(k=0;k<4;k++)
- 438   1              {
- 439   1                      LCD_Chip_Select(k);        //оƬѡ��
- 440   1                      for(j=0;j<8;j++)
- 441   1                      {
- 442   1                              //LCD_Chip_Select(k);      //оƬѡ��
- 443   1                              //while (LCD_Read_Status() & 0x80);
- 444   1                              LCD_Write_CMD(0xb8+j);   //ҳ��ַ����
- 445   1                              //while (LCD_Read_Status() & 0x80);
- 446   1                              LCD_Write_CMD(0x40);            //�е�ַ����
- 447   1                              for(i=0;i<64;i++)
- 448   1                              {
- 449   1                                      n=i+256*(j%2)+64*k;
- 450   1                                      //while (LCD_Read_Status() & 0x80);
- 451   1                                      LCD_Write_Char(BMP[n]);
- 452   1                                      
- 453   1                              }
- 454   1                      } 
- 455   1      
- 456   1              }*/
- 457   1               
- 458   1               
- 459   1      
- 460   1      
- 461   1              /*      for(k=4;k>0;k--)
- 462   1              {
- 463   1                      LCD_Chip_Select(k-1);      //оƬѡ��
- 464   1                      for(j=0;j<8;j++)
- 465   1                      {
+ 428   2                      {
+ 429   3                              LCD_Chip_Select(k);        //оƬѡ��
+ 430   3                              //while (LCD_Read_Status() & 0x80);
+ 431   3                              LCD_Write_CMD(0xb8+2*j);         //ҳ��ַ����
+ 432   3                              //while (LCD_Read_Status() & 0x80);
+ 433   3                              LCD_Write_CMD(0x40);            //�е�ַ����
+ 434   3                              for(i=0;i<64;i++)
+ 435   3                              {
+ 436   4                                      n=2*i+128*k;
+ 437   4                                      //while (LCD_Read_Status() & 0x80);
+ 438   4                                      LCD_Write_Char(num[n]);
+ 439   4                                      
+ 440   4                              }
+ 441   3                              LCD_Write_CMD(0xb8+2*j+1);       //ҳ��ַ����
+ 442   3                              //while (LCD_Read_Status() & 0x80);
+ 443   3                              LCD_Write_CMD(0x40);            //�е�ַ����
+ 444   3                              for(i=0;i<64;i++)
+ 445   3                              {
+ 446   4                                      n=2*i+128*k+1;
+ 447   4                                      //while (LCD_Read_Status() & 0x80);
+ 448   4                                      LCD_Write_Char(num[n]);
+ 449   4                                      
+ 450   4                              }
+ 451   3                      } 
+ 452   2      
+ 453   2              }
+ 454   1              
+ 455   1              //LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);
+ 456   1      
+ 457   1              Delay(10000);
+ 458   1              /*for(k=0;k<4;k++)
+ 459   1              {
+ 460   1                      LCD_Chip_Select(k);        //оƬѡ��
+ 461   1                      for(j=0;j<8;j++)
+ 462   1                      {
+ 463   1                              //LCD_Chip_Select(k);      //оƬѡ��
+ 464   1                              //while (LCD_Read_Status() & 0x80);
+ 465   1                              LCD_Write_CMD(0xb8+j);   //ҳ��ַ����
  466   1                              //while (LCD_Read_Status() & 0x80);
- 467   1                              LCD_Write_CMD(0xb8+j);   //ҳ��ַ����
- 468   1                              //while (LCD_Read_Status() & 0x80);
- 469   1                              LCD_Write_CMD(0x40);            //�е�ַ����
- 470   1                              for(i=0;i<64;i++)
- 471   1                              {
- 472   1                                      n=i+256*(j%2)+64*(k-1);
- 473   1                                      //while (LCD_Read_Status() & 0x80);
- 474   1                                      LCD_Write_Char(BMP[n]);
- 475   1                              }
- 476   1                      } 
- 477   1      
- 478   1              }  */
- 479   1              i = 0;
- 480   1              while(1){
- 481   2                      LCD_CSB = 0;
- 482   2                      LCD_CSA = 0;
- 483   2                      Delay(100);
- 484   2                      LCD_CSA = 1;
- 485   2                      LCD_CSB = 1;
- 486   2                      Delay(100);
- 487   2                      i = (i > 64)?0:i;
- 488   2                      i++;
- 489   2                      for (k=0;k<4;k++){
-C51 COMPILER V9.00   MAIN                                                                  04/20/2011 01:18:10 PAGE 9   
+ 467   1                              LCD_Write_CMD(0x40);            //�е�ַ����
+ 468   1                              for(i=0;i<64;i++)
+ 469   1                              {
+ 470   1                                      n=i+256*(j%2)+64*k;
+ 471   1                                      //while (LCD_Read_Status() & 0x80);
+ 472   1                                      LCD_Write_Char(BMP[n]);
+ 473   1                                      
+ 474   1                              }
+ 475   1                      } 
+ 476   1      
+ 477   1              }*/
+ 478   1               
+ 479   1               
+ 480   1      
+ 481   1      
+ 482   1              /*      for(k=4;k>0;k--)
+ 483   1              {
+ 484   1                      LCD_Chip_Select(k-1);      //оƬѡ��
+ 485   1                      for(j=0;j<8;j++)
+ 486   1                      {
+ 487   1                              //while (LCD_Read_Status() & 0x80);
+ 488   1                              LCD_Write_CMD(0xb8+j);   //ҳ��ַ����
+ 489   1                              //while (LCD_Read_Status() & 0x80);
+C51 COMPILER V9.00   MAIN                                                                  04/20/2011 02:26:10 PAGE 9   
 
- 490   3                              LCD_Chip_Select(k);        //оƬѡ��
- 491   3                              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|i);
- 492   3                      }
- 493   2                      
- 494   2              }
- 495   1              while(1);
- 496   1      
- 497   1       }
- 498          void Delay(uint16_t t)
- 499          {
- 500   1              volatile  uint16_t i;
- 501   1              volatile uint16_t j;
- 502   1              volatile uint16_t k;
- 503   1      
- 504   1              for(j=0;j<t;j++){
- 505   2                      for(i=0;i<109;i++)
- 506   2                      {
- 507   3                               k =i;
- 508   3                      }
- 509   2              }
- 510   1      }
+ 490   1                              LCD_Write_CMD(0x40);            //�е�ַ����
+ 491   1                              for(i=0;i<64;i++)
+ 492   1                              {
+ 493   1                                      n=i+256*(j%2)+64*(k-1);
+ 494   1                                      //while (LCD_Read_Status() & 0x80);
+ 495   1                                      LCD_Write_Char(BMP[n]);
+ 496   1                              }
+ 497   1                      } 
+ 498   1      
+ 499   1              }  */
+ 500   1              i = 0;
+ 501   1              while(1){
+ 502   2                      LCD_CSB = 0;
+ 503   2                      LCD_CSA = 0;
+ 504   2                      Delay(100);
+ 505   2                      LCD_CSA = 1;
+ 506   2                      LCD_CSB = 1;
+ 507   2                      Delay(100);
+ 508   2                      i = (i > 64)?0:i;
+ 509   2                      i++;
+ 510   2                      for (k=0;k<4;k++){
+ 511   3                              LCD_Chip_Select(k);        //оƬѡ��
+ 512   3                              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|i);
+ 513   3                      }
+ 514   2                      
+ 515   2              }
+ 516   1              while(1);
+ 517   1      
+ 518   1       }
+ 519          void Delay(uint16_t t)
+ 520          {
+ 521   1              volatile  uint16_t i;
+ 522   1              volatile uint16_t j;
+ 523   1              volatile uint16_t k;
+ 524   1      
+ 525   1              for(j=0;j<t;j++){
+ 526   2                      for(i=0;i<109;i++)
+ 527   2                      {
+ 528   3                               k =i;
+ 529   3                      }
+ 530   2              }
+ 531   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    449    ----
+   CODE SIZE        =    484    ----
    CONSTANT SIZE    =   1936    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
