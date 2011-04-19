@@ -1,0 +1,86 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+F:\KeilPrj\lcdtest.uvproj
+Project File Date:  04/15/2011
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lpc2478_lcd.c...
+LPC2478_LCD.C(178): warning C173: missing return-expression
+LPC2478_LCD.C(198): warning C173: missing return-expression
+LPC2478_LCD.C(178): warning C290: missing return value
+LPC2478_LCD.C(198): warning C290: missing return value
+compiling main.c...
+compiling monitor.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_XSPRINTF?MONITOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_XDPRINTF?MONITOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUT_DUMP?MONITOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_XDGETS?MONITOR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_XATOI?MONITOR
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: _DATA_GROUP_
+    LENGTH:  0012H
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?_PUT_DUMP?MONITOR
+    LENGTH:  000EH
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?_XATOI?MONITOR
+    LENGTH:  000DH
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?_XDGETS?MONITOR
+    LENGTH:  000BH
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?_XGETS?MONITOR
+    LENGTH:  0009H
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?MONITOR
+    LENGTH:  0009H
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: ?DT?_XPUTC?MONITOR
+    LENGTH:  0001H
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  _XFUNC_OUT
+    SEGMENT: ?DT?MONITOR
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  XFUNC_IN
+    SEGMENT: ?DT?MONITOR
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  ?_XATOI?BYTE
+    SEGMENT: ?DT?_XATOI?MONITOR
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  ?_XDGETS?BYTE
+    SEGMENT: ?DT?_XDGETS?MONITOR
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  ?_PUT_DUMP?BYTE
+    SEGMENT: ?DT?_PUT_DUMP?MONITOR
+Program Size: data=204.0 xdata=0 code=5889
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lpc2478_lcd.c...
+LPC2478_LCD.C(178): warning C173: missing return-expression
+LPC2478_LCD.C(198): warning C173: missing return-expression
+LPC2478_LCD.C(178): warning C290: missing return value
+LPC2478_LCD.C(198): warning C290: missing return value
+compiling main.c...
+linking...
+Program Size: data=31.0 xdata=0 code=3026
+creating hex file from "lcdtest"...
+"lcdtest" - 0 Error(s), 4 Warning(s).

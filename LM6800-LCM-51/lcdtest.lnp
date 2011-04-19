@@ -1,0 +1,5 @@
+"STARTUP.obj",
+"lpc2478_lcd.obj",
+"main.obj" 
+TO "lcdtest" 
+RAMSIZE(256) 

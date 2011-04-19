@@ -1,0 +1,393 @@
+C51 COMPILER V9.00   MONITOR                                                               04/19/2011 20:53:04 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MONITOR
+OBJECT MODULE PLACED IN monitor.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE monitor.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*------------------------------------------------------------------------/
+   2          /  Universal string handler for user console interface
+   3          /-------------------------------------------------------------------------/
+   4          /
+   5          /  Copyright (C) 2011, ChaN, all right reserved.
+   6          /
+   7          / * This software is a free software and there is NO WARRANTY.
+   8          / * No restriction on use. You can use, modify and redistribute it for
+   9          /   personal, non-profit or commercial products UNDER YOUR RESPONSIBILITY.
+  10          / * Redistributions of source code must retain the above copyright notice.
+  11          /
+  12          /-------------------------------------------------------------------------*/
+  13          
+  14          #include "monitor.h"
+  15          
+  16          
+  17          #if _USE_XFUNC_OUT
+  18          #include <stdarg.h>
+  19          void (*xfunc_out)(unsigned char);       /* Pointer to the output stream */
+  20          static char *outptr;
+  21          
+  22          /*----------------------------------------------*/
+  23          /* Put a character                              */
+  24          /*----------------------------------------------*/
+  25          
+  26          void xputc (char c)
+  27          {
+  28   1              if (_CR_CRLF && c == '\n') xputc('\r');         /* CR -> CRLF */
+  29   1      
+  30   1              if (outptr) {
+  31   2                      *outptr++ = (unsigned char)c;
+  32   2                      return;
+  33   2              }
+  34   1      
+  35   1              if (xfunc_out) xfunc_out((unsigned char)c);
+  36   1      }
+  37          
+  38          
+  39          
+  40          /*----------------------------------------------*/
+  41          /* Put a null-terminated string                 */
+  42          /*----------------------------------------------*/
+  43          
+  44          void xputs (const char* str)
+  45          {
+  46   1              while (*str)
+  47   1                      xputc(*str++);
+  48   1      }
+  49          
+  50          
+  51          
+  52          /*----------------------------------------------*/
+  53          /* Formatted string output                      */
+  54          /*----------------------------------------------*/
+  55          /*  xprintf("%d", 1234);                        "1234"
+C51 COMPILER V9.00   MONITOR                                                               04/19/2011 20:53:04 PAGE 2   
+
+  56              xprintf("%6d,%3d%%", -200, 5);      "  -200,  5%"
+  57              xprintf("%-6u", 100);                       "100   "
+  58              xprintf("%ld", 12345678L);          "12345678"
+  59              xprintf("%04x", 0xA3);                      "00a3"
+  60              xprintf("%08LX", 0x123ABC);         "00123ABC"
+  61              xprintf("%016b", 0x550F);           "0101010100001111"
+  62              xprintf("%s", "String");            "String"
+  63              xprintf("%-4s", "abc");                     "abc "
+  64              xprintf("%4s", "abc");                      " abc"
+  65              xprintf("%c", 'a');                         "a"
+  66              xprintf("%f", 10.0);            <xprintf lacks floating point support>
+  67          */
+  68          
+  69          static
+  70          void xvprintf (
+  71                  const char*     fmt,    /* Pointer to the format string */
+  72                  va_list arp                     /* Pointer to arguments */
+  73          )
+  74          {
+  75   1              unsigned int r, i, j, w, f;
+  76   1              unsigned long v;
+  77   1              char s[16], c, d, *p;
+  78   1      
+  79   1      
+  80   1              for (;;) {
+  81   2                      c = *fmt++;                                     /* Get a char */
+  82   2                      if (!c) break;                          /* End of format? */
+  83   2                      if (c != '%') {                         /* Pass through it if not a % sequense */
+  84   3                              xputc(c); continue;
+  85   3                      }
+  86   2                      f = 0;
+  87   2                      c = *fmt++;                                     /* Get first char of the sequense */
+  88   2                      if (c == '0') {                         /* Flag: '0' padded */
+  89   3                              f = 1; c = *fmt++;
+  90   3                      } else {
+  91   3                              if (c == '-') {                 /* Flag: left justified */
+  92   4                                      f = 2; c = *fmt++;
+  93   4                              }
+  94   3                      }
+  95   2                      for (w = 0; c >= '0' && c <= '9'; c = *fmt++)   /* Minimum width */
+  96   2                              w = w * 10 + c - '0';
+  97   2                      if (c == 'l' || c == 'L') {     /* Prefix: Size is long int */
+  98   3                              f |= 4; c = *fmt++;
+  99   3                      }
+ 100   2                      if (!c) break;                          /* End of format? */
+ 101   2                      d = c;
+ 102   2                      if (d >= 'a') d -= 0x20;
+ 103   2                      switch (d) {                            /* Type is... */
+ 104   3                      case 'S' :                                      /* String */
+ 105   3                              p = va_arg(arp, char*);
+ 106   3                              for (j = 0; p[j]; j++) ;
+ 107   3                              while (!(f & 2) && j++ < w) xputc(' ');
+ 108   3                              xputs(p);
+ 109   3                              while (j++ < w) xputc(' ');
+ 110   3                              continue;
+ 111   3                      case 'C' :                                      /* Character */
+ 112   3                              xputc((char)va_arg(arp, int)); continue;
+ 113   3                      case 'B' :                                      /* Binary */
+ 114   3                              r = 2; break;
+ 115   3                      case 'O' :                                      /* Octal */
+ 116   3                              r = 8; break;
+ 117   3                      case 'D' :                                      /* Signed decimal */
+C51 COMPILER V9.00   MONITOR                                                               04/19/2011 20:53:04 PAGE 3   
+
+ 118   3                      case 'U' :                                      /* Unsigned decimal */
+ 119   3                              r = 10; break;
+ 120   3                      case 'X' :                                      /* Hexdecimal */
+ 121   3                              r = 16; break;
+ 122   3                      default:                                        /* Unknown type (passthrough) */
+ 123   3                              xputc(c); continue;
+ 124   3                      }
+ 125   2      
+ 126   2                      /* Get an argument and put it in numeral */
+ 127   2                      v = (f & 4) ? va_arg(arp, long) : ((d == 'D') ? (long)va_arg(arp, int) : (long)va_arg(arp, unsigned int)
+             -);
+ 128   2                      if (d == 'D' && (v & 0x80000000)) {
+ 129   3                              v = 0 - v;
+ 130   3                              f |= 8;
+ 131   3                      }
+ 132   2                      i = 0;
+ 133   2                      do {
+ 134   3                              d = (char)(v % r); v /= r;
+ 135   3                              if (d > 9) d += (c == 'x') ? 0x27 : 0x07;
+ 136   3                              s[i++] = d + '0';
+ 137   3                      } while (v && i < sizeof(s));
+ 138   2                      if (f & 8) s[i++] = '-';
+ 139   2                      j = i; d = (f & 1) ? '0' : ' ';
+ 140   2                      while (!(f & 2) && j++ < w) xputc(d);
+ 141   2                      do xputc(s[--i]); while(i);
+ 142   2                      while (j++ < w) xputc(' ');
+ 143   2              }
+ 144   1      }
+ 145          
+ 146          
+ 147          void xprintf (
+ 148                  const char*     fmt,    /* Pointer to the format string */
+ 149                  ...                                     /* Optional arguments */
+ 150          )
+ 151          {
+ 152   1              va_list arp;
+ 153   1      
+ 154   1      
+ 155   1              va_start(arp, fmt);
+ 156   1              xvprintf(fmt, arp);
+ 157   1              va_end(arp);
+ 158   1      }
+ 159          
+ 160          
+ 161          void xsprintf (
+ 162                  char* buff,                     /* Pointer to the output buffer */
+ 163                  const char*     fmt,    /* Pointer to the format string */
+ 164                  ...                                     /* Optional arguments */
+ 165          )
+ 166          {
+ 167   1              va_list arp;
+ 168   1      
+ 169   1      
+ 170   1              outptr = buff;          /* Switch destination for memory */
+ 171   1      
+ 172   1              va_start(arp, fmt);
+ 173   1              xvprintf(fmt, arp);
+ 174   1              va_end(arp);
+ 175   1      
+ 176   1              *outptr = 0;            /* Terminate output string */
+ 177   1              outptr = 0;                     /* Switch destination for device */
+ 178   1      }
+C51 COMPILER V9.00   MONITOR                                                               04/19/2011 20:53:04 PAGE 4   
+
+ 179          
+ 180          
+ 181          void xdprintf (
+ 182                  void(*func)(unsigned char),     /* Pointer to the output function */
+ 183                  const char*     fmt,                    /* Pointer to the format string */
+ 184                  ...                                                     /* Optional arguments */
+ 185          )
+ 186          {
+ 187   1              va_list arp;
+ 188   1              void (*pf)(unsigned char);
+ 189   1      
+ 190   1      
+ 191   1              pf = xfunc_out;         /* Save current output device */
+ 192   1              xfunc_out = func;       /* Switch output to specified device */
+ 193   1      
+ 194   1              va_start(arp, fmt);
+ 195   1              xvprintf(fmt, arp);
+ 196   1              va_end(arp);
+ 197   1      
+ 198   1              xfunc_out = pf;         /* Restore output device */
+ 199   1      }
+ 200          
+ 201          
+ 202          
+ 203          /*----------------------------------------------*/
+ 204          /* Dump a line of binary dump                   */
+ 205          /*----------------------------------------------*/
+ 206          
+ 207          void put_dump (
+ 208                  const void* buff,               /* Pointer to the byte array to be dumped */
+ 209                  unsigned long addr,             /* Heading address value */
+ 210                  int len                                 /* Number of bytes to be dumped */
+ 211          )
+ 212          {
+ 213   1              int i;
+ 214   1              const unsigned char *p = buff;
+ 215   1      
+ 216   1      
+ 217   1              xprintf("%08lX ", addr);                /* address */
+ 218   1      
+ 219   1              for (i = 0; i < len; i++)               /* data (hexdecimal) */
+ 220   1                      xprintf(" %02X", p[i]);
+ 221   1      
+ 222   1              xputc(' ');
+ 223   1              for (i = 0; i < len; i++)               /* data (ascii) */
+ 224   1                      xputc((p[i] >= ' ' && p[i] <= '~') ? p[i] : '.');
+ 225   1      
+ 226   1              xputc('\n');
+ 227   1      }
+ 228          
+ 229          #endif /* _USE_XFUNC_OUT */
+ 230          
+ 231          
+ 232          
+ 233          #if _USE_XFUNC_IN
+ 234          unsigned char (*xfunc_in)(void);        /* Pointer to the input stream */
+ 235          
+ 236          /*----------------------------------------------*/
+ 237          /* Get a line from the input                    */
+ 238          /*----------------------------------------------*/
+ 239          
+ 240          int xgets (             /* 0:End of stream, 1:A line arrived */
+C51 COMPILER V9.00   MONITOR                                                               04/19/2011 20:53:04 PAGE 5   
+
+ 241                  char* buff,     /* Pointer to the buffer */
+ 242                  int len         /* Buffer length */
+ 243          )
+ 244          {
+ 245   1              int c, i;
+ 246   1      
+ 247   1      
+ 248   1              if (!xfunc_in) return 0;                /* No input function specified */
+ 249   1      
+ 250   1              i = 0;
+ 251   1              for (;;) {
+ 252   2                      c = xfunc_in();                         /* Get a char from the incoming stream */
+ 253   2                      if (!c) return 0;                       /* End of stream? */
+ 254   2                      if (c == '\r') break;           /* End of line? */
+ 255   2                      if (c == '\b' && i) {           /* Back space? */
+ 256   3                              i--;
+ 257   3                              if (_LINE_ECHO) xputc(c);
+ 258   3                              continue;
+ 259   3                      }
+ 260   2                      if (c >= ' ' && i < len - 1) {  /* Visible chars */
+ 261   3                              buff[i++] = c;
+ 262   3                              if (_LINE_ECHO) xputc(c);
+ 263   3                      }
+ 264   2              }
+ 265   1              buff[i] = 0;    /* Terminate with a \0 */
+ 266   1              if (_LINE_ECHO) xputc('\n');
+ 267   1              return 1;
+ 268   1      }
+ 269          
+ 270          
+ 271          int xdgets (    /* 0:End of stream, 1:A line arrived */
+ 272                  unsigned char (*func)(void),    /* Pointer to the input stream function */
+ 273                  char* buff,     /* Pointer to the buffer */
+ 274                  int len         /* Buffer length */
+ 275          )
+ 276          {
+ 277   1              unsigned char (*pf)(void);
+ 278   1              int n;
+ 279   1      
+ 280   1      
+ 281   1              pf = xfunc_in;                  /* Save current input device */
+ 282   1              xfunc_in = func;                /* Switch input to specified device */
+ 283   1              n = xgets(buff, len);   /* Get a line */
+ 284   1              xfunc_in = pf;                  /* Restore input device */
+ 285   1      
+ 286   1              return n;
+ 287   1      }
+ 288          
+ 289          
+ 290          /*----------------------------------------------*/
+ 291          /* Get a value of the string                    */
+ 292          /*----------------------------------------------*/
+ 293          /*      "123 -5   0x3ff 0b1111 0377  w "
+ 294                      ^                           1st call returns 123 and next ptr
+ 295                         ^                        2nd call returns -5 and next ptr
+ 296                             ^                3rd call returns 1023 and next ptr
+ 297                                    ^         4th call returns 15 and next ptr
+ 298                                         ^    5th call returns 255 and next ptr
+ 299                                            ^ 6th call fails and returns 0
+ 300          */
+ 301          
+ 302          int xatoi (                     /* 0:Failed, 1:Successful */
+C51 COMPILER V9.00   MONITOR                                                               04/19/2011 20:53:04 PAGE 6   
+
+ 303                  char **str,             /* Pointer to pointer to the string */
+ 304                  long *res               /* Pointer to the valiable to store the value */
+ 305          )
+ 306          {
+ 307   1              unsigned long val;
+ 308   1              unsigned char c, r, s = 0;
+ 309   1      
+ 310   1      
+ 311   1              *res = 0;
+ 312   1      
+ 313   1              while ((c = **str) == ' ') (*str)++;    /* Skip leading spaces */
+ 314   1      
+ 315   1              if (c == '-') {         /* negative? */
+ 316   2                      s = 1;
+ 317   2                      c = *(++(*str));
+ 318   2              }
+ 319   1      
+ 320   1              if (c == '0') {
+ 321   2                      c = *(++(*str));
+ 322   2                      switch (c) {
+ 323   3                      case 'x':               /* hexdecimal */
+ 324   3                              r = 16; c = *(++(*str));
+ 325   3                              break;
+ 326   3                      case 'b':               /* binary */
+ 327   3                              r = 2; c = *(++(*str));
+ 328   3                              break;
+ 329   3                      default:
+ 330   3                              if (c <= ' ') return 1; /* single zero */
+ 331   3                              if (c < '0' || c > '9') return 0;       /* invalid char */
+ 332   3                              r = 8;          /* octal */
+ 333   3                      }
+ 334   2              } else {
+ 335   2                      if (c < '0' || c > '9') return 0;       /* EOL or invalid char */
+ 336   2                      r = 10;                 /* decimal */
+ 337   2              }
+ 338   1      
+ 339   1              val = 0;
+ 340   1              while (c > ' ') {
+ 341   2                      if (c >= 'a') c -= 0x20;
+ 342   2                      c -= '0';
+ 343   2                      if (c >= 17) {
+ 344   3                              c -= 7;
+ 345   3                              if (c <= 9) return 0;   /* invalid char */
+ 346   3                      }
+ 347   2                      if (c >= r) return 0;           /* invalid char for current radix */
+ 348   2                      val = val * r + c;
+ 349   2                      c = *(++(*str));
+ 350   2              }
+ 351   1              if (s) val = 0 - val;                   /* apply sign if needed */
+ 352   1      
+ 353   1              *res = val;
+ 354   1              return 1;
+ 355   1      }
+ 356          
+ 357          #endif /* _USE_XFUNC_IN */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1850    ----
+   CONSTANT SIZE    =     13    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.00   MONITOR                                                               04/19/2011 20:53:04 PAGE 7   
+
+   DATA SIZE        =      9     164
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
