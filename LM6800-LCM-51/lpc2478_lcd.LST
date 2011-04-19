@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 22:55:10 PAGE 1   
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE LPC2478_LCD
@@ -21,220 +21,741 @@ line level    source
   12          
   13          uint16_t gl_curRow = 0;
   14          uint16_t gl_curCol = 0;
-  15          
-  16          /** 
-  17           * 
-  18           * 
-  19           * 
-  20           * @return 
-  21           */
-  22          ERCD LCD_Init(void)
-  23          {
-  24   1          uint8_t i ;
-  25   1          LCD_RST_LOW();                  /*RST must keep low at least 1us then go high*/
-  26   1          Delay(100);
-  27   1          LCD_RST_HIGH();
-  28   1          Delay(10);
-  29   1          for (i = 0; i < 4; i++){
-  30   2              LCD_Chip_Select(i);
-  31   2              LCD_Write_CMD(LCD_DISPLAY_ON);/*Display on*/
-  32   2              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);/*display startline register 0*/
-  33   2          }
-  34   1          return ERCD_OK;
-  35   1      }
-  36          /** 
-  37           * 
-  38           * 
-  39           * @param cmdcode 
-  40           * 
-  41           * @return 
-  42           */
-  43          ERCD LCD_Write_CMD(uint8_t cmdcode)
-  44          {
-  45   1          while(LCD_Read_Status() & 0x90);
-  46   1              
-  47   1              LCD_RS_LOW();                   /*when RS=0 R/W=0,cmd write the data bus*/
-  48   1          LCD_R_W_LOW();
-  49   1          LCD_OUT_DATA(cmdcode);          /*output cmd  on the bus*/
-  50   1          LCD_E_HIGH_LOW();               /*when E high->low data appear on the bus*/
-  51   1              _nop_();
-  52   1              _nop_();
-  53   1              _nop_();
-  54   1          return ERCD_OK;
-  55   1      }
-C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 22:55:10 PAGE 2   
+  15          uint8_t code gl_asckey8X8[] = {
+  16                          0x00,0x00,0x00,0x00,/*" ",0*/
+  17          
+  18                          0x00,0x00,0x5E,0x00,/*"!",1*/
+  19          
+  20                          0x00,0x04,0x06,0x02,/*""",2*/
+  21          
+  22                          0x7C,0x28,0x7C,0x00,/*"#",3*/
+  23          
+  24                          0x00,0x6C,0xFE,0x64,/*"$",4*/
+  25          
+  26                          0x1C,0x5C,0x70,0x7C,/*"%",5*/
+  27          
+  28                          0x60,0x5C,0x3C,0x48,/*"&",6*/
+  29          
+  30                          0x04,0x02,0x00,0x00,/*"'",7*/
+  31          
+  32                          0x00,0x00,0x7C,0x82,/*"(",8*/
+  33          
+  34                          0x00,0xC6,0x38,0x00,/*")",9*/
+  35          
+  36                          0x00,0x18,0x3C,0x18,/*"*",10*/
+  37          
+  38                          0x08,0x08,0x3E,0x08,/*"+",11*/
+  39          
+  40                          0x80,0x40,0x00,0x00,/*",",12*/
+  41          
+  42                          0x08,0x08,0x08,0x00,/*"-",13*/
+  43          
+  44                          0x00,0x40,0x00,0x00,/*".",14*/
+  45          
+  46                          0xC0,0x38,0x06,0x00,/*"/",15*/
+  47          
+  48                          0x38,0x44,0x38,0x00,/*"0",16*/
+  49          
+  50                          0x00,0x48,0x78,0x40,/*"1",17*/
+  51          
+  52                          0x6C,0x54,0x4C,0x00,/*"2",18*/
+  53          
+  54                          0x6C,0x4C,0x74,0x00,/*"3",19*/
+  55          
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 2   
 
-  56          /** 
-  57           * 
-  58           * 
-  59           * @param char_data 
-  60           * 
-  61           * @return 
-  62           */
-  63          ERCD LCD_Write_Char(uint8_t char_data)
-  64          {
-  65   1          while(LCD_Read_Status() & 0x90);
-  66   1              //LCD_E_LOW();
-  67   1              LCD_RS_HIGH();                  /*when RS=1 R/W=0,cmd write the data bus*/
-  68   1          LCD_R_W_LOW();
-  69   1          LCD_OUT_DATA(char_data);        /*output data on the bus*/
-  70   1          LCD_E_HIGH_LOW();               /*when E high->low(falling edge) data appear on the bus*/
-  71   1              _nop_();
-  72   1              _nop_();
-  73   1              _nop_();
-  74   1          return ERCD_OK;
-  75   1      }
-  76          /** 
-  77           * 
-  78           * 
-  79           * 
-  80           * @return 
-  81           */
-  82          uint8_t LCD_Read_Char(void)
-  83          {
-  84   1          uint8_t data_read;
-  85   1          while(LCD_Read_Status() & 0x90);
-  86   1          /*when read data ,a dummy read is needed*/
-  87   1          LCD_RS_HIGH();                   /*when RS=1 R/W=1,read data from the displayram*/
-  88   1          LCD_R_W_HIGH();
-  89   1              LCD_E_HIGH();                    /*when E=1 and device is selected data appear*/
-  90   1          data_read = LCD_IN_DATA();       /*in data on the bus*/
-  91   1          LCD_E_LOW(); 
-  92   1              _nop_();
-  93   1              _nop_();
-  94   1              _nop_();
-  95   1          return data_read;                            /*must pull low here*/
-  96   1      }
-  97          /** 
-  98           * 
-  99           * 
- 100           * 
- 101           * @return 
- 102           */
- 103          uint8_t LCD_Read_Status(void)
- 104          {
- 105   1          uint8_t status;
- 106   1          /*when read status ,a dummy read is not needed*/
- 107   1              LCD_OUT_DATA(0x00);
- 108   1              _nop_();
- 109   1              _nop_();
- 110   1          LCD_RS_LOW();                  /*when RS=0 R/W=1,read status ofthe l*/
- 111   1          LCD_R_W_HIGH();
- 112   1              LCD_E_HIGH();                   /*when E=1 and device is selecte dat ppear*/
- 113   1          status= LCD_IN_DATA();         /*n data on the bus*/    
- 114   1              LCD_E_LOW();                            /*must pull low here*/
- 115   1          return status;
- 116   1      }
- 117          /** 
-C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 22:55:10 PAGE 3   
+  56                          0x10,0x28,0x7C,0x00,/*"4",20*/
+  57          
+  58                          0x7C,0x54,0x74,0x00,/*"5",21*/
+  59          
+  60                          0x38,0x54,0x54,0x70,/*"6",22*/
+  61          
+  62                          0x00,0x04,0x7C,0x04,/*"7",23*/
+  63          
+  64                          0x6C,0x54,0x6C,0x00,/*"8",24*/
+  65          
+  66                          0x1C,0x54,0x3C,0x00,/*"9",25*/
+  67          
+  68                          0x00,0x00,0x48,0x00,/*":",26*/
+  69          
+  70                          0x00,0x00,0xC8,0x00,/*";",27*/
+  71          
+  72                          0x00,0x10,0x28,0x44,/*"<",28*/
+  73          
+  74                          0x28,0x28,0x28,0x00,/*"=",29*/
+  75          
+  76                          0x00,0x44,0x28,0x10,/*">",30*/
+  77          
+  78                          0x06,0x52,0x0E,0x00,/*"?",31*/
+  79          
+  80                          0x6C,0x54,0x4C,0x00,/*"2",32*/
+  81          
+  82                          0x40,0x7C,0x78,0x40,/*"A",33*/
+  83          
+  84                          0x00,0x7C,0x4C,0x74,/*"B",34*/
+  85          
+  86                          0x38,0x44,0x44,0x00,/*"C",35*/
+  87          
+  88                          0x00,0x7C,0x44,0x38,/*"D",36*/
+  89          
+  90                          0x00,0x7C,0x5C,0x44,/*"E",37*/
+  91          
+  92                          0x00,0x7C,0x1C,0x04,/*"F",38*/
+  93          
+  94                          0x38,0x64,0x24,0x20,/*"G",39*/
+  95          
+  96                          0x00,0x7C,0x10,0x7C,/*"H",40*/
+  97          
+  98                          0x00,0x44,0x7C,0x44,/*"I",41*/
+  99          
+ 100                          0x80,0x84,0xFC,0x04,/*"J",42*/
+ 101          
+ 102                          0x00,0x7C,0x7C,0x44,/*"K",43*/
+ 103          
+ 104                          0x00,0x7C,0x40,0x40,/*"L",44*/
+ 105          
+ 106                          0x7C,0x7F,0x7C,0x00,/*"M",45*/
+ 107          
+ 108                          0x00,0x7C,0x7C,0x7C,/*"N",46*/
+ 109          
+ 110                          0x38,0x44,0x44,0x38,/*"O",47*/
+ 111          
+ 112                          0x00,0x7C,0x14,0x1C,/*"P",48*/
+ 113          
+ 114                          0x38,0x64,0x64,0xB8,/*"Q",49*/
+ 115          
+ 116                          0x00,0x7C,0x0C,0x3C,/*"R",50*/
+ 117          
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 3   
 
- 118            
- 119            * 
- 120            * param cipsel 
- 121            * 
- 122            * @return 
- 123            */
- 124          ERCD LCD_Chip_Select(uint8_t chipsel)
- 125          {
- 126   1          if (chipsel > 3){
- 127   2              return ERCD_ARG_ERR;
- 128   2          }
- 129   1              //LCD_CHIP_SEL_OUTPUT();
- 130   1              //Delay(1);
- 131   1          switch (chipsel){
- 132   2              case 0:
- 133   2                  LCD_CHIP_SEL_0();
- 134   2                  break;
- 135   2              case 1:
- 136   2                  LCD_CHIP_SEL_1();
- 137   2                  break;
- 138   2              case 2:
- 139   2                  LCD_CHIP_SEL_2();
- 140   2                  break;
- 141   2              case 3:
- 142   2                  LCD_CHIP_SEL_3();
- 143   2                  break;
- 144   2              default:
- 145   2                  break;
- 146   2          }
- 147   1              //Delay(1);
- 148   1              _nop_();
- 149   1              _nop_();
- 150   1              _nop_();
- 151   1          return ERCD_OK;
- 152   1      }
- 153          /* 
- 154          * 
- 155          * 
- 156          * @ara row 
- 157           * @param col 
- 158           * 
- 159           * @return 
- 160           */
- 161          ERCD LCD_Locate(uint16_t row, uint16_t col)
- 162          {
- 163   1          uint8_t chipsel = 0;
- 164   1              gl_curRow = row;
- 165   1              gl_curCol = col;
- 166   1          if ( (col < LCD_COLS) && (row < LCD_ROWS) ){ /*check if the row and col is over range */
- 167   2              chipsel = col / LCD_CHIP_WIDTH;
- 168   2              LCD_Chip_Select(chipsel);
- 169   2          } else {
- 170   2              return ERCD_ARG_ERR;
- 171   2          }
- 172   1          LCD_Write_CMD(LCD_SET_X_ADDRESS|(row>>3)); /*Page address*/
- 173   1          LCD_Write_CMD(LCD_SET_Y_ADDRESS|(col%LCD_CHIP_WIDTH));
- 174   1          return ERCD_OK;
- 175   1      }
- 176          
+ 118                          0x4C,0x54,0x64,0x00,/*"S",51*/
+ 119          
+ 120                          0x04,0x04,0x7C,0x04,/*"T",52*/
+ 121          
+ 122                          0x00,0x7C,0x40,0x7C,/*"U",53*/
+ 123          
+ 124                          0x04,0x3C,0x60,0x3C,/*"V",54*/
+ 125          
+ 126                          0x0C,0x74,0x1C,0x7C,/*"W",55*/
+ 127          
+ 128                          0x44,0x7C,0x7C,0x44,/*"X",56*/
+ 129          
+ 130                          0x04,0x4C,0x70,0x4C,/*"Y",57*/
+ 131          
+ 132                          0x44,0x7C,0x4C,0x00,/*"Z",58*/
+ 133          
+ 134                          0x00,0x00,0xFE,0x82,/*"[",59*/
+ 135          
+ 136                          0x00,0x1C,0xE0,0x00,/*"\",60*/
+ 137          
+ 138                          0x00,0x82,0xFE,0x00,/*"]",61*/
+ 139          
+ 140                          0x00,0x04,0x02,0x04,/*"^",62*/
+ 141          
+ 142                          0x80,0x80,0x80,0x80,/*"_",63*/
+ 143          
+ 144                          0x00,0x00,0x02,0x00,/*"`",64*/
+ 145          
+ 146                          0x68,0x58,0x78,0x40,/*"a",65*/
+ 147          
+ 148                          0x00,0x7C,0x48,0x78,/*"b",66*/
+ 149          
+ 150                          0x70,0x48,0x48,0x00,/*"c",67*/
+ 151          
+ 152                          0x78,0x48,0x7C,0x00,/*"d",68*/
+ 153          
+ 154                          0x00,0x70,0x58,0x58,/*"e",69*/
+ 155          
+ 156                          0x48,0x7C,0x4C,0x00,/*"f",70*/
+ 157          
+ 158                          0x00,0xF8,0xD8,0xD8,/*"g",71*/
+ 159          
+ 160                          0x00,0x7C,0x08,0x78,/*"h",72*/
+ 161          
+ 162                          0x00,0x48,0x7C,0x40,/*"i",73*/
+ 163          
+ 164                          0x00,0x88,0xFC,0x00,/*"j",74*/
+ 165          
+ 166                          0x00,0x7C,0x78,0x48,/*"k",75*/
+ 167          
+ 168                          0x00,0x44,0x7C,0x40,/*"l",76*/
+ 169          
+ 170                          0x78,0x78,0x78,0x00,/*"m",77*/
+ 171          
+ 172                          0x00,0x78,0x08,0x78,/*"n",78*/
+ 173          
+ 174                          0x30,0x48,0x48,0x30,/*"o",79*/
+ 175          
+ 176                          0x00,0xF8,0xC8,0x78,/*"p",80*/
  177          
- 178          /*-----------------------------------------------------------------------*/
- 179          /* Put a character                                                       */
-C51 COMPILER V9.00   LPC2478_LCD                                                           04/19/2011 22:55:10 PAGE 4   
+ 178                          0x78,0xC8,0xF8,0x00,/*"q",81*/
+ 179          
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 4   
 
- 180          /*-----------------------------------------------------------------------*/
+ 180                          0x48,0x78,0x48,0x08,/*"r",82*/
  181          
- 182          
+ 182                          0x00,0x58,0x68,0x68,/*"s",83*/
  183          
- 184          ERCD LCD_PutDot(uint16_t row, uint16_t col, uint8_t dot_state)
- 185          {
- 186   1              
- 187   1              uint8_t ram;
- 188   1              LCD_Write_CMD(LCD_DISPLAY_ON);
- 189   1              LCD_Locate(row,col);
- 190   1              ram = LCD_Read_Char();
- 191   1              ram = LCD_Read_Char();
- 192   1              ram = (ram & (~(1<<(row%8))) & 0xff) | (dot_state<<(row%8));
- 193   1              LCD_Locate(row,col);
- 194   1          LCD_Write_Char(ram);
- 195   1          return ERCD_OK;
- 196   1      }
+ 184                          0x08,0x7C,0x40,0x00,/*"t",84*/
+ 185          
+ 186                          0x00,0x78,0x40,0x78,/*"u",85*/
+ 187          
+ 188                          0x08,0x38,0x40,0x38,/*"v",86*/
+ 189          
+ 190                          0x18,0x68,0x18,0x78,/*"w",87*/
+ 191          
+ 192                          0x48,0x78,0x78,0x48,/*"x",88*/
+ 193          
+ 194                          0x88,0xD8,0x38,0x08,/*"y",89*/
+ 195          
+ 196                          0x00,0x68,0x78,0x48,/*"z",90*/
  197          
- 198          ERCD LCD_ClrScreen(void)
- 199          {
- 200   1              uint16_t i ,j, k;
- 201   1              for(k=0;k<4;k++)
- 202   1              {
- 203   2                      LCD_Chip_Select(k);
- 204   2                      for(j=0;j<8;j++)
- 205   2                      {
- 206   3                              LCD_Write_CMD(LCD_SET_X_ADDRESS|j);
- 207   3                              LCD_Write_CMD(LCD_SET_Y_ADDRESS);
- 208   3                              for(i=0;i<64;i++)
- 209   3                                      LCD_Write_Char(0x00);
- 210   3                      }
- 211   2              }
- 212   1              LCD_Locate(0,0);
- 213   1              return ERCD_OK;
- 214   1      }
+ 198                          0x00,0x10,0xFE,0x82,/*"{",91*/
+ 199          
+ 200                          0x00,0x00,0xFF,0x00,/*"|",92*/
+ 201          
+ 202                          0x82,0xFE,0x10,0x00,/*"}",93*/
+ 203          
+ 204                          0x03,0x01,0x02,0x03,/*"~",94*/
+ 205          };
+ 206          uint8_t code gl_asckey8X16[] = {
+ 207                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+ 208                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*" ",0*/
+ 209          
+ 210                          0x00,0x00,0x00,0xF8,0x00,0x00,0x00,0x00,
+ 211                          0x00,0x00,0x00,0x33,0x30,0x00,0x00,0x00,/*"!",1*/
+ 212          
+ 213                          0x00,0x10,0x0C,0x06,0x10,0x0C,0x06,0x00,
+ 214                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*""",2*/
+ 215          
+ 216                          0x40,0xC0,0x78,0x40,0xC0,0x78,0x40,0x00,
+ 217                          0x04,0x3F,0x04,0x04,0x3F,0x04,0x04,0x00,/*"#",3*/
+ 218          
+ 219                          0x00,0x70,0x88,0xFC,0x08,0x30,0x00,0x00,
+ 220                          0x00,0x18,0x20,0xFF,0x21,0x1E,0x00,0x00,/*"$",4*/
+ 221          
+ 222                          0xF0,0x08,0xF0,0x00,0xE0,0x18,0x00,0x00,
+ 223                          0x00,0x21,0x1C,0x03,0x1E,0x21,0x1E,0x00,/*"%",5*/
+ 224          
+ 225                          0x00,0xF0,0x08,0x88,0x70,0x00,0x00,0x00,
+ 226                          0x1E,0x21,0x23,0x24,0x19,0x27,0x21,0x10,/*"&",6*/
+ 227          
+ 228                          0x10,0x16,0x0E,0x00,0x00,0x00,0x00,0x00,
+ 229                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*"'",7*/
+ 230          
+ 231                          0x00,0x00,0x00,0xE0,0x18,0x04,0x02,0x00,
+ 232                          0x00,0x00,0x00,0x07,0x18,0x20,0x40,0x00,/*"(",8*/
+ 233          
+ 234                          0x00,0x02,0x04,0x18,0xE0,0x00,0x00,0x00,
+ 235                          0x00,0x40,0x20,0x18,0x07,0x00,0x00,0x00,/*")",9*/
+ 236          
+ 237                          0x40,0x40,0x80,0xF0,0x80,0x40,0x40,0x00,
+ 238                          0x02,0x02,0x01,0x0F,0x01,0x02,0x02,0x00,/*"*",10*/
+ 239          
+ 240                          0x00,0x00,0x00,0xF0,0x00,0x00,0x00,0x00,
+ 241                          0x01,0x01,0x01,0x1F,0x01,0x01,0x01,0x00,/*"+",11*/
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 5   
+
+ 242          
+ 243                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+ 244                          0x80,0xB0,0x70,0x00,0x00,0x00,0x00,0x00,/*",",12*/
+ 245          
+ 246                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+ 247                          0x00,0x01,0x01,0x01,0x01,0x01,0x01,0x01,/*"-",13*/
+ 248          
+ 249                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+ 250                          0x00,0x30,0x30,0x00,0x00,0x00,0x00,0x00,/*".",14*/
+ 251          
+ 252                          0x00,0x00,0x00,0x00,0x80,0x60,0x18,0x04,
+ 253                          0x00,0x60,0x18,0x06,0x01,0x00,0x00,0x00,/*"/",15*/
+ 254          
+ 255                          0x00,0xE0,0x10,0x08,0x08,0x10,0xE0,0x00,
+ 256                          0x00,0x0F,0x10,0x20,0x20,0x10,0x0F,0x00,/*"0",16*/
+ 257          
+ 258                          0x00,0x10,0x10,0xF8,0x00,0x00,0x00,0x00,
+ 259                          0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,/*"1",17*/
+ 260          
+ 261                          0x00,0x70,0x08,0x08,0x08,0x88,0x70,0x00,
+ 262                          0x00,0x30,0x28,0x24,0x22,0x21,0x30,0x00,/*"2",18*/
+ 263          
+ 264                          0x00,0x30,0x08,0x88,0x88,0x48,0x30,0x00,
+ 265                          0x00,0x18,0x20,0x20,0x20,0x11,0x0E,0x00,/*"3",19*/
+ 266          
+ 267                          0x00,0x00,0xC0,0x20,0x10,0xF8,0x00,0x00,
+ 268                          0x00,0x07,0x04,0x24,0x24,0x3F,0x24,0x00,/*"4",20*/
+ 269          
+ 270                          0x00,0xF8,0x08,0x88,0x88,0x08,0x08,0x00,
+ 271                          0x00,0x19,0x21,0x20,0x20,0x11,0x0E,0x00,/*"5",21*/
+ 272          
+ 273                          0x00,0xE0,0x10,0x88,0x88,0x18,0x00,0x00,
+ 274                          0x00,0x0F,0x11,0x20,0x20,0x11,0x0E,0x00,/*"6",22*/
+ 275          
+ 276                          0x00,0x38,0x08,0x08,0xC8,0x38,0x08,0x00,
+ 277                          0x00,0x00,0x00,0x3F,0x00,0x00,0x00,0x00,/*"7",23*/
+ 278          
+ 279                          0x00,0x70,0x88,0x08,0x08,0x88,0x70,0x00,
+ 280                          0x00,0x1C,0x22,0x21,0x21,0x22,0x1C,0x00,/*"8",24*/
+ 281          
+ 282                          0x00,0xE0,0x10,0x08,0x08,0x10,0xE0,0x00,
+ 283                          0x00,0x00,0x31,0x22,0x22,0x11,0x0F,0x00,/*"9",25*/
+ 284          
+ 285                          0x00,0x00,0x00,0xC0,0xC0,0x00,0x00,0x00,
+ 286                          0x00,0x00,0x00,0x30,0x30,0x00,0x00,0x00,/*":",26*/
+ 287          
+ 288                          0x00,0x00,0x00,0x80,0x00,0x00,0x00,0x00,
+ 289                          0x00,0x00,0x80,0x60,0x00,0x00,0x00,0x00,/*";",27*/
+ 290          
+ 291                          0x00,0x00,0x80,0x40,0x20,0x10,0x08,0x00,
+ 292                          0x00,0x01,0x02,0x04,0x08,0x10,0x20,0x00,/*"<",28*/
+ 293          
+ 294                          0x40,0x40,0x40,0x40,0x40,0x40,0x40,0x00,
+ 295                          0x04,0x04,0x04,0x04,0x04,0x04,0x04,0x00,/*"=",29*/
+ 296          
+ 297                          0x00,0x08,0x10,0x20,0x40,0x80,0x00,0x00,
+ 298                          0x00,0x20,0x10,0x08,0x04,0x02,0x01,0x00,/*">",30*/
+ 299          
+ 300                          0x00,0x70,0x48,0x08,0x08,0x08,0xF0,0x00,
+ 301                          0x00,0x00,0x00,0x30,0x36,0x01,0x00,0x00,/*"?",31*/
+ 302          
+ 303                          0x00,0x70,0x08,0x08,0x08,0x88,0x70,0x00,
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 6   
+
+ 304                          0x00,0x30,0x28,0x24,0x22,0x21,0x30,0x00,/*"2",32*/
+ 305          
+ 306                          0x00,0x00,0xC0,0x38,0xE0,0x00,0x00,0x00,
+ 307                          0x20,0x3C,0x23,0x02,0x02,0x27,0x38,0x20,/*"A",33*/
+ 308          
+ 309                          0x08,0xF8,0x88,0x88,0x88,0x70,0x00,0x00,
+ 310                          0x20,0x3F,0x20,0x20,0x20,0x11,0x0E,0x00,/*"B",34*/
+ 311          
+ 312                          0xC0,0x30,0x08,0x08,0x08,0x08,0x38,0x00,
+ 313                          0x07,0x18,0x20,0x20,0x20,0x10,0x08,0x00,/*"C",35*/
+ 314          
+ 315                          0x08,0xF8,0x08,0x08,0x08,0x10,0xE0,0x00,
+ 316                          0x20,0x3F,0x20,0x20,0x20,0x10,0x0F,0x00,/*"D",36*/
+ 317          
+ 318                          0x08,0xF8,0x88,0x88,0xE8,0x08,0x10,0x00,
+ 319                          0x20,0x3F,0x20,0x20,0x23,0x20,0x18,0x00,/*"E",37*/
+ 320          
+ 321                          0x08,0xF8,0x88,0x88,0xE8,0x08,0x10,0x00,
+ 322                          0x20,0x3F,0x20,0x00,0x03,0x00,0x00,0x00,/*"F",38*/
+ 323          
+ 324                          0xC0,0x30,0x08,0x08,0x08,0x38,0x00,0x00,
+ 325                          0x07,0x18,0x20,0x20,0x22,0x1E,0x02,0x00,/*"G",39*/
+ 326          
+ 327                          0x08,0xF8,0x08,0x00,0x00,0x08,0xF8,0x08,
+ 328                          0x20,0x3F,0x21,0x01,0x01,0x21,0x3F,0x20,/*"H",40*/
+ 329          
+ 330                          0x00,0x08,0x08,0xF8,0x08,0x08,0x00,0x00,
+ 331                          0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,/*"I",41*/
+ 332          
+ 333                          0x00,0x00,0x08,0x08,0xF8,0x08,0x08,0x00,
+ 334                          0xC0,0x80,0x80,0x80,0x7F,0x00,0x00,0x00,/*"J",42*/
+ 335          
+ 336                          0x08,0xF8,0x88,0xC0,0x28,0x18,0x08,0x00,
+ 337                          0x20,0x3F,0x20,0x01,0x26,0x38,0x20,0x00,/*"K",43*/
+ 338          
+ 339                          0x08,0xF8,0x08,0x00,0x00,0x00,0x00,0x00,
+ 340                          0x20,0x3F,0x20,0x20,0x20,0x20,0x30,0x00,/*"L",44*/
+ 341          
+ 342                          0x08,0xF8,0xF8,0x00,0xF8,0xF8,0x08,0x00,
+ 343                          0x20,0x3F,0x00,0x3F,0x00,0x3F,0x20,0x00,/*"M",45*/
+ 344          
+ 345                          0x08,0xF8,0x30,0xC0,0x00,0x08,0xF8,0x08,
+ 346                          0x20,0x3F,0x20,0x00,0x07,0x18,0x3F,0x00,/*"N",46*/
+ 347          
+ 348                          0xE0,0x10,0x08,0x08,0x08,0x10,0xE0,0x00,
+ 349                          0x0F,0x10,0x20,0x20,0x20,0x10,0x0F,0x00,/*"O",47*/
+ 350          
+ 351                          0x08,0xF8,0x08,0x08,0x08,0x08,0xF0,0x00,
+ 352                          0x20,0x3F,0x21,0x01,0x01,0x01,0x00,0x00,/*"P",48*/
+ 353          
+ 354                          0xE0,0x10,0x08,0x08,0x08,0x10,0xE0,0x00,
+ 355                          0x0F,0x18,0x24,0x24,0x38,0x50,0x4F,0x00,/*"Q",49*/
+ 356          
+ 357                          0x08,0xF8,0x88,0x88,0x88,0x88,0x70,0x00,
+ 358                          0x20,0x3F,0x20,0x00,0x03,0x0C,0x30,0x20,/*"R",50*/
+ 359          
+ 360                          0x00,0x70,0x88,0x08,0x08,0x08,0x38,0x00,
+ 361                          0x00,0x38,0x20,0x21,0x21,0x22,0x1C,0x00,/*"S",51*/
+ 362          
+ 363                          0x18,0x08,0x08,0xF8,0x08,0x08,0x18,0x00,
+ 364                          0x00,0x00,0x20,0x3F,0x20,0x00,0x00,0x00,/*"T",52*/
+ 365          
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 7   
+
+ 366                          0x08,0xF8,0x08,0x00,0x00,0x08,0xF8,0x08,
+ 367                          0x00,0x1F,0x20,0x20,0x20,0x20,0x1F,0x00,/*"U",53*/
+ 368          
+ 369                          0x08,0x78,0x88,0x00,0x00,0xC8,0x38,0x08,
+ 370                          0x00,0x00,0x07,0x38,0x0E,0x01,0x00,0x00,/*"V",54*/
+ 371          
+ 372                          0xF8,0x08,0x00,0xF8,0x00,0x08,0xF8,0x00,
+ 373                          0x03,0x3C,0x07,0x00,0x07,0x3C,0x03,0x00,/*"W",55*/
+ 374          
+ 375                          0x08,0x18,0x68,0x80,0x80,0x68,0x18,0x08,
+ 376                          0x20,0x30,0x2C,0x03,0x03,0x2C,0x30,0x20,/*"X",56*/
+ 377          
+ 378                          0x08,0x38,0xC8,0x00,0xC8,0x38,0x08,0x00,
+ 379                          0x00,0x00,0x20,0x3F,0x20,0x00,0x00,0x00,/*"Y",57*/
+ 380          
+ 381                          0x10,0x08,0x08,0x08,0xC8,0x38,0x08,0x00,
+ 382                          0x20,0x38,0x26,0x21,0x20,0x20,0x18,0x00,/*"Z",58*/
+ 383          
+ 384                          0x00,0x00,0x00,0xFE,0x02,0x02,0x02,0x00,
+ 385                          0x00,0x00,0x00,0x7F,0x40,0x40,0x40,0x00,/*"[",59*/
+ 386          
+ 387                          0x00,0x0C,0x30,0xC0,0x00,0x00,0x00,0x00,
+ 388                          0x00,0x00,0x00,0x01,0x06,0x38,0xC0,0x00,/*"\",60*/
+ 389          
+ 390                          0x00,0x02,0x02,0x02,0xFE,0x00,0x00,0x00,
+ 391                          0x00,0x40,0x40,0x40,0x7F,0x00,0x00,0x00,/*"]",61*/
+ 392          
+ 393                          0x00,0x00,0x04,0x02,0x02,0x02,0x04,0x00,
+ 394                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*"^",62*/
+ 395          
+ 396                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+ 397                          0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x80,/*"_",63*/
+ 398          
+ 399                          0x00,0x02,0x02,0x04,0x00,0x00,0x00,0x00,
+ 400                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*"`",64*/
+ 401          
+ 402                          0x00,0x00,0x80,0x80,0x80,0x80,0x00,0x00,
+ 403                          0x00,0x19,0x24,0x22,0x22,0x22,0x3F,0x20,/*"a",65*/
+ 404          
+ 405                          0x08,0xF8,0x00,0x80,0x80,0x00,0x00,0x00,
+ 406                          0x00,0x3F,0x11,0x20,0x20,0x11,0x0E,0x00,/*"b",66*/
+ 407          
+ 408                          0x00,0x00,0x00,0x80,0x80,0x80,0x00,0x00,
+ 409                          0x00,0x0E,0x11,0x20,0x20,0x20,0x11,0x00,/*"c",67*/
+ 410          
+ 411                          0x00,0x00,0x00,0x80,0x80,0x88,0xF8,0x00,
+ 412                          0x00,0x0E,0x11,0x20,0x20,0x10,0x3F,0x20,/*"d",68*/
+ 413          
+ 414                          0x00,0x00,0x80,0x80,0x80,0x80,0x00,0x00,
+ 415                          0x00,0x1F,0x22,0x22,0x22,0x22,0x13,0x00,/*"e",69*/
+ 416          
+ 417                          0x00,0x80,0x80,0xF0,0x88,0x88,0x88,0x18,
+ 418                          0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,/*"f",70*/
+ 419          
+ 420                          0x00,0x00,0x80,0x80,0x80,0x80,0x80,0x00,
+ 421                          0x00,0x6B,0x94,0x94,0x94,0x93,0x60,0x00,/*"g",71*/
+ 422          
+ 423                          0x08,0xF8,0x00,0x80,0x80,0x80,0x00,0x00,
+ 424                          0x20,0x3F,0x21,0x00,0x00,0x20,0x3F,0x20,/*"h",72*/
+ 425          
+ 426                          0x00,0x80,0x98,0x98,0x00,0x00,0x00,0x00,
+ 427                          0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,/*"i",73*/
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 8   
+
+ 428          
+ 429                          0x00,0x00,0x00,0x80,0x98,0x98,0x00,0x00,
+ 430                          0x00,0xC0,0x80,0x80,0x80,0x7F,0x00,0x00,/*"j",74*/
+ 431          
+ 432                          0x08,0xF8,0x00,0x00,0x80,0x80,0x80,0x00,
+ 433                          0x20,0x3F,0x24,0x02,0x2D,0x30,0x20,0x00,/*"k",75*/
+ 434          
+ 435                          0x00,0x08,0x08,0xF8,0x00,0x00,0x00,0x00,
+ 436                          0x00,0x20,0x20,0x3F,0x20,0x20,0x00,0x00,/*"l",76*/
+ 437          
+ 438                          0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x00,
+ 439                          0x20,0x3F,0x20,0x00,0x3F,0x20,0x00,0x3F,/*"m",77*/
+ 440          
+ 441                          0x80,0x80,0x00,0x80,0x80,0x80,0x00,0x00,
+ 442                          0x20,0x3F,0x21,0x00,0x00,0x20,0x3F,0x20,/*"n",78*/
+ 443          
+ 444                          0x00,0x00,0x80,0x80,0x80,0x80,0x00,0x00,
+ 445                          0x00,0x1F,0x20,0x20,0x20,0x20,0x1F,0x00,/*"o",79*/
+ 446          
+ 447                          0x80,0x80,0x00,0x80,0x80,0x00,0x00,0x00,
+ 448                          0x80,0xFF,0xA1,0x20,0x20,0x11,0x0E,0x00,/*"p",80*/
+ 449          
+ 450                          0x00,0x00,0x00,0x80,0x80,0x80,0x80,0x00,
+ 451                          0x00,0x0E,0x11,0x20,0x20,0xA0,0xFF,0x80,/*"q",81*/
+ 452          
+ 453                          0x80,0x80,0x80,0x00,0x80,0x80,0x80,0x00,
+ 454                          0x20,0x20,0x3F,0x21,0x20,0x00,0x01,0x00,/*"r",82*/
+ 455          
+ 456                          0x00,0x00,0x80,0x80,0x80,0x80,0x80,0x00,
+ 457                          0x00,0x33,0x24,0x24,0x24,0x24,0x19,0x00,/*"s",83*/
+ 458          
+ 459                          0x00,0x80,0x80,0xE0,0x80,0x80,0x00,0x00,
+ 460                          0x00,0x00,0x00,0x1F,0x20,0x20,0x00,0x00,/*"t",84*/
+ 461          
+ 462                          0x80,0x80,0x00,0x00,0x00,0x80,0x80,0x00,
+ 463                          0x00,0x1F,0x20,0x20,0x20,0x10,0x3F,0x20,/*"u",85*/
+ 464          
+ 465                          0x80,0x80,0x80,0x00,0x00,0x80,0x80,0x80,
+ 466                          0x00,0x01,0x0E,0x30,0x08,0x06,0x01,0x00,/*"v",86*/
+ 467          
+ 468                          0x80,0x80,0x00,0x80,0x00,0x80,0x80,0x80,
+ 469                          0x0F,0x30,0x0C,0x03,0x0C,0x30,0x0F,0x00,/*"w",87*/
+ 470          
+ 471                          0x00,0x80,0x80,0x00,0x80,0x80,0x80,0x00,
+ 472                          0x00,0x20,0x31,0x2E,0x0E,0x31,0x20,0x00,/*"x",88*/
+ 473          
+ 474                          0x80,0x80,0x80,0x00,0x00,0x80,0x80,0x80,
+ 475                          0x80,0x81,0x8E,0x70,0x18,0x06,0x01,0x00,/*"y",89*/
+ 476          
+ 477                          0x00,0x80,0x80,0x80,0x80,0x80,0x80,0x00,
+ 478                          0x00,0x21,0x30,0x2C,0x22,0x21,0x30,0x00,/*"z",90*/
+ 479          
+ 480                          0x00,0x00,0x00,0x00,0x80,0x7C,0x02,0x02,
+ 481                          0x00,0x00,0x00,0x00,0x00,0x3F,0x40,0x40,/*"{",91*/
+ 482          
+ 483                          0x00,0x00,0x00,0x00,0xFF,0x00,0x00,0x00,
+ 484                          0x00,0x00,0x00,0x00,0xFF,0x00,0x00,0x00,/*"|",92*/
+ 485          
+ 486                          0x00,0x02,0x02,0x7C,0x80,0x00,0x00,0x00,
+ 487                          0x00,0x40,0x40,0x3F,0x00,0x00,0x00,0x00,/*"}",93*/
+ 488          
+ 489                          0x00,0x06,0x01,0x01,0x02,0x02,0x04,0x04,
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 9   
+
+ 490                          0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*"~",94*/
+ 491          };
+ 492          /** 
+ 493           * 
+ 494           * 
+ 495           * 
+ 496           * @return 
+ 497           */
+ 498          ERCD LCD_Init(void)
+ 499          {
+ 500   1          uint8_t i ;
+ 501   1          LCD_RST_LOW();                  /*RST must keep low at least 1us then go high*/
+ 502   1          Delay(100);
+ 503   1          LCD_RST_HIGH();
+ 504   1          Delay(10);
+ 505   1          for (i = 0; i < 4; i++){
+ 506   2              LCD_Chip_Select(i);
+ 507   2              LCD_Write_CMD(LCD_DISPLAY_ON);/*Display on*/
+ 508   2              LCD_Write_CMD(LCD_DISPLAY_START_ADDR|0x0);/*display startline register 0*/
+ 509   2          }
+ 510   1          return ERCD_OK;
+ 511   1      }
+ 512          /** 
+ 513           * 
+ 514           * 
+ 515           * @param cmdcode 
+ 516           * 
+ 517           * @return 
+ 518           */
+ 519          ERCD LCD_Write_CMD(uint8_t cmdcode)
+ 520          {
+ 521   1          while(LCD_Read_Status() & 0x90);
+ 522   1              
+ 523   1              LCD_RS_LOW();                   /*when RS=0 R/W=0,cmd write the data bus*/
+ 524   1          LCD_R_W_LOW();
+ 525   1          LCD_OUT_DATA(cmdcode);          /*output cmd  on the bus*/
+ 526   1          LCD_E_HIGH_LOW();               /*when E high->low data appear on the bus*/
+ 527   1              _nop_();
+ 528   1              _nop_();
+ 529   1              _nop_();
+ 530   1          return ERCD_OK;
+ 531   1      }
+ 532          /** 
+ 533           * 
+ 534           * 
+ 535           * @param char_data 
+ 536           * 
+ 537           * @return 
+ 538           */
+ 539          ERCD LCD_Write_Char(uint8_t char_data)
+ 540          {
+ 541   1          while(LCD_Read_Status() & 0x90);
+ 542   1              //LCD_E_LOW();
+ 543   1              LCD_RS_HIGH();                  /*when RS=1 R/W=0,cmd write the data bus*/
+ 544   1          LCD_R_W_LOW();
+ 545   1          LCD_OUT_DATA(char_data);        /*output data on the bus*/
+ 546   1          LCD_E_HIGH_LOW();               /*when E high->low(falling edge) data appear on the bus*/
+ 547   1              _nop_();
+ 548   1              _nop_();
+ 549   1              _nop_();
+ 550   1          return ERCD_OK;
+ 551   1      }
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 10  
+
+ 552          /** 
+ 553           * 
+ 554           * 
+ 555           * 
+ 556           * @return 
+ 557           */
+ 558          uint8_t LCD_Read_Char(void)
+ 559          {
+ 560   1          uint8_t data_read;
+ 561   1          while(LCD_Read_Status() & 0x90);
+ 562   1          /*when read data ,a dummy read is needed*/
+ 563   1          LCD_RS_HIGH();                   /*when RS=1 R/W=1,read data from the displayram*/
+ 564   1          LCD_R_W_HIGH();
+ 565   1              LCD_E_HIGH();                    /*when E=1 and device is selected data appear*/
+ 566   1          data_read = LCD_IN_DATA();       /*in data on the bus*/
+ 567   1          LCD_E_LOW(); 
+ 568   1              _nop_();
+ 569   1              _nop_();
+ 570   1              _nop_();
+ 571   1          return data_read;                            /*must pull low here*/
+ 572   1      }
+ 573          /** 
+ 574           * 
+ 575           * 
+ 576           * 
+ 577           * @return 
+ 578           */
+ 579          uint8_t LCD_Read_Status(void)
+ 580          {
+ 581   1          uint8_t status;
+ 582   1          /*when read status ,a dummy read is not needed*/
+ 583   1              LCD_OUT_DATA(0x00);
+ 584   1              _nop_();
+ 585   1              _nop_();
+ 586   1          LCD_RS_LOW();                  /*when RS=0 R/W=1,read status ofthe l*/
+ 587   1          LCD_R_W_HIGH();
+ 588   1              LCD_E_HIGH();                   /*when E=1 and device is selecte dat ppear*/
+ 589   1          status= LCD_IN_DATA();         /*n data on the bus*/    
+ 590   1              LCD_E_LOW();                            /*must pull low here*/
+ 591   1          return status;
+ 592   1      }
+ 593          /** 
+ 594            
+ 595            * 
+ 596            * param cipsel 
+ 597            * 
+ 598            * @return 
+ 599            */
+ 600          ERCD LCD_Chip_Select(uint8_t chipsel)
+ 601          {
+ 602   1          if (chipsel > 3){
+ 603   2              return ERCD_ARG_ERR;
+ 604   2          }
+ 605   1              //LCD_CHIP_SEL_OUTPUT();
+ 606   1              //Delay(1);
+ 607   1          switch (chipsel){
+ 608   2              case 0:
+ 609   2                  LCD_CHIP_SEL_0();
+ 610   2                  break;
+ 611   2              case 1:
+ 612   2                  LCD_CHIP_SEL_1();
+ 613   2                  break;
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 11  
+
+ 614   2              case 2:
+ 615   2                  LCD_CHIP_SEL_2();
+ 616   2                  break;
+ 617   2              case 3:
+ 618   2                  LCD_CHIP_SEL_3();
+ 619   2                  break;
+ 620   2              default:
+ 621   2                  break;
+ 622   2          }
+ 623   1              //Delay(1);
+ 624   1              _nop_();
+ 625   1              _nop_();
+ 626   1              _nop_();
+ 627   1          return ERCD_OK;
+ 628   1      }
+ 629          /* 
+ 630          * 
+ 631          * 
+ 632          * @ara row 
+ 633           * @param col 
+ 634           * 
+ 635           * @return 
+ 636           */
+ 637          ERCD LCD_Locate(uint16_t row, uint16_t col)
+ 638          {
+ 639   1          uint8_t chipsel = 0;
+ 640   1              gl_curRow = row;
+ 641   1              gl_curCol = col;
+ 642   1          if ( (col < LCD_COLS) && (row < LCD_ROWS) ){ /*check if the row and col is over range */
+ 643   2              chipsel = col / LCD_CHIP_WIDTH;
+ 644   2              LCD_Chip_Select(chipsel);
+ 645   2          } else {
+ 646   2              return ERCD_ARG_ERR;
+ 647   2          }
+ 648   1          LCD_Write_CMD(LCD_SET_X_ADDRESS|(row>>3)); /*Page address*/
+ 649   1          LCD_Write_CMD(LCD_SET_Y_ADDRESS|(col%LCD_CHIP_WIDTH));
+ 650   1          return ERCD_OK;
+ 651   1      }
+ 652          
+ 653          
+ 654          
+ 655          ERCD LCD_PutDot(uint16_t row, uint16_t col, uint8_t dot_state)
+ 656          {
+ 657   1              
+ 658   1              uint8_t ram;
+ 659   1              LCD_Write_CMD(LCD_DISPLAY_ON);
+ 660   1              LCD_Locate(row,col);
+ 661   1              ram = LCD_Read_Char();
+ 662   1              ram = LCD_Read_Char();
+ 663   1              ram = (ram & (~(1<<(row%8))) & 0xff) | (dot_state<<(row%8));
+ 664   1              LCD_Locate(row,col);
+ 665   1          LCD_Write_Char(ram);
+ 666   1          return ERCD_OK;
+ 667   1      }
+ 668          
+ 669          ERCD LCD_PutAsc(uint8_t asc_type,uint8_t asc_code)
+ 670          {
+ 671   1      
+ 672   1              uint8_t i;
+ 673   1              uint16_t asc_codeTemp;
+ 674   1      
+ 675   1              asc_codeTemp = asc_code;
+C51 COMPILER V9.00   LPC2478_LCD                                                           04/20/2011 01:18:09 PAGE 12  
+
+ 676   1              LCD_Write_CMD(LCD_DISPLAY_ON);
+ 677   1      
+ 678   1              switch (asc_type){
+ 679   2                      case ASC_8X16:
+ 680   2                              LCD_Locate(gl_curRow,gl_curCol);
+ 681   2                              for (i = 0;i < 8; i++){
+ 682   3                                              LCD_Write_Char(gl_asckey8X16[i+(asc_codeTemp-ASC_CODE_START)<<8]);
+ 683   3                              }
+ 684   2                              LCD_Locate(gl_curRow+8,gl_curCol);
+ 685   2                              for (i = 8;i < 16; i++){
+ 686   3                                                      LCD_Write_Char(gl_asckey8X16[i+(asc_codeTemp-ASC_CODE_START)<<8]);
+ 687   3                              }
+ 688   2                              LCD_Locate(gl_curRow,gl_curCol+8);
+ 689   2                              break;
+ 690   2                      case ASC_8X8:
+ 691   2                              LCD_Locate(gl_curRow,gl_curCol);
+ 692   2                              for (i = 0;i < 8; i++){
+ 693   3                                      LCD_Write_Char(gl_asckey8X8[i+(asc_codeTemp-ASC_CODE_START)<<8]);
+ 694   3                              }
+ 695   2                              LCD_Locate(gl_curRow,gl_curCol+8);
+ 696   2                              break;
+ 697   2                      default:
+ 698   2                              break;
+ 699   2              }
+ 700   1          return ERCD_OK;
+ 701   1      }
+ 702          
+ 703          ERCD LCD_ClrScreen(void)
+ 704          {
+ 705   1              uint16_t i ,j, k;
+ 706   1              for(k=0;k<4;k++)
+ 707   1              {
+ 708   2                      LCD_Chip_Select(k);
+ 709   2                      for(j=0;j<8;j++)
+ 710   2                      {
+ 711   3                              LCD_Write_CMD(LCD_SET_X_ADDRESS|j);
+ 712   3                              LCD_Write_CMD(LCD_SET_Y_ADDRESS);
+ 713   3                              for(i=0;i<64;i++)
+ 714   3                                      LCD_Write_Char(0x00);
+ 715   3                      }
+ 716   2              }
+ 717   1              LCD_Locate(0,0);
+ 718   1              return ERCD_OK;
+ 719   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    463    ----
-   CONSTANT SIZE    =   ----    ----
+   CODE SIZE        =    634    ----
+   CONSTANT SIZE    =   1900    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      4      17
+   DATA SIZE        =      4      21
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

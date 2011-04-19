@@ -293,6 +293,7 @@ uint8_t code num[] ={
 
 
 
+
  void main()
  {
 	uint16_t i,j,k;
@@ -326,17 +327,19 @@ uint8_t code num[] ={
 	}*/
 	LCD_ClrScreen();
 	//LCD_Locate();
-	Delay(2000);
+	Delay(200);
 	//LCD_Read_Char();
-	for(k=0;k<16;k++)
+	/*for(k=0;k<16;k++)
 	{
 		for(j=0;j<12;j++)
 		{
 			LCD_PutDot(k*4,4*j,1);
 		}
 	}
-	Delay(10000);
-	
+	Delay(10000);*/
+	LCD_Locate(8,64);
+	LCD_PutAsc(ASC_8X8,'a');
+
 
 	/*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);
 	LCD_Write_CMD(0xb8+0);	 //ҳ��ַ����

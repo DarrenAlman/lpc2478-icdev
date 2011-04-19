@@ -71,6 +71,15 @@ sbit E_PIN = P0^4;
 #define LCD_CHIP_SEL_OUTPUT()   {LCD_CSA = 1;LCD_CSB = 1;LCD_CSC=1;} /*select the left-most section*/
 #define LCD_CHIP_DISABLE_ALL() {LCD_CSC = 1}           /*Disable all the access to the LCD module*/
 
+#define ASC_CODE_START 32
+#define ASC_8X16	1
+#define ASC_8X8 	0
+
+extern uint16_t gl_curRow;
+extern uint16_t gl_curCol ;
+extern uint8_t code gl_asckey8X8[];
+extern uint8_t code gl_asckey8X16[];
+
 /*function declaration*/
 ERCD LCD_Init(void);
 ERCD LCD_Write_CMD(uint8_t cmdcode);
@@ -82,5 +91,6 @@ ERCD LCD_Locate(uint16_t row, uint16_t col);
 void Delay(uint16_t t);
 ERCD LCD_ClrScreen(void);
 ERCD LCD_PutDot(uint16_t row, uint16_t col, uint8_t dot_state);
+ERCD LCD_PutAsc(uint8_t asc_type,uint8_t asc_code);
 
 #endif
