@@ -92,5 +92,6 @@ void Delay(uint16_t t);
 ERCD LCD_ClrScreen(void);
 ERCD LCD_PutDot(uint16_t row, uint16_t col, uint8_t dot_state);
 ERCD LCD_PutAsc(uint8_t asc_type,uint8_t asc_code);
+ERCD LCD_PutAscStr(uint8_t asc_type,uint8_t *asc_str);
 
 #endif

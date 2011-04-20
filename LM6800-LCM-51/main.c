@@ -299,6 +299,7 @@ uint8_t code num[] ={
 	uint16_t i,j,k;
 	uint16_t n;
 	uint8_t status = 0;
+	uint8_t hello[] ="Hello World!" ;
 	//while(1);
 	LCD_CSC = 1;
 	LCD_CSB = 1;
@@ -359,8 +360,14 @@ uint8_t code num[] ={
 	LCD_PutAsc(ASC_8X16,'{');
 	LCD_PutAsc(ASC_8X16,'A');
 	LCD_PutAsc(ASC_8X8,'B');
+	LCD_PutAsc(ASC_8X8,'\n');
 	LCD_PutAsc(ASC_8X8,'C');
 	LCD_PutAsc(ASC_8X8,'d');
+	LCD_PutAscStr(ASC_8X8,"\b\b\b\b\b\b");
+	LCD_PutAscStr(ASC_8X8,&hello[0]);
+	LCD_PutAscStr(ASC_8X8,"\n");
+	LCD_PutAscStr(ASC_8X16,&hello[0]);
+
 	Delay(5000);
 	/*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);
 	LCD_Write_CMD(0xb8+0);	 //ҳ��ַ����

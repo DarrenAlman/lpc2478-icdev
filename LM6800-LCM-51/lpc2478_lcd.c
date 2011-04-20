@@ -674,9 +674,34 @@ ERCD LCD_PutAsc(uint8_t asc_type,uint8_t asc_code)
 
 	asc_codeTemp = asc_code;
 	LCD_Write_CMD(LCD_DISPLAY_ON);
-	row = gl_curRow;
-	col = gl_curCol;
-	col = (col >> 3) << 3;
+
+	switch (asc_code){ /*deal with the special code*/
+		case '\n':
+			if (asc_type == ASC_8X8){
+				LCD_Locate((gl_curRow+8)&(LCD_ROWS-1),0);
+			}else if (asc_type == ASC_8X16){
+				LCD_Locate((gl_curRow+16)&(LCD_ROWS-1),0);
+			}
+			return ERCD_OK;
+		case '\r':
+			LCD_Locate(gl_curRow,0);
+			return ERCD_OK;
+		case '\b':
+			if ((gl_curCol-8) > (LCD_COLS -1)){
+				if (asc_type == ASC_8X8){
+					gl_curRow = (gl_curRow - 8)&(LCD_ROWS-1);
+				}else if (asc_type == ASC_8X16){
+					gl_curRow = (gl_curRow - 16)&(LCD_ROWS-1);
+				}
+			}
+			LCD_Locate(gl_curRow,(gl_curCol-8)&(LCD_COLS-1));
+			return ERCD_OK;
+		default:
+			row = gl_curRow;
+			col = gl_curCol;
+			col = (col >> 3) << 3;
+		break;
+	}
 
 	switch (asc_type){
 		case ASC_8X16:
@@ -684,23 +709,36 @@ ERCD LCD_PutAsc(uint8_t asc_type,uint8_t asc_code)
 			for (i = 0;i < 8; i++){
 				LCD_Write_Char(gl_asckey8X16[i+((asc_codeTemp-ASC_CODE_START)<<4)]); /*notice the priority*/
 			}
-			LCD_Locate(row+8,col);
+			LCD_Locate((row+8)&(LCD_ROWS-1),col);
 			for (i = 8;i < 16; i++){
 				LCD_Write_Char(gl_asckey8X16[i+((asc_codeTemp-ASC_CODE_START)<<4)]); /*notice the priority*/
 			}
-			LCD_Locate(row,col+8);
+			if ((col+8) > (LCD_COLS-1)){
+				row = (row + 8)&(LCD_ROWS-1);
+			}
+			LCD_Locate(row, (col+8)&(LCD_COLS-1));
 			break;
 		case ASC_8X8:
 			LCD_Locate(row,col);
 			for (i = 0;i < 8; i++){
 				LCD_Write_Char(gl_asckey8X8[i+((asc_codeTemp-ASC_CODE_START)<<3)]); /*notice the priority*/
 			}
-			LCD_Locate(row,col+8);
+			if ((col+8) > (LCD_COLS-1)){
+				row = (row + 8)&(LCD_ROWS-1);
+			}
+			LCD_Locate(row,(col+8)&(LCD_COLS-1));
 			break;
 		default:
 			break;
 	}
     return ERCD_OK;
+}
+ERCD LCD_PutAscStr(uint8_t asc_type,uint8_t *asc_str)
+{
+	while((*asc_str) != 0){
+		LCD_PutAsc(asc_type,*asc_str++);
+	}
+	return ERCD_OK;
 }
 
 ERCD LCD_ClrScreen(void)
