@@ -19,7 +19,7 @@
 <folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1996420947." name="/" resourcePath="">
 <toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.698230151" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
 <targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.1310211626" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
-<builder buildPath="${workspace_loc:/lcd/Debug}" id="cdt.managedbuild.target.gnu.builder.exe.debug.879204727" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.debug"/>
+<builder buildPath="${workspace_loc:/lcd}" id="cdt.managedbuild.target.gnu.builder.exe.debug.879204727" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.debug"/>
 <tool id="cdt.managedbuild.tool.gnu.archiver.base.416862231" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1964446622" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
 <option id="gnu.cpp.compiler.exe.debug.option.optimization.level.2143914139" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
@@ -31,12 +31,11 @@
 <option id="gnu.c.compiler.option.include.paths.564588729" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="/media/Program/Keil/C51/INC/SST"/>
 <listOptionValue builtIn="false" value="/media/Program/Keil/C51/INC"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/media/Program/Keil/C51/INC}&quot;"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1675500898" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1315700345" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
-<option id="gnu.c.link.option.paths.1942743468" superClass="gnu.c.link.option.paths" valueType="libPaths">
+<option id="gnu.c.link.option.paths.1942743468" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
 <listOptionValue builtIn="false" value="/media/Program/Keil/C51/INC"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.c.linker.input.2012843162" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
