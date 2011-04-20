@@ -13,6 +13,7 @@
 
 #include "SST89x5xxRD2.H"
 #include "INTRINS.H"
+#include "monitor.h"
 
 
 typedef  unsigned long   uint32_t;
@@ -74,6 +75,7 @@ sbit E_PIN = P0^4;
 #define ASC_CODE_START 32
 #define ASC_8X16	1
 #define ASC_8X8 	0
+#define _LCM_PUT_8X8 1
 
 extern uint16_t gl_curRow;
 extern uint16_t gl_curCol ;
@@ -93,5 +95,6 @@ ERCD LCD_ClrScreen(void);
 ERCD LCD_PutDot(uint16_t row, uint16_t col, uint8_t dot_state);
 ERCD LCD_PutAsc(uint8_t asc_type,uint8_t asc_code);
 ERCD LCD_PutAscStr(uint8_t asc_type,uint8_t *asc_str);
+void LCD_PutCode(uint8_t asc_code);
 
 #endif
