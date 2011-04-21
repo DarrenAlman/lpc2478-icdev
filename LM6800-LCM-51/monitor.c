@@ -15,9 +15,9 @@
 
 
 #if _USE_XFUNC_OUT
-#include <stdarg.h>
+
 void (*xfunc_out)(unsigned char);	/* Pointer to the output stream */
-static xdata char *outptr;
+static  char *outptr;
 
 /*----------------------------------------------*/
 /* Put a character                              */
@@ -27,12 +27,14 @@ void xputc (char c)
 {
 	if (_CR_CRLF && c == '\n') xputc('\r');		/* CR -> CRLF */
 
+	if (xfunc_out) xfunc_out((unsigned char)c);
 	if (outptr) {
 		*outptr++ = (unsigned char)c;
 		return;
 	}
 
-	if (xfunc_out) xfunc_out((unsigned char)c);
+	
+	
 }
 
 

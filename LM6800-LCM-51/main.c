@@ -136,7 +136,7 @@
 
 	}*/
 	LCD_Locate(6,32);
-	LCD_PutAsc(ASC_8X16,'{');
+	/*LCD_PutAsc(ASC_8X16,'{');
 	LCD_PutAsc(ASC_8X16,'A');
 	LCD_PutAsc(ASC_8X8,'B');
 	LCD_PutAsc(ASC_8X8,'\n');
@@ -145,11 +145,14 @@
 	LCD_PutAscStr(ASC_8X8,"\b\b\b\b\b\b");
 	LCD_PutAscStr(ASC_8X8,&hello[0]);
 	LCD_PutAscStr(ASC_8X8,"\n");
-	LCD_PutAscStr(ASC_8X16,&hello[0]);
-	xprintf("row:%d col:%d\n",gl_curRow,gl_curCol);
-	//xprintf("Hello!");
+	LCD_PutAscStr(ASC_8X16,&hello[0]);	*/
+	
+	xputc('a');
+	xprintf("Hello!");
+	j = 10;
+	xprintf("r:%d c:%d\n", 1,1);
 
-	Delay(5000);
+	//Delay(5000);
 	/*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);
 	LCD_Write_CMD(0xb8+0);	 //ҳ��ַ����
 	LCD_Write_CMD(0x40);		//�е�ַ����

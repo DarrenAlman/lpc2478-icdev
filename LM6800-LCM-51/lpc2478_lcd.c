@@ -742,12 +742,12 @@ ERCD LCD_PutAscStr(uint8_t asc_type,uint8_t *asc_str)
 }
 void LCD_PutCode(uint8_t asc_code)
 {
-#if _LCM_PUT_8X8
+//#if _LCM_PUT_8X8
 	LCD_PutAsc(ASC_8X8,asc_code);
-#else
-	LCD_PutAsc(ASC_8X16,asc_code);
-#endif
-	return ;
+//#else
+//	LCD_PutAsc(ASC_8X16,asc_code);
+//#endif
+//	return ;
 }
 
 ERCD LCD_ClrScreen(void)
