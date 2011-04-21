@@ -181,10 +181,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>39</ColumnNumber>
+      <ColumnNumber>52</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>2</CurrentLine>
+      <TopLine>57</TopLine>
+      <CurrentLine>68</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\lpc2478_lcd.c</PathWithFileName>
       <FilenameWithoutPath>lpc2478_lcd.c</FilenameWithoutPath>
@@ -1279,5 +1279,22 @@
       </Window>
     </View>
   </WinLayout>
+
+  <MDIGroups>
+    <Orientation>1</Orientation>
+    <ActiveMDIGroup>0</ActiveMDIGroup>
+    <MDIGroup>
+      <Size>100</Size>
+      <ActiveTab>0</ActiveTab>
+      <Documents>
+        <Doc>
+          <Name>.\main.c</Name>
+          <ColumnNumber>35</ColumnNumber>
+          <TopLine>128</TopLine>
+          <CurrentLine>148</CurrentLine>
+        </Doc>
+      </Documents>
+    </MDIGroup>
+  </MDIGroups>
 
 </ProjectOpt>

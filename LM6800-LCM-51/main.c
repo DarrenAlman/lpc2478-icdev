@@ -135,7 +135,7 @@
 		}
 
 	}*/
-	LCD_Locate(6,32);
+	LCD_Locate(6,230);
 	/*LCD_PutAsc(ASC_8X16,'{');
 	LCD_PutAsc(ASC_8X16,'A');
 	LCD_PutAsc(ASC_8X8,'B');
@@ -144,13 +144,14 @@
 	LCD_PutAsc(ASC_8X8,'d');
 	LCD_PutAscStr(ASC_8X8,"\b\b\b\b\b\b");
 	LCD_PutAscStr(ASC_8X8,&hello[0]);
-	LCD_PutAscStr(ASC_8X8,"\n");
-	LCD_PutAscStr(ASC_8X16,&hello[0]);	*/
-	
-	xputc('a');
-	xprintf("Hello!");
+	LCD_PutAscStr(ASC_8X8,"\n");*/
+	LCD_PutAscStr(ASC_16X16,&hello[0]);
+	LCD_PutAscStr(ASC_16X16,"\b\b\b\b\b");
+	//LCD_PutAscStr(ASC_16X16,"TEST");
+	xputs("     ");
+	//xprintf("Hello!");
 	j = 10;
-	xprintf("r:%d c:%d\n", 1,1);
+	xprintf("r:%d c:%d\n",(int)1,(int)1);
 
 	//Delay(5000);
 	/*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);
@@ -194,7 +195,7 @@
 	{
 		
 		//while (LCD_Read_Status() & 0x80);
-	/*	LCD_Locate(2,i*4);
+		LCD_Locate(2,i*4);
 		LCD_Write_Char(0xa5);
 		LCD_Write_Char(0x5a);
 		LCD_Locate(25,i*4);
@@ -202,7 +203,7 @@
 		LCD_Write_Char(0x5a);
 		LCD_Locate(46,i*4);
 		LCD_Write_Char(0xa5);
-		LCD_Write_Char(0x5a); */
+		LCD_Write_Char(0x5a); 
 		/*LCD_Chip_Select(k);	   //оƬѡ��
 		LCD_Write_CMD(0xb8+j);
 			//ҳ��ַ����
