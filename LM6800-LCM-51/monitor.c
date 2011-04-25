@@ -36,7 +36,7 @@ void xputc (char c)
 		*outptr++ = (unsigned char)c;
 		return;
 	}
-
+    
 	
 	
 }
