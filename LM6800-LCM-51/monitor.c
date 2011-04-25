@@ -1,6 +1,7 @@
 /*------------------------------------------------------------------------/
 /  Universal string handler for user console interface
 /-------------------------------------------------------------------------/
+#include <SST89X5XXRD2.H>
 /
 /  Copyright (C) 2011, ChaN, all right reserved.
 /
@@ -27,7 +28,10 @@ void xputc (char c)
 {
 	if (_CR_CRLF && c == '\n') xputc('\r');		/* CR -> CRLF */
 
+    //xfunc_out = LCD_PutCode;
+	xdev_out(LCD_PutCode);
 	if (xfunc_out) xfunc_out((unsigned char)c);
+//	LCD_PutCode((unsigned char)c);
 	if (outptr) {
 		*outptr++ = (unsigned char)c;
 		return;

@@ -1,4 +1,4 @@
-#include "SST89x5xxRD2.H"
+//#include "SST89x5xxRD2.H"
 #include "lpc2478_lcd.h"
 
 
@@ -105,6 +105,8 @@
 		}
 	}*/
 	xdev_out(LCD_PutCode);
+	//xfunc_out = (void (*)(unsigned char))(LCD_PutCode);
+	//xfunc_out =  (LCD_PutCode);
 	LCD_ClrScreen();
 	//LCD_Locate();
 	Delay(200);
@@ -151,7 +153,7 @@
 	xputs("     ");
 	//xprintf("Hello!");
 	j = 10;
-	xprintf("r:%d c:%d\n",(int)1,(int)1);
+	xprintf("r:%d,%b c:%s\n",gl_curRow,gl_curRow,&hello[0]);
 
 	//Delay(5000);
 	/*LCD_CHIP_SEL_3();//LCD_Chip_Select(0);

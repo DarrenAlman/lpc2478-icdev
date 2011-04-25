@@ -13,8 +13,8 @@
 
 #include "SST89x5xxRD2.H"
 #include "INTRINS.H"
-#include "monitor.h"
 #include <stdarg.h>
+#include "monitor.h"
 
 typedef  unsigned long   uint32_t;
 typedef  signed   long   int32_t;
