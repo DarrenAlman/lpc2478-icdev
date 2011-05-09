@@ -1427,6 +1427,8 @@ ERCD LCD_Chip_Select(uint8_t chipsel)
         default:
             break;
     }
+    //LCD_CHIP_SEL(chipsel);
+    
 	//Delay(1);
 	_nop_();
 	_nop_();

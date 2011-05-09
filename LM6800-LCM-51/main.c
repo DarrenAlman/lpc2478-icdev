@@ -74,7 +74,7 @@
  void main()
  {
 	uint16_t i,j,k;
-	uint16_t n;
+//	uint16_t n;
 	uint8_t status = 0;
 	uint8_t hello[] ="Hello World!" ;
 	//while(1);

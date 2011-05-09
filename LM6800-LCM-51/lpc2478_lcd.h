@@ -69,6 +69,7 @@ sbit E_PIN = P0^4;
 #define LCD_CHIP_SEL_1()   {LCD_CSA = 1;LCD_CSB = 0;LCD_CSC=0;} /*select the left-most section*/
 #define LCD_CHIP_SEL_2()   {LCD_CSA = 0;LCD_CSB = 1;LCD_CSC=0;} /*select the left-most section*/
 #define LCD_CHIP_SEL_3()   {LCD_CSA = 1;LCD_CSB = 1;LCD_CSC=0;} /*select the left-most section*/
+//#define LCD_Chip_Select(NUM)      LCD_CHIP_SEL##_##NUM()
 #define LCD_CHIP_SEL_OUTPUT()   {LCD_CSA = 1;LCD_CSB = 1;LCD_CSC=1;} /*select the left-most section*/
 #define LCD_CHIP_DISABLE_ALL() {LCD_CSC = 1}           /*Disable all the access to the LCD module*/
 
