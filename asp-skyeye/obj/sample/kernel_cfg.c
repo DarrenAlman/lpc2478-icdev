@@ -293,8 +293,8 @@ const PRI _kernel_inh_ipm_tbl[TNUM_INH] = {
 };
 
 const uint32_t _kernel_ipm_mask_tbl[8]={
-	UINT32_C(0x00000000),/* Priority 0  */
-	UINT32_C(0x00000000),/* Priority -1  */
+	UINT32_C(0x000000 0),/* Priority 0  */
+	UINT32_C(0x000000 0),/* Priority -1  */
 	UINT32_C(0x00000004),/* Priority -2  */
 	UINT32_C(0x00000004),/* Priority -3  */
 	UINT32_C(0x00000004),/* Priority -4  */

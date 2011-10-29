@@ -53,8 +53,8 @@
     .global start
 start:
     /*
-     * プロセッサモードの初期化
-     * スーパーバイザーモード，FIQ/IRQ禁止
+     * プロセッサモードの初期化 //processor init
+     * スーパーバイザーモード，FIQ/IRQ禁止 //SVC模式 FIQ/IRQ中断禁止
      */
     msr  cpsr, #(CPSR_SVC|CPSR_INTLOCK) 
 
@@ -65,13 +65,13 @@ start:
      */
     ldr  r0, =_kernel_istkpt
     ldr  sp, [r0]
-    mov  fp, #0        /* ARMモード用フレームポインタ(r11) */         
-    mov  r7, #0        /* Thumbモード用フレームポインタ    */
+    mov  fp, #0        /* ARMモード用フレームポインタ(r11) */ /*ARM mode frame pointer r11*/
+    mov  r7, #0        /* Thumbモード用フレームポインタ    */ /*Thumb mode frame pointer*/
 
     /*
      * hardware_init_hookの呼び出し （0でない場合）
      *
-     * ターゲットハードウェアに依存して必要な初期化処理がある場合
+     * ターゲットハードウェアに依存して必要な初期化処理がある場合 //if initialize need depend on target, hardware_init_hook called
      * は，hardware_init_hook という関数を用意する
      */
     ldr   r0, =hardware_init_hook
@@ -80,6 +80,6 @@ start:
     movne pc, r0 
 
     /*
-     * コンパイラの初期化ルーチンを呼び出す
+     * コンパイラの初期化ルーチンを呼び出す //Call the initialization routine of the compiler
      */
     b __cs3_reset
