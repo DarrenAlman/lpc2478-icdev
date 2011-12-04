@@ -1,5 +1,14 @@
-#Wed Apr 06 01:47:16 CST 2011
+#Sun Dec 04 19:41:38 CST 2011
 eclipse.preferences.version=1
+encoding//include/kernel.h=UTF-8
+encoding//kernel/alarm.c=UTF-8
+encoding//kernel/alarm.h=UTF-8
+encoding//kernel/cyclic.c=UTF-8
+encoding//kernel/dataqueue.c=UTF-8
+encoding//kernel/dataqueue.h=UTF-8
+encoding//kernel/eventflag.c=UTF-8
+encoding//kernel/eventflag.h=UTF-8
+encoding//kernel/time_event.h=EUC-JP
 encoding//obj/sample/sample1.h=EUC-JP
 encoding//target/at91skyeye_gcc/target_config.c=EUC-JP
 encoding/<project>=EUC-JP

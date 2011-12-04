@@ -8,40 +8,40 @@
  *  Copyright (C) 2005-2008 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id: dataqueue.c 748 2008-03-07 17:18:06Z hiro $
  */
 
 /*
- *		�ǡ������塼��ǽ
+ *		データキュー機能
  */
 
 #include "kernel_impl.h"
@@ -51,7 +51,7 @@
 #include "dataqueue.h"
 
 /*
- *  �ȥ졼�������ޥ����Υǥե�������
+ *  トレースログマクロのデフォルト定義
  */
 #ifndef LOG_SND_DTQ_ENTER
 #define LOG_SND_DTQ_ENTER(dtqid, data)
@@ -142,18 +142,18 @@
 #endif /* LOG_REF_DTQ_LEAVE */
 
 /*
- *  �ǡ������塼�ο�
+ *  データキューの数
  */
 #define tnum_dtq	((uint_t)(tmax_dtqid - TMIN_DTQID + 1))
 
 /*
- *  �ǡ������塼ID����ǡ������塼�����֥��å�����Ф�����Υޥ���
+ *  データキューIDからデータキュー管理ブロックを取り出すためのマクロ
  */
 #define INDEX_DTQ(dtqid)	((uint_t)((dtqid) - TMIN_DTQID))
 #define get_dtqcb(dtqid)	(&(dtqcb_table[INDEX_DTQ(dtqid)]))
 
 /*
- *  �ǡ������塼��ǽ�ν����
+ *  データキュー機能の初期化
  */
 #ifdef TOPPERS_dtqini
 
@@ -176,7 +176,7 @@ initialize_dataqueue(void)
 #endif /* TOPPERS_dtqini */
 
 /*
- *  �ǡ������塼�����ΰ�ؤΥǡ����γ�Ǽ
+ *  データキュー管理領域へのデータの格納
  */
 #ifdef TOPPERS_dtqenq
 
@@ -194,7 +194,7 @@ enqueue_data(DTQCB *p_dtqcb, intptr_t data)
 #endif /* TOPPERS_dtqenq */
 
 /*
- *  �ǡ������塼�����ΰ�ؤΥǡ����ζ�����Ǽ
+ *  データキュー管理領域へのデータの強制格納
  */
 #ifdef TOPPERS_dtqfenq
 
@@ -217,7 +217,7 @@ force_enqueue_data(DTQCB *p_dtqcb, intptr_t data)
 #endif /* TOPPERS_dtqfenq */
 
 /*
- *  �ǡ������塼�����ΰ褫��Υǡ����μ�Ф�
+ *  データキュー管理領域からのデータの取出し
  */
 #ifdef TOPPERS_dtqdeq
 
@@ -235,7 +235,7 @@ dequeue_data(DTQCB *p_dtqcb, intptr_t *p_data)
 #endif /* TOPPERS_dtqdeq */
 
 /*
- *  �ǡ������塼�ؤΥǡ�������
+ *  データキューへのデータ送信
  */
 #ifdef TOPPERS_dtqsnd
 
@@ -263,7 +263,7 @@ send_data(DTQCB *p_dtqcb, intptr_t data, bool_t *p_reqdsp)
 #endif /* TOPPERS_dtqsnd */
 
 /*
- *  �ǡ������塼�ؤΥǡ�����������
+ *  データキューへのデータ強制送信
  */
 #ifdef TOPPERS_dtqfsnd
 
@@ -286,7 +286,7 @@ force_send_data(DTQCB *p_dtqcb, intptr_t data)
 #endif /* TOPPERS_dtqfsnd */
 
 /*
- *  �����Ԥ����塼����Ƭ����������Υǡ�������
+ *  送信待ちキューの先頭タスクからのデータ受信
  */
 #ifdef TOPPERS_dtqrcv
 
@@ -323,7 +323,7 @@ receive_data(DTQCB *p_dtqcb, intptr_t *p_data, bool_t *p_reqdsp)
 #endif /* TOPPERS_dtqrcv */
 
 /*
- *  �ǡ������塼�ؤ�����
+ *  データキューへの送信
  */
 #ifdef TOPPERS_snd_dtq
 
@@ -364,7 +364,8 @@ snd_dtq(ID dtqid, intptr_t data)
 #endif /* TOPPERS_snd_dtq */
 
 /*
- *  �ǡ������塼�ؤ������ʥݡ���󥰡�
+ *  データキューへの送信（ポーリング）
+ *  发送给数据队列（轮询）
  */
 #ifdef TOPPERS_psnd_dtq
 
@@ -400,7 +401,8 @@ psnd_dtq(ID dtqid, intptr_t data)
 #endif /* TOPPERS_psnd_dtq */
 
 /*
- *  �ǡ������塼�ؤ������ʥݡ���󥰡��󥿥�������ƥ������ѡ�
+ *  データキューへの送信（ポーリング，非タスクコンテキスト用）
+ *  发送给数据队列（非任务上下文轮询）。
  */
 #ifdef TOPPERS_ipsnd_dtq
 
@@ -436,7 +438,8 @@ ipsnd_dtq(ID dtqid, intptr_t data)
 #endif /* TOPPERS_ipsnd_dtq */
 
 /*
- *  �ǡ������塼�ؤ������ʥ����ॢ���Ȥ����
+ *  データキューへの送信（タイムアウトあり）
+ *  发送给数据队列（带超时）
  */
 #ifdef TOPPERS_tsnd_dtq
 
@@ -483,7 +486,8 @@ tsnd_dtq(ID dtqid, intptr_t data, TMO tmout)
 #endif /* TOPPERS_tsnd_dtq */
 
 /*
- *  �ǡ������塼�ؤζ�������
+ *  データキューへの強制送信
+ *  强制传输到数据队列
  */
 #ifdef TOPPERS_fsnd_dtq
 
@@ -514,7 +518,8 @@ fsnd_dtq(ID dtqid, intptr_t data)
 #endif /* TOPPERS_fsnd_dtq */
 
 /*
- *  �ǡ������塼�ؤζ����������󥿥�������ƥ������ѡ�
+ *  データキューへの強制送信（非タスクコンテキスト用）
+ *  强制传输到数据队列 非任务上下文
  */
 #ifdef TOPPERS_ifsnd_dtq
 
@@ -545,7 +550,8 @@ ifsnd_dtq(ID dtqid, intptr_t data)
 #endif /* TOPPERS_ifsnd_dtq */
 
 /*
- *  �ǡ������塼����μ���
+ *  データキューからの受信
+ *  数据队列的接收
  */
 #ifdef TOPPERS_rcv_dtq
 
@@ -591,7 +597,8 @@ rcv_dtq(ID dtqid, intptr_t *p_data)
 #endif /* TOPPERS_rcv_dtq */
 
 /*
- *  �ǡ������塼����μ����ʥݡ���󥰡�
+ *  データキューからの受信（ポーリング）
+ *  轮询 接收数据队列
  */
 #ifdef TOPPERS_prcv_dtq
 
@@ -627,7 +634,7 @@ prcv_dtq(ID dtqid, intptr_t *p_data)
 #endif /* TOPPERS_prcv_dtq */
 
 /*
- *  �ǡ������塼����μ����ʥ����ॢ���Ȥ����
+ *  データキューからの受信（タイムアウトあり）
  */
 #ifdef TOPPERS_trcv_dtq
 
@@ -678,7 +685,7 @@ trcv_dtq(ID dtqid, intptr_t *p_data, TMO tmout)
 #endif /* TOPPERS_trcv_dtq */
 
 /*
- *  �ǡ������塼�κƽ����
+ *  データキューの再初期化
  */
 #ifdef TOPPERS_ini_dtq
 
@@ -716,7 +723,7 @@ ini_dtq(ID dtqid)
 #endif /* TOPPERS_ini_dtq */
 
 /*
- *  �ǡ������塼�ξ��ֻ���
+ *  データキューの状態参照
  */
 #ifdef TOPPERS_ref_dtq
 
