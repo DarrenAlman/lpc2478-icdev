@@ -86,9 +86,9 @@ typedef struct pridataq_control_block {
 	const PDQINIB *p_pdqinib;	/* 初期化ブロックへのポインタ */
 	QUEUE		rwait_queue;	/* 優先度データキュー受信待ちキュー */
 	uint_t		count;			/* 優先度データキュー中のデータの数 */
-	PDQMB		*p_head;		/* 最初のデータ */
-	uint_t		unused;			/* 未使用データ管理ブロックの先頭 */
-	PDQMB		*p_freelist;	/* 未割当てデータ管理ブロックのリスト */
+	PDQMB		*p_head;		/* 最初のデータ */ /*The first data*/
+	uint_t		unused;			/* 未使用データ管理ブロックの先頭 */ /*Top management of unused data blocks*/
+	PDQMB		*p_freelist;	/* 未割当てデータ管理ブロックのリスト */ /*A list of unallocated blocks data management*/
 } PDQCB;
 
 /*

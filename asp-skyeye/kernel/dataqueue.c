@@ -635,6 +635,7 @@ prcv_dtq(ID dtqid, intptr_t *p_data)
 
 /*
  *  データキューからの受信（タイムアウトあり）
+ *  从数据队列接收（带超时）
  */
 #ifdef TOPPERS_trcv_dtq
 
@@ -724,6 +725,7 @@ ini_dtq(ID dtqid)
 
 /*
  *  データキューの状態参照
+ *  查看数据队列状态
  */
 #ifdef TOPPERS_ref_dtq
 

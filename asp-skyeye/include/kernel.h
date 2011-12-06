@@ -357,8 +357,8 @@ extern bool_t	xsns_xpn(void *p_excinf) throw();
 #define TA_TPRI			UINT_C(0x01)	/* タスクの待ち行列を優先度順に */
 #define TA_MPRI			UINT_C(0x02)	/* メッセージキューを優先度順に */
 
-#define TA_WMUL			UINT_C(0x02)	/* 複数の待ちタスク */
-#define TA_CLR			UINT_C(0x04)	/* イベントフラグのクリア指定 */
+#define TA_WMUL			UINT_C(0x02)	/* 複数の待ちタスク *//*多个任务等待*/
+#define TA_CLR			UINT_C(0x04)	/* イベントフラグのクリア指定 *//*要清除事件标志*/
 
 #define TA_STA			UINT_C(0x02)	/* 周期ハンドラを動作状態で生成 */
 
@@ -370,8 +370,8 @@ extern bool_t	xsns_xpn(void *p_excinf) throw();
 /*
  *  サービスコールの動作モードの定義
  */
-#define TWF_ORW			UINT_C(0x01)	/* イベントフラグのOR待ち */
-#define TWF_ANDW		UINT_C(0x02)	/* イベントフラグのAND待ち */
+#define TWF_ORW			UINT_C(0x01)	/* イベントフラグのOR待ち */ /*或等待事件标志*/
+#define TWF_ANDW		UINT_C(0x02)	/* イベントフラグのAND待ち */ /*and等待事件标志*/
 
 /*
  *  オブジェクトの状態の定義
@@ -394,8 +394,8 @@ extern bool_t	xsns_xpn(void *p_excinf) throw();
 #define TTW_MBX			UINT_C(0x0040)	/* メールボックスからの受信待ち */
 #define TTW_MPF			UINT_C(0x2000)	/* 固定長メモリブロックの獲得待ち */
 
-#define TTEX_ENA		UINT_C(0x01)	/* タスク例外処理許可状態 */
-#define TTEX_DIS		UINT_C(0x02)	/* タスク例外処理禁止状態 */
+#define TTEX_ENA		UINT_C(0x01)	/* タスク例外処理許可状態 */ /*任务异常启用状态*/
+#define TTEX_DIS		UINT_C(0x02)	/* タスク例外処理禁止状態 */ /*任务异常禁止状态*/
 
 #define TCYC_STP		UINT_C(0x01)	/* 周期ハンドラが動作していない */
 #define TCYC_STA		UINT_C(0x02)	/* 周期ハンドラが動作している */
@@ -409,7 +409,7 @@ extern bool_t	xsns_xpn(void *p_excinf) throw();
 #define TSK_SELF		0			/* 自タスク指定 */
 #define TSK_NONE		0			/* 該当するタスクがない */
 
-#define TPRI_SELF		0			/* 自タスクのベース優先度 */
+#define TPRI_SELF		0			/* 自タスクのベース優先度 *//*Base priority of the task itself*/
 #define TPRI_INI		0			/* タスクの起動時優先度 */
 
 #define TIPM_ENAALL		0			/* 割込み優先度マスク全解除 */

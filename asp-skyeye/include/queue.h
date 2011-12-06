@@ -78,6 +78,7 @@ queue_initialize(QUEUE *p_queue)
 
 /*
  *  キューの前エントリへの挿入
+ *  前插
  *
  *  p_queueの前にp_entryを挿入する．p_queueにキューヘッダを指定した場
  *  合には，キューの末尾にp_entryを挿入することになる．
@@ -93,6 +94,8 @@ queue_insert_prev(QUEUE *p_queue, QUEUE *p_entry)
 
 /*
  *  キューの次エントリへの挿入
+ *  p_entry插入在p_queue后面
+ *  后插
  *
  *  p_queueの次にp_entryを挿入する．p_queueにキューヘッダを指定した場
  *  合には，キューの先頭にp_entryを挿入することになる．

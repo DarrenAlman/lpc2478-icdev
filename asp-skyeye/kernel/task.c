@@ -386,6 +386,7 @@ change_priority(TCB *p_tcb, uint_t newpri)
 
 /*
  *  レディキューの回転
+ *  Rotation of the ready queue
  *
  *  最高優先順位のタスクを更新するのは，最高優先順位のタスクがタスクキ
  *  ューの末尾に移動した場合である．

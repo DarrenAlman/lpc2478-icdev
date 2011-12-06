@@ -270,6 +270,7 @@ iset_flg(ID flgid, FLGPTN setptn)
 
 /*
  *  イベントフラグのクリア
+ *  清除事件标志
  */
 #ifdef TOPPERS_clr_flg
 
@@ -298,6 +299,7 @@ clr_flg(ID flgid, FLGPTN clrptn)
 
 /*
  *  イベントフラグ待ち
+ *  事件标志等待
  */
 #ifdef TOPPERS_wai_flg
 
@@ -345,6 +347,7 @@ wai_flg(ID flgid, FLGPTN waiptn, MODE wfmode, FLGPTN *p_flgptn)
 
 /*
  *  イベントフラグ待ち（ポーリング）
+ *  事件标志等待（轮询）
  */
 #ifdef TOPPERS_pol_flg
 
@@ -436,6 +439,7 @@ twai_flg(ID flgid, FLGPTN waiptn, MODE wfmode, FLGPTN *p_flgptn, TMO tmout)
 
 /*
  *  イベントフラグの再初期化
+ *  重新初始化事件标志
  */
 #ifdef TOPPERS_ini_flg
 
@@ -469,6 +473,7 @@ ini_flg(ID flgid)
 
 /*
  *  イベントフラグの状態参照
+ *  查看事件标志状态
  */
 #ifdef TOPPERS_ref_flg
 
