@@ -115,7 +115,9 @@ dispatch_r:
     ldmfd sp!,{r4 - r11,lr}     /* レジスタの復帰 */
     /*
      * タスク例外処理ルーチンの起動
+     * Starting the task exception handling routine
      * dispatcherから呼び出されるため，TCBのアドレスはr1に入っている
+     * called and the dispatcher, the address of the TCB is contained in r1
      */
     ldrb  r0,[r1,#TCB_enatex]
     tst   r0,#TCB_enatex_mask
@@ -138,7 +140,7 @@ start_dispatch:
      *  タスクコンテキストと同等）で呼び出されることを想定している．
      *
      *  dispatcherは，CPUロック状態，（モデル上の）割込み優先度マスク全
-     *  解除状態，例外（割込み/CPU例外）のネスト回数0で呼び出す．     
+     *  解除状態，例外（割込み/CPU例外）のネスト回数0で呼び出す．
      *  target_initializeでは，（モデル上の）割込み優先度マスク全解除
      *  とし，カーネル管理外の割込みであるFIQを許可することで，
      *  CPUロック状態・（モデル上の）割込み優先度マスク全解除状態になる．
@@ -157,7 +159,7 @@ start_dispatch:
  */
     .globl exit_and_dispatch
 exit_and_dispatch:
-    /* ディスパッチャ本体（dispatcher）へ */    
+    /* ディスパッチャ本体（dispatcher）へ */
 
 /*
  *  ディスパッチャ本体
@@ -190,7 +192,7 @@ dispatcher_0:
     bl    log_dsp_leave
     mov   r1, r4
 #endif /* LOG_DSP_LEAVE */
-    ldr   pc, [r1,#TCB_pc]  /* 実行再開番地を復帰   */    
+    ldr   pc, [r1,#TCB_pc]  /* 実行再開番地を復帰   */
 dispatcher_1:
     /*
      * CPUロック状態の解除と，非タスクコンテキスト実行状態への
@@ -315,7 +317,7 @@ ret_exc:
 ret_int_1:
     /*
      *  割込み処理からのリターンにより，CPUロック解除状態に移行しなければ
-     *  ならない．    
+     *  ならない．
      *  ARMでは，CPSRのIRQビットでCPUロック解除状態とするため，単にリターン
      *  すればよい．
      */                
@@ -372,7 +374,7 @@ ret_int_3:
     b     dispatcher
 
 ret_int_r: 
-    ldmfd sp!, {r4-r11}       /* レジスタの復帰 */    
+    ldmfd sp!, {r4-r11}       /* レジスタの復帰 */
 ret_int_4:
     /*
      *  enatexがtrueで，texptnが0でなければ，タスク例外処理ルーチンを
@@ -384,7 +386,7 @@ ret_int_4:
     beq   ret_int_5              /* enatex が false なら ret_int5へ */
     ldr   r0, [r1,#TCB_texptn]   /* texptnをロード               */
     tst   r0, r0                 /* texptn が0で無ければ         */
-    blne  call_texrtn            /* タスク例外ルーチンの呼び出し */            
+    blne  call_texrtn            /* タスク例外ルーチンの呼び出し */
 ret_int_5:
     /*
      *  割込み処理からのリターンにより，CPUロック解除状態に移行するよ
@@ -393,7 +395,7 @@ ret_int_5:
      */        
     ldmfd sp!, {r0}             /* spsr を復帰 */
     msr   spsr,r0               /* 戻り先のcpsrをspsrに設定 */
-    ldmfd sp!,{r0-r3,ip,lr,pc}^ /* タスクに復帰 ^付きなので、cpsr <- spsr */    
+    ldmfd sp!,{r0-r3,ip,lr,pc}^ /* タスクに復帰 ^付きなので、cpsr <- spsr */
     
 
 /*

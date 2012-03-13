@@ -8,51 +8,51 @@
  *  Copyright (C) 2006-2010 by Embedded and Real-Time Systems Laboratory
  *              Graduate School of Information Science, Nagoya Univ., JAPAN
  * 
- *  �嵭����Ԥϡ��ʲ���(1)��(4)�ξ������������˸¤ꡤ�ܥ��եȥ���
- *  �����ܥ��եȥ���������Ѥ�����Τ�ޤࡥ�ʲ�Ʊ���ˤ���ѡ�ʣ������
- *  �ѡ������ۡʰʲ������ѤȸƤ֡ˤ��뤳�Ȥ�̵���ǵ������롥
- *  (1) �ܥ��եȥ������򥽡��������ɤη������Ѥ�����ˤϡ��嵭������
- *      ��ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ��꤬�����Τޤޤη��ǥ���
- *      ����������˴ޤޤ�Ƥ��뤳�ȡ�
- *  (2) �ܥ��եȥ������򡤥饤�֥������ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ�����Ǻ����ۤ�����ˤϡ������ۤ�ȼ���ɥ�����ȡ�����
- *      �ԥޥ˥奢��ʤɡˤˡ��嵭�����ɽ�����������Ѿ�浪��Ӳ���
- *      ��̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *  (3) �ܥ��եȥ������򡤵�����Ȥ߹���ʤɡ�¾�Υ��եȥ�������ȯ�˻�
- *      �ѤǤ��ʤ����Ǻ����ۤ�����ˤϡ����Τ����줫�ξ�����������
- *      �ȡ�
- *    (a) �����ۤ�ȼ���ɥ�����ȡ����Ѽԥޥ˥奢��ʤɡˤˡ��嵭����
- *        �ɽ�����������Ѿ�浪��Ӳ�����̵�ݾڵ����Ǻܤ��뤳�ȡ�
- *    (b) �����ۤη��֤��̤�������ˡ�ˤ�äơ�TOPPERS�ץ��������Ȥ�
- *        ��𤹤뤳�ȡ�
- *  (4) �ܥ��եȥ����������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������뤤���ʤ�»
- *      ������⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ����դ��뤳�ȡ�
- *      �ޤ����ܥ��եȥ������Υ桼���ޤ��ϥ���ɥ桼������Τ����ʤ���
- *      ͳ�˴�Ť����ᤫ��⡤�嵭����Ԥ����TOPPERS�ץ��������Ȥ�
- *      ���դ��뤳�ȡ�
+ *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
+ *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
+ *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
+ *      権表示，この利用条件および下記の無保証規定が，そのままの形でソー
+ *      スコード中に含まれていること．
+ *  (2) 本ソフトウェアを，ライブラリ形式など，他のソフトウェア開発に使
+ *      用できる形で再配布する場合には，再配布に伴うドキュメント（利用
+ *      者マニュアルなど）に，上記の著作権表示，この利用条件および下記
+ *      の無保証規定を掲載すること．
+ *  (3) 本ソフトウェアを，機器に組み込むなど，他のソフトウェア開発に使
+ *      用できない形で再配布する場合には，次のいずれかの条件を満たすこ
+ *      と．
+ *    (a) 再配布に伴うドキュメント（利用者マニュアルなど）に，上記の著
+ *        作権表示，この利用条件および下記の無保証規定を掲載すること．
+ *    (b) 再配布の形態を，別に定める方法によって，TOPPERSプロジェクトに
+ *        報告すること．
+ *  (4) 本ソフトウェアの利用により直接的または間接的に生じるいかなる損
+ *      害からも，上記著作権者およびTOPPERSプロジェクトを免責すること．
+ *      また，本ソフトウェアのユーザまたはエンドユーザからのいかなる理
+ *      由に基づく請求からも，上記著作権者およびTOPPERSプロジェクトを
+ *      免責すること．
  * 
- *  �ܥ��եȥ������ϡ�̵�ݾڤ��󶡤���Ƥ����ΤǤ��롥�嵭����Ԥ�
- *  ���TOPPERS�ץ��������Ȥϡ��ܥ��եȥ������˴ؤ��ơ�����λ�����Ū
- *  ���Ф���Ŭ������ޤ�ơ������ʤ��ݾڤ�Ԥ�ʤ����ޤ����ܥ��եȥ���
- *  �������Ѥˤ��ľ��Ū�ޤ��ϴ���Ū�������������ʤ�»���˴ؤ��Ƥ⡤��
- *  ����Ǥ�����ʤ���
+ *  本ソフトウェアは，無保証で提供されているものである．上記著作権者お
+ *  よびTOPPERSプロジェクトは，本ソフトウェアに関して，特定の使用目的
+ *  に対する適合性も含めて，いかなる保証も行わない．また，本ソフトウェ
+ *  アの利用により直接的または間接的に生じたいかなる損害に関しても，そ
+ *  の責任を負わない．
  * 
  *  @(#) $Id: target_support.S 839 2008-03-20 14:50:50Z honda $
  */
 
 /*
- *  ���åװ�¸�⥸�塼�� ������֥��������AT91SKYEYE�ѡ�
+ *  チップ依存モジュール アセンブリ言語部（AT91SKYEYE用）
  */
 
 #define  TOPPERS_MACRO_ONLY
-#define UINT_C(val)		(val)		/* uint_t�����������ޥ��� */
-#define ULONG_C(val)	(val)		/* ulong_t�����������ޥ��� */
+#define UINT_C(val)		(val)		/* uint_t型の定数を作るマクロ */
+#define ULONG_C(val)	(val)		/* ulong_t型の定数を作るマクロ */
 #include "kernel_impl.h"
 
 /*
- *  ���٥�Υ������åȥ����ƥ��¸�ν����
+ *  低レベルのターゲットシステム依存の初期化
  *
- *  �������ȥ��åץ⥸�塼�����ǡ��������������˸ƤӽФ���롥          
+ *  スタートアップモジュールの中で，メモリ初期化の前に呼び出される．
  */
         .text
         .align 2
@@ -75,150 +75,153 @@ software_term_hook:
 
 
 /*
- * ����ߥϥ�ɥ�
+ * 割込みハンドラ
  *
- * IRQ �㳰�٥�������ƤӽФ����
+ * IRQ 例外ベクタから呼び出される
  */
     .text
     .align 2
     .global irq_handler
 irq_handler:
     /* 
-     * IRQ�⡼�ɤǼ¹Ԥ����
+     * IRQモードで実行される
+     * 在IRQ模式执行
      */
     /* 
-     *  ��������Υ⡼��(�����ѡ��Х������⡼��)��
-     *  �ܹԤ�������ƥ����Ȥ���¸����
+     *  割込み前のモード(スーパーバイザーモード)へ
+     *  移行し，コンテキストを保存する
+     *  在IRQ中断模式前，先进入SVC模式将上下文保存
      */
     msr   cpsr, #(CPSR_SVC|CPSR_IRQ_BIT) 
-    stmfd sp!, {r0-r3, ip, lr, pc} /* pc�ϥ��ߡ� */
+    stmfd sp!, {r0-r3, ip, lr, pc} /* pcはダミー */
 
     /*
-     * spsr��������Ϥ�������뤿���IRQ�⡼�ɤ�
+     * spsrと戻り番地を取得するためにIRQモードへ
+     * IRQ mode to get the address and return to spsr
      */
     msr   cpsr, #(CPSR_IRQ|CPSR_IRQ_BIT)
     sub   r0, lr, #4
     mrs   r1, spsr
 
     /*
-     *  ����ߥϥ�ɥ�¹Ի��Υ⡼�ɡʥ����ѡ��Х������⡼�ɡˤ�
+     *  割込みハンドラ実行時のモード（スーパーバイザーモード）に
      */
     msr   cpsr, #(CPSR_SVC|CPSR_IRQ_BIT) 
-    str   r0, [sp, #0x18] /* ������Ϥ򥹥��å��� */
-    stmfd sp!, {r1}       /* spsr�򥹥��å�����¸ */
-    mov   lr, sp          /* ���λ����Υ����å��������Τ������ */
+    str   r0, [sp, #0x18] /* 戻り番地をスタックに *//*The return address stack*/
+    stmfd sp!, {r1}       /* spsrをスタックに保存 */
+    mov   lr, sp          /* この時点のスタックを復帰のため取得 */
 
     /*
-     *  ¿�ų���ߤ�Ƚ��
+     *  多重割込みか判定
      */
 
-    ldr   r2, =excpt_nest_count /* �㳰������ߥͥ��Ȳ������� */
+    ldr   r2, =excpt_nest_count /* 例外・割込みネスト回数を取得 */
     ldr   r3, [r2]
-    add   r0, r3, #1            /* �㳰������ߥͥ��Ȳ���򹹿� */
+    add   r0, r3, #1            /* 例外・割込みネスト回数を更新 */
     str   r0, [r2]
     cmp   r3, #0    
     bne   irq_handler_1
 
     /* 
-     * �����ܤ��㳰�ʳ���ߡˤʤ饹���å����ѹ�����
+     * 一段目の例外（割込み）ならスタックを変更する
      */
     ldr   r0, =_kernel_istkpt
     ldr   sp, [r0]
 
 irq_handler_1:
-    stmfd sp!, {lr}     /* �����ѤΥ����å��ݥ��󥿤���¸ */
+    stmfd sp!, {lr}     /* 復帰用のスタックポインタの保存 */
 
     ldr   r1, =AIC_IVR
     ldr   r3, [r1]
 
     /*
-     *  �������װ���Ƚ��
+     *  割り込み要因の判定
      */
     ldr   r1, =AIC_ISR
     ldr   r3, [r1]
 
     /*
-     *  ������װ��γ����ͥ���٤���(��ǥ���)�����ͥ���٥ޥ����򥻥å�
-     *  ���롥�ޤ����κݡ��ϥ�ɥ�¹�����(��ǥ���)�����ͥ���٥ޥ�����
-     *  ��¸���롥
+     *  割込み要因の割込み優先度を求め(モデル上の)割込み優先度マスクをセット
+     *  する．またその際，ハンドラ実行前の(モデル上の)割込み優先度マスクを
+     *  保存する．
      */
-    ldr   r0, =inh_ipm_tbl      /* �����ͥ���٤���� */
-    ldr   r1, [r0, r3, lsl #2]  /* r1<-�����ͥ����   */
-    ldr   r0, =ipm              /* �����ȯ�����γ����ͥ���٥ޥ����򥹥��å�����¸ */
+    ldr   r0, =inh_ipm_tbl      /* 割込み優先度を取得 */
+    ldr   r1, [r0, r3, lsl #2]  /* r1<-割込み優先度   */
+    ldr   r0, =ipm              /* 割込み発生前の割込み優先度マスクをスタックに保存 */
     ldr   r2, [r0]              
     stmfd sp!,{r2}         
-    str   r1, [r0]              /* (��ǥ���)�����ͥ���٥ޥ����򥻥å� */
+    str   r1, [r0]              /* (モデル上の)割込み優先度マスクをセット */
 
     /*
-     * (��ǥ���)�����ͥ���٥ޥ���������
+     * (モデル上の)割込み優先度マスクの設定
      * 
-     * �����դ�������ߤγ����ͥ���٤����ꤵ�줿������׵�ػߥե饰��
-     * �ơ��֥���ͤ�(��ǥ���)�Ƴ���ߤγ�����׵�ػߥե饰�ξ��֤�
-     * �ݻ������ѿ����ͤȤ�OR��IRC�γ�����׵�ػߥե饰�˥��åȤ��롥
+     * 受け付けた割込みの割込み優先度に設定された割込み要求禁止フラグの
+     * テーブルの値と(モデル上の)各割込みの割込み要求禁止フラグの状態を
+     * 保持した変数の値とのORをIRCの割込み要求禁止フラグにセットする．
      */
-    rsb   r1, r1,  #0           /* ����ǥå����Ȥʤ�褦��ȿž */
-    ldr   r0, =ipm_mask_tbl     /* (��ǥ��)�γ����ͥ���٤�¸����뤿��� */
-    ldr   r2, [r0, r1, lsl #2]  /* ������׵�ػߥե饰����� */    
-    ldr   r0, =idf              /* �Ƴ���ߤγ�����׵�ػߥե饰�ξ��֤���� */
+    rsb   r1, r1,  #0           /* インデックスとなるように反転 */
+    ldr   r0, =ipm_mask_tbl     /* (モデル上)の割込み優先度を実現するための */
+    ldr   r2, [r0, r1, lsl #2]  /* 割込み要求禁止フラグを取得 */
+    ldr   r0, =idf              /* 各割込みの割込み要求禁止フラグの状態を取得 */
     ldr   r1, [r0]
     /*
-     * �Ƴ���ߤγ�����׵�ػߥե饰�ξ��֤�(��ǥ��)�γ����ͥ���٤Τ�¸�����
-     * ����γ�����׵�ػߥե饰�ξ��֤�OR��Ȥꡤ������������뤳�Ȥˤ�ꡤ
-     * IRC�γ���ߵ��ĥ쥸�����ؤ������ͤ����������ꤹ�롥
+     * 各割込みの割込み要求禁止フラグの状態と(モデル上)の割込み優先度のを実現する
+     * ための割込み要求禁止フラグの状態のORをとり，それの否定を求めることにより，
+     * IRCの割込み許可レジスタへの設定値を生成し設定する．
      */
     mvn   lr, #0                
     ldr   r0, =AIC_IDCR
     str   lr, [r0]
-    orr   r1, r1, r2            /* �ޥ������ꤵ��Ƥ��ʤ�����ߤε��� */
-    mvn   r1, r1                /* �����ͤ����� */    
+    orr   r1, r1, r2            /* マスク指定されていない割込みの許可 */
+    mvn   r1, r1                /* 設定値を生成 */
     ldr   r0, =AIC_IECR
     str   r1, [r0]
 
     /*
-     *  ����ߥϥ�ɥ�ε�ư���Ϥ����
+     *  割込みハンドラの起動番地を取得
      */
-    ldr   r0, =inh_tbl         /* ����ߥϥ�ɥ�ơ��֥���ɤ߽Ф�  */
-    ldr   r0, [r0, r3, lsl #2] /* r0<-����ߥϥ�ɥ�            */    
+    ldr   r0, =inh_tbl         /* 割込みハンドラテーブルの読み出し  */
+    ldr   r0, [r0, r3, lsl #2] /* r0<-割込みハンドラ            */
 
     /*
-     *  EOI�Τ������¸
+     *  EOIのために保存
      */
     mov   r1, #1
     mov   r1, r1, lsl r3
     stmfd sp!, {r1} 
 
-    stmfd sp!,{r3}       /* inhno ����¸  */
+    stmfd sp!,{r3}       /* inhno を保存  */
 
     /* 
-     * �����ߵ��� 
+     * 割り込み許可
      */         
     msr   cpsr, #(CPSR_SVC)
 
 #ifdef LOG_INH_ENTER
     stmfd sp!,{r0}
-    mov   r0, r3         /* inhno ��ѥ�᡼����    */
-    bl    log_inh_enter  /* log_inh_enter��ƤӽФ� */
+    mov   r0, r3         /* inhno をパラメータに    */
+    bl    log_inh_enter  /* log_inh_enterを呼び出す */
     ldmfd sp!,{r0}
 #endif /* LOG_INH_ENTER */
 
     /* 
-     * ����ߥϥ�ɥ�θƤӽФ�
+     * 割込みハンドラの呼び出し
      */
     mov   lr, pc
     mov   pc, r0        
 
-    ldmfd sp!,{r0}       /* inhno ������  */    
+    ldmfd sp!,{r0}       /* inhno を復帰  */
 #ifdef LOG_INH_LEAVE
-    bl    log_inh_leave  /* log_inh_leave��ƤӽФ� */
+    bl    log_inh_leave  /* log_inh_leaveを呼び出す */
 #endif /* LOG_INH_LEAVE */
 
     /*
-     * �����ͥ�����γ���ߤ�ػߤ���
+     * カーネル管理の割込みを禁止する
      */
     msr   cpsr, #(CPSR_SVC|CPSR_IRQ_BIT)
 
     /*
-     * ����ߥ��ꥢ
+     * 割込みクリア
      */
     ldmfd   sp!,{r0}
     ldr     r3, =AIC_EOI
@@ -228,39 +231,39 @@ irq_handler_1:
 
 
 /*
- * �������åȰ�¸���㳰��������
+ * ターゲット依存の例外入口処理
  */
     .text
     .global target_exc_handler
 target_exc_handler:    
     /*
-     *  �㳰�¹ԤΥ⡼�ɡʥ����ѡ��Х������⡼�ɡˤ�
-     *  ����ߥ��å����֡�CPU���å����֤�CPU�㳰ȯ������
-     *  ���֤�Ѿ����롥
+     *  例外実行のモード（スーパーバイザーモード）に
+     *  割込みロック状態，CPUロック状態はCPU例外発生時の
+     *  状態を継承する．
      */
     msr   cpsr, #(CPSR_SVC|CPSR_FIQ_BIT|CPSR_IRQ_BIT) 
-    str   r0, [sp, #0x18] /* ������Ϥ򥹥��å��� */
-    stmfd sp!, {r1}       /* spsr�򥹥��å�����¸ */    
-    mov   lr, sp          /* ���λ����Υ����å��������Τ������ */
+    str   r0, [sp, #0x18] /* 戻り番地をスタックに */
+    stmfd sp!, {r1}       /* spsrをスタックに保存 */
+    mov   lr, sp          /* この時点のスタックを復帰のため取得 */
 
-    ldr   r0, =ipm        /* �����ȯ�����γ����ͥ���٥ޥ����򥹥��å�����¸ */
+    ldr   r0, =ipm        /* 割込み発生前の割込み優先度マスクをスタックに保存 */
     ldr   r1, [r0]              
     stmfd sp!, {r1}
 
     /* 
-     * ����ƥ�����Ƚ��Τ��ᡤexcpt_nest_count �򥹥��å�����¸��
-     * �����å�����¸���������ߤ�excpt_nest_count��-1����ȼ����Ǥ��뤬��
-     * �����å����Ѥ�Ǥ����������ǥХå������Ԥ��䤹���Τǡ������å���
-     * ��¸���롥
+     * コンテキスト判定のため，excpt_nest_count をスタックに保存．
+     * スタックに保存せず，現在のexcpt_nest_countを-1すると取得できるが，
+     * スタックに積んでおいた方がデバッグ等が行いやすいので，スタックに
+     * 保存する．
      */
     ldr   r0, =excpt_nest_count
     ldr   r1, [r0]
     stmfd sp!, {r1}
 
-    mov   r3,  sp         /* �㳰�ե졼�����Ϥ���¸ */
+    mov   r3,  sp         /* 例外フレーム番地を保存 */
 
     /*
-     *  ¿�ų����ߤ�Ƚ��
+     *  多重割り込みか判定
      */
     ldr   r0, =excpt_nest_count
     ldr   r1, [r0]
@@ -270,33 +273,33 @@ target_exc_handler:
     bne   target_exc_handler_1    
 
     /* 
-     * �����ܤμ¹Ԥʤ饹���å����ѹ�����
+     * 一段目の実行ならスタックを変更する
      */
     ldr  r0, =_kernel_istkpt
     ldr  sp, [r0]
 
 target_exc_handler_1:    
-    stmfd sp!, {lr}     /* �����ѤΥ����å��ݥ��󥿤���¸ */
+    stmfd sp!, {lr}     /* 復帰用のスタックポインタの保存 */
 
     /* 
-     * �����ȯ�����γ����ͥ���٥ޥ����򥹥��å�����¸ 
-     * ����ߥϥ�ɥ�Ƚи��롼�����ͭ���뤿�����¸
+     * 割込み発生前の割込み優先度マスクをスタックに保存
+     * 割込みハンドラと出口ルーチンを共有するために保存
      */
     ldr   r0, =ipm       
     ldr   r1, [r0]              
     stmfd sp!, {r1}
 
     /*
-     *  CPU�㳰�ϥ�ɥ�ε�ư���Ϥ����
+     *  CPU例外ハンドラの起動番地を取得
      */
-    ldr   r0, =exch_tbl        /* ����ߥϥ�ɥ�ơ��֥���ɤ߽Ф� */
-    ldr   r1, [r0, r2, lsl #2] /* r1<-�㳰�ϥ�ɥ�                 */
+    ldr   r0, =exch_tbl        /* 割込みハンドラテーブルの読み出し */
+    ldr   r1, [r0, r2, lsl #2] /* r1<-例外ハンドラ                 */
 
-    stmfd sp!,{r2}      /* excno ����¸ */
+    stmfd sp!,{r2}      /* excno を保存 */
 
     /* 
-     * �����ߵ��� 
-     * CPU���å����֡�����ߥ��å����֤ϷѾ�����
+     * 割り込み許可
+     * CPUロック状態，割込みロック状態は継承する
      */         
     ldr   r0, [lr]
     and   r0, r0, #(CPSR_IRQ_BIT|CPSR_FIQ_BIT)
@@ -305,69 +308,69 @@ target_exc_handler_1:
 
 #ifdef LOG_EXC_ENTER
     stmfd sp!,{r1,r3}
-    mov   r0, r2         /* excno ��ѥ�᡼����    */
-    bl    log_exc_enter  /* log_exc_enter��ƤӽФ� */
+    mov   r0, r2         /* excno をパラメータに    */
+    bl    log_exc_enter  /* log_exc_enterを呼び出す */
     ldmfd sp!,{r1,r3}
 #endif /* LOG_EXC_ENTER */
 
     /* 
-     * CPU�㳰�ϥ�ɥ�θƤӽФ�
+     * CPU例外ハンドラの呼び出し
      *
-     * �㳰�ե졼�����Ƭ������Ȥ����Ϥ�
+     * 例外フレームの先頭を引数として渡す
      */        
     mov   r0, r3
     mov   lr, pc
     mov   pc, r1
 
-    ldmfd sp!,{r0}       /* excno ������  */    
+    ldmfd sp!,{r0}       /* excno を復帰  */
 #ifdef LOG_EXC_LEAVE
-    bl    log_exc_leave  /* log_exc_leave��ƤӽФ� */
+    bl    log_exc_leave  /* log_exc_leaveを呼び出す */
 #endif /* LOG_EXC_LEAVE */
 
 /*
- * �������åȰ�¸���㳰������ߤνи�����
+ * ターゲット依存の例外・割込みの出口処理
  *
  */
     .global target_ret_exc
 target_ret_exc:
     /*
-     * �����ͥ�����γ���ߤ�ػߤ���
+     * カーネル管理の割込みを禁止する
      */
     msr   cpsr, #(CPSR_SVC|CPSR_IRQ_BIT)  
 
     .global target_ret_int        
 target_ret_int:        
     /*
-     * �����ͥ���٥ޥ����򸵤��᤹
+     * 割込み優先度マスクを元に戻す
      */
-    ldmfd sp!, {r1}             /* ���γ����ͥ���٥ޥ�������� */
-    ldr   r0, =ipm              /* �����ͥ���٥ޥ���������     */
+    ldmfd sp!, {r1}             /* 元の割込み優先度マスクを取得 */
+    ldr   r0, =ipm              /* 割込み優先度マスクを復帰     */
     str   r1, [r0]
-    rsb   r1, r1,  #0           /* ����ǥå����Ȥʤ�褦��ȿž */
-    ldr   r0, =ipm_mask_tbl     /* (��ǥ��)�γ����ͥ���٤Τ�¸����뤿��� */
-    ldr   r2, [r0, r1, lsl #2]  /* ������׵�ػߥե饰����� */    
-    ldr   r0, =idf              /* �Ƴ���ߤγ�����׵�ػߥե饰�ξ��֤���� */
+    rsb   r1, r1,  #0           /* インデックスとなるように反転 */
+    ldr   r0, =ipm_mask_tbl     /* (モデル上)の割込み優先度のを実現するための */
+    ldr   r2, [r0, r1, lsl #2]  /* 割込み要求禁止フラグを取得 */
+    ldr   r0, =idf              /* 各割込みの割込み要求禁止フラグの状態を取得 */
     ldr   r1, [r0]
     /*
-     * �Ƴ���ߤγ�����׵�ػߥե饰�ξ��֤�(��ǥ��)�γ����ͥ���٤Τ�¸�����
-     * ����γ�����׵�ػߥե饰�ξ��֤�OR��Ȥꡤ������������뤳�Ȥˤ�ꡤ
-     * IRC�γ���ߵ��ĥ쥸�����ؤ������ͤ����������ꤹ�롥
+     * 各割込みの割込み要求禁止フラグの状態と(モデル上)の割込み優先度のを実現する
+     * ための割込み要求禁止フラグの状態のORをとり，それの否定を求めることにより，
+     * IRCの割込み許可レジスタへの設定値を生成し設定する．
      */
     mvn   lr, #0                
     ldr   r0, =AIC_IDCR
     str   lr, [r0]
-    orr   r1, r1, r2            /* �ޥ������ꤵ��Ƥ��ʤ�����ߤε��� */
-    mvn   r1, r1                /* �����ͤ����� */    
+    orr   r1, r1, r2            /* マスク指定されていない割込みの許可 */
+    mvn   r1, r1                /* 設定値を生成 */
     ldr   r0, =AIC_IECR
     str   r1, [r0]
 
     /*
-     * �����å��ݥ��󥿤�����
+     * スタックポインタの復帰
      */
-    ldmfd sp!, {r2}             /* ���Υ����å��ݥ��󥿤���� */
+    ldmfd sp!, {r2}             /* 元のスタックポインタを取得 */
     mov   sp, r2
     
     /*
-     * ��ν�����ARM��¸���Ǽ¹�
+     * 後の処理はARM依存部で実行
      */            
     b     ret_int

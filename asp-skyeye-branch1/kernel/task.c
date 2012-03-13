@@ -73,6 +73,7 @@ TCB		*p_schedtsk;
 
 /*
  *  タスクディスパッチ／タスク例外処理ルーチン起動要求フラグ
+ *  task dispatch request/taks exception request flag
  */
 bool_t	reqflg;
 

@@ -68,6 +68,7 @@ set_bit_func(BIT_FUNC bit_func)
 
 /*
  *	チェックポイント
+ *	check point
  */
 void
 check_point(uint_t count)
@@ -78,11 +79,13 @@ check_point(uint_t count)
 
 	/*
 	 *  割込みロック状態に
+	 *  Interrupts locked
 	 */
 	SIL_LOC_INT();
 
 	/*
 	 *  シーケンスチェック
+	 *  Check Sequence
 	 */
 	if (++check_count == count) {
 		syslog_1(LOG_NOTICE, "Check point %d passed.", count);
@@ -94,6 +97,7 @@ check_point(uint_t count)
 
 	/*
 	 *  カーネルの内部状態の検査
+	 *  Checking the internal state of the kernel
 	 */
 	if (check_bit_func != NULL) {
 		rercd = (*check_bit_func)();

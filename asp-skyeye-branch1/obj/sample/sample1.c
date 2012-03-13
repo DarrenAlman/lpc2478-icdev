@@ -108,6 +108,7 @@
 #include "syssvc/syslog.h"
 #include "kernel_cfg.h"
 #include "sample1.h"
+#include "core_sil.h"
 
 /*
  *  サービスコールのエラーのログ出力
@@ -337,6 +338,7 @@ void main_task(intptr_t exinf)
 #endif /* TASK_LOOP */
 	tex_loop = task_loop / 5;
 
+	sil_dly_nse(100);
 	/*
  	 *  タスクの起動
 	 */

@@ -1,4 +1,4 @@
-#Tue Dec 06 16:27:44 CST 2011
+#Tue Dec 06 16:33:04 CST 2011
 eclipse.preferences.version=1
 encoding//include/kernel.h=UTF-8
 encoding//include/t_stddef.h=UTF-8
@@ -23,4 +23,5 @@ encoding//kernel/time_event.h=EUC-JP
 encoding//kernel/wait.c=UTF-8
 encoding//obj/sample/sample1.h=EUC-JP
 encoding//target/at91skyeye_gcc/target_config.c=EUC-JP
+encoding//target/at91skyeye_gcc/target_support.S=UTF-8
 encoding/<project>=EUC-JP
