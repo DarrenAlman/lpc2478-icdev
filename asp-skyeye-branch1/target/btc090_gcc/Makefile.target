@@ -1,0 +1,68 @@
+#
+#  @(#) $Id: Makefile.target 845 2008-03-20 15:39:57Z honda $
+# 
+
+#
+#		Makefile のターゲット依存部（BTC090用）
+#
+
+#
+#  ボード名の定義
+#
+BOARD = bt090
+
+#
+#  チップ名の定義
+#
+AT91SAM7S_TYPE = at91sam7s128
+
+#
+#  コンパイルオプション
+#
+INCLUDES := $(INCLUDES) -I$(TARGETDIR)
+COPTS := $(COPTS)
+LDFLAGS := $(LDFLAGS)
+
+#
+#  カーネルに関する定義
+#
+KERNEL_DIR := $(KERNEL_DIR) $(TARGETDIR)
+KERNEL_ASMOBJS := $(KERNEL_ASMOBJS) 
+KERNEL_COBJS := $(KERNEL_COBJS)
+
+#
+#  システムサービスに関する定義
+#
+SYSSVC_DIR := $(SYSSVC_DIR) $(TARGETDIR)
+SYSSVC_COBJS := $(SYSSVC_COBJS) dbgu_serial.o
+
+#
+#  トレースログ記録のサンプルコードに関する定義
+#
+ifeq ($(ENABLE_TRACE),true)
+      COPTS := $(COPTS) -DTOPPERS_ENABLE_TRACE
+      KERNEL_DIR := $(KERNEL_DIR) $(SRCDIR)/arch/logtrace
+      KERNEL_COBJS := $(KERNEL_COBJS) trace_config.o trace_dump.o
+endif
+
+#
+#  GNU開発環境のターゲットアーキテクチャの定義
+#
+GCC_TARGET = arm-elf
+
+#
+#  各セグメントの開始アドレスの定義
+#
+TEXT_START_ADDRESS=0x00000000
+DATA_START_ADDRESS=0x00200000
+
+#
+#  依存関係の定義
+#
+kernel_cfg.timestamp: $(TARGETDIR)/target.tf
+$(OBJFILE): $(TARGETDIR)/target_check.tf
+
+#
+#  チップ依存部のインクルード
+#
+include $(SRCDIR)/arch/arm_gcc/at91sam7s/Makefile.chip
