@@ -1,0 +1,1 @@
+这个项目是基于lpc2478开发板的一个使用makefile进行管理，采用codesourcery公司的arm工具链进行编译链接，开发板采用的是ICDEV的lpc2478的开发板
